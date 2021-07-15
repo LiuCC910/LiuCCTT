@@ -1,0 +1,35 @@
+.prefrence{@extend %marginSet1; @extend %paddingSet2;background: #fff;border-radius: 6px;
+  .formLayout{
+    td{
+      &>label.aloneCheck{display: block;width: calc(100% - 70px); margin-left: 4px;/*border-radius: 4px; padding-left: 32px; */
+      }
+    }
+    .note{font-size: .9em;margin:5px 3px 0 8px;}
+  }
+  .excludedItems{background: #fff;margin:3px 0 0 3px;padding: 0; 
+    select{display: block;width: 96%; width:calc(100% - 10px);height: 7em;background: none;padding: 4px;margin-bottom: 8px;}
+  }
+}
+
+.minimumPurchase{
+  label{display: block;margin:8px 0 8px 6px;}
+}
+
+@media screen and (min-width: $wwMedium){
+  .prefrence{
+    .formLayout{
+      td{padding-bottom: 12px;
+        &:nth-child(odd){width: 20%;}
+      }
+    }
+  }
+  .excludedItems{padding-top: 6px;}
+  .minimumPurchase{padding-top: 3px;overflow: hidden;
+    label{width: 48%;float: left;
+      &+label{float: right;}
+      input{margin-left: 0;}
+    }
+    p{clear: both;}
+  }
+
+}

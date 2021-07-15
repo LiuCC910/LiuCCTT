@@ -1,0 +1,20 @@
+$stBg1:#ffd933;//waiting
+$stBg2:#aafe20;//approval
+$stBg3:#ff91b6;//rejected
+.hisInquiries{@extend %paddingSet2; @extend %marginSet1;background: #fff; border-radius: 6px;clear: both;
+  ul{margin: 0;padding: 0;list-style: none;line-height: 1.3;}
+  li{margin: 0 0 15px;padding:0 0 15px;border-bottom: 1px solid $border-color-pale;
+    &:last-child{border: none;margin-bottom: 0;}
+    &>a{display: block;border: none;margin:4px -4px 0; padding: 3px 4px; color: $font-color; border-radius: 4px; transition: .2s;clear: both;
+      .subject{color: $font-color-darker;margin-bottom: .2em;
+        &:before{content: attr(title)': ';color: $btn-bg2;}
+      }
+      &:hover{background:$bg-color-pale;text-decoration: underline}
+    }
+  }
+
+  .classify , time, .status{font-size: .9em;margin-bottom:4px;}
+  .classify{display: inline-block;border: 1px solid $border-color-light;height: 1.35em;line-height: 1.4em;padding: 0 .5em;border-radius: 3px;}
+  time{display: inline-block;margin-left: 1em;color: $font-color-lighter}
+
+}

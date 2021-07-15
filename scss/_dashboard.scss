@@ -1,0 +1,318 @@
+.overview{display: flex;
+  h3{font-size: 1.5em;}
+  .blkLeft{flex: 1 1 60%; margin-right: 15px;}
+  .blkRight{flex: 1 1 33%; display: flex; flex-flow: column wrap; justify-content: space-between; 
+    .boardMap{
+      img.fakeMap{display: block;width: 100%;}
+    }
+  }
+  .listTbNew{margin:5px 0 0;padding: 9px;border: $bg-color 1px solid;
+    table{border: none; margin: 0;
+      th{padding-top:2px;}
+    }
+  }
+}
+
+// board1:配送商機數, board2依公司主要產業比較同業平均值, 
+// websiteEffects:網站使用狀況
+.board1, .board2, .websiteEffects{
+  h3{margin: 0 0 10px;  }
+  ul, li{margin: 0;padding: 0;list-style: none;}
+  ul{display: flex;justify-content: space-between;line-height: 1.15;}
+  li{padding:12px 10px 6px; background: #fff; border-radius: 6px;
+    .subject{font-size: 1.2em; margin-bottom: 1.5em;}
+    .percentage{ float: left; font-size: 1.2em; background:$bg-color-dark; color: #fff; height: 1.8em; line-height: 1.8em;padding:0 8px; border-radius: 4px;
+      &.negative{background: #029a8b;}
+      &.positive{background: #d71c57;}
+    }
+    .score{font-size: 2em; height: 1.2em;line-height: 1em; font-weight: bold; float: right; margin-left: 5px;}
+  }
+  .more{margin: 8px 5px 0 auto; outline: 1px soldi red;}
+}
+.board1{
+  ul{flex-wrap: wrap;justify-content: space-between; }
+  li{ flex: 1 1 calc(32% - 30px);margin: 5px;box-shadow: rgba(0,0,0,.35) 0 1px 3px; cursor: pointer; transition: .3s;
+    &:nth-child(3n+1){margin-left: 0;}
+    &:nth-child(3n){margin-right: 0;}
+    &:hover{box-shadow:$btn-bg1 0 0 0 2px, rgba(0,0,0,.5) 0 2px 12px;}
+  }
+
+}
+.board2{margin: 15px 0 0; padding:20px 10px 10px; background: $bg-color;border-radius: 6px;
+  li{ flex: 1 1 calc(33% - 20px); margin: 0 5px;
+    &:first-child{margin-left: 0;}
+    &:last-child{margin-right: 0;}
+  }
+
+}
+
+
+// 20201224 新增 ec 使用者的進階使用者功能畫面截圖 
+.fakeDashboard{@extend %marginSet1;padding:0; position: relative;
+  img{display: block; width:875px;}
+  &::before{content: ''; position: absolute; left: 0;top: 0;right: 0;bottom: 0; background-color: rgba(80,85,90,.3); border-radius: 6px;opacity: 0; transition: .3s; cursor: pointer;}
+  &:hover{
+    &::before{opacity: 1;}
+  }
+
+  //20210205
+  &.boardH{margin-left: -5px; margin-right: -5px;
+    img{display: block; width: 100%; }
+  }
+}
+
+
+
+
+// 頁籤內容下方區塊，從「網站使用狀況」開始
+.boardMsg{@extend %marginSet1;padding:10px; background: #fff;border-radius: 6px;margin-top: 40px;
+  h3{font-size: 1.5em;
+    // &::after{content: ''; display: inline-block;width: 9px;height: 9px; margin-left: 4px; margin-bottom: -2px; background:$hiLight2;}
+  }
+  .listTbNew, .listTable{ margin: 20px 0 0;padding:10px;
+    h3{margin-bottom: 5px;}
+    table{margin-bottom: 5px;}
+    a{border: none;}
+  }
+}
+//網站使用狀況
+.websiteEffects{margin:0; padding:20px 10px 10px;  background: $hiLight1;border-radius: 6px;
+  h3 .icon_i{ margin-left: 8px; vertical-align: top;box-shadow: #fff 0 0 0 2px;}
+  li{flex: 1 1 20%; margin: 0 5px;
+    &:first-child{margin-left: 0;}
+    &:last-child{margin-right: 0;}
+    &.grade{font-size: 3em; font-weight: bold; text-align: right;padding-bottom: 0;flex-basis: 16%;
+      background: none;/* box-shadow: rgba(0,0,0,.4) 0 0 5px inset; */
+      &::first-letter{font-size: 1.8em; height: 1em; line-height: 1;}
+    }
+  }
+}
+//訂單動態
+.orderStatus{margin:30px 0 0;padding:20px 10px 10px;background:$bg-color;border-radius: 6px;
+  h3{margin: 0 0 10px; }
+  ol{list-style: none;margin:0;padding:0; display: flex; }
+  li{ flex: 1 1 20%; margin:0 5px;padding: 0;text-align: center;
+    border-radius: 6px;background: #fff;box-shadow: rgba(0,0,0,.35) 0 1px 3px;
+      transition: .3s;
+    &:first-child{margin-left: 0;}
+    &:last-child{margin-right: 0;}
+    &:hover{box-shadow:$btn-bg1 0 0 0 2px, rgba(0,0,0,.5) 0 2px 12px;}
+
+    a{display: flex;flex-flow: nowrap column;justify-content: space-between;
+      padding:12px 10px 6px;height:calc(100% - 18px);border: none; color: $font-color;}
+    .title{font-size: 1.2em;}
+    .count{font-size: 2em;height: 1.5em;line-height: 1.6;margin: .3em 0 0; font-weight: bold; border-top: 1px solid $border-color-pale; }
+
+  }
+}
+
+
+$yellow:#d8ae06;
+$green:#a4b113;
+$orange:#dc7a11;
+$red:#d24b3c;
+$blue:#4b8cc5;
+$lightBlue:#40adce;
+$pink:#d25b9c;
+$purple:#9d5fba;
+
+//流量分析
+.browsingRecord{
+  ul, li{list-style: none;margin: 0;padding: 0;}
+  ul{display: flex; flex-wrap: wrap; justify-content: space-between; margin: 0 1px;}
+  li{
+    h3{font-size: 1.4em; color: #fff; margin: 0 0 .5em; line-height: 1.1;}
+    p{margin: 0; line-height: 1.5; color: #111;}
+    a{position: relative; display: block;color: #fff;border: none;border-radius: 6px; transition: .2s; box-sizing: border-box;
+      &:hover{box-shadow:#fff 0 0 0 2px, rgba(0,0,0,.4) 0 0 6px 2px;
+        &::before{animation-name: flipInY; animation-duration: .75s;}
+      }
+    }
+    &:nth-child(1), &:nth-child(2){flex: 0 1 calc(50% - 6px); margin: 0 0 12px;
+       display: flex;
+      a{padding:26px 25px 24px 120px; width: 100%;
+        &::before{content: '';position: absolute;left: 30px;top: 50%; width: 48px;height: 48px;margin-top: -24px;background-repeat: no-repeat; background-position: 0 center; background-size: 43px auto;}
+        &::after{content: ''; position: absolute; left: 100px; top: .5em; width: 1px;bottom: .5em;background-image: linear-gradient( transparent ,rgba(255,255,255,.6), transparent);}
+      }
+    }
+    &:nth-child(n+3){font-size: 1.4em;
+      flex: 0 1 calc(33.33% - 8px);margin: 0 12px 12px 0;
+      a{padding:0 60px 0 25px; height: 4em; line-height: 4em;
+        &::before{content: '';position: absolute; right: 25px;top: 50%;width: 32px;height: 32px;margin-top: -16px;background-position: 0 center; background-repeat: no-repeat; background-size: 26px auto;}
+      }
+    }
+    &:nth-child(3n + 2){margin-right: 0;}
+
+    &:nth-child(1) a::before{background-image: url(../images/dashboard/2-1.png);}
+    &:nth-child(2) a::before{background-image: url(../images/dashboard/2-2.png);}
+    &:nth-child(3) a::before{background-image: url(../images/dashboard/2-3.png);}
+    &:nth-child(4) a::before{background-image: url(../images/dashboard/2-4.png);}
+    &:nth-child(5) a::before{background-image: url(../images/dashboard/2-5.png);}
+    &:nth-child(6) a::before{background-image: url(../images/dashboard/2-6.png);}
+    &:nth-child(7) a::before{background-image: url(../images/dashboard/2-7.png);}
+    &:nth-child(8) a::before{background-image: url(../images/dashboard/2-8.png);}
+
+    &:nth-child(1) a{background-color:$yellow;}
+    &:nth-child(2) a{background-color:$green;}
+    &:nth-child(3) a{background-color:$orange;}
+    &:nth-child(4) a{background-color:$red;}
+    &:nth-child(5) a{background-color:$pink;}
+    &:nth-child(6) a{background-color:$lightBlue;}
+    &:nth-child(7) a{background-color:$blue;}
+    &:nth-child(8) a{background-color:$purple;}
+  }
+}
+
+// 買主行為、產業分析
+.buyerRecord, .comparison{
+  ul, li{list-style: none;margin: 0;padding: 0;}
+  ul{display: flex; flex-wrap: wrap; justify-content: space-between; margin: 0 1px;}
+  li{flex: 0 1 calc(50% - 6px); margin: 0 0 11px;font-size: 1.4em;
+    a{position: relative; display: block; background: $btn-bg2;color: #fff;padding: 0 30px 0 130px; height: 5em; line-height: 5em; border: none; border-radius: 6px; transition: .2s;
+      &:hover{box-shadow:#fff 0 0 0 2px, rgba(0,0,0,.4) 0 0 6px 2px;
+        &::before{animation-name: flipInY;animation-duration: .75s;}    
+      }
+      &::after{content: ''; position: absolute; left: 100px; top: .5em; width: 1px; height:4em;
+        background-image: linear-gradient( transparent ,rgba(255,255,255,.6), transparent);}
+      &::before{content: ''; position: absolute;left: 30px; top: 50%; margin-top: -23px; width: 48px;height: 48px; background-repeat: no-repeat; background-position: 0 center; background-size: 43px auto;}
+    }
+  }
+}
+.buyerRecord li{
+  &:nth-child(1) a{ background: $yellow;
+    &::before{ background-image: url(../images/dashboard/3-1.png);}
+  }
+  &:nth-child(2) a{ background: $green;
+    &::before{ background-image: url(../images/dashboard/3-2.png);}
+  }
+  &:nth-child(3) a{ background: $purple;
+    &::before{ background-image: url(../images/dashboard/3-3.png);}
+  }
+  &:nth-child(4) a{ background: $pink;
+    &::before{ background-image: url(../images/dashboard/3-4.png);}
+  }
+  &:nth-child(5) a{ background: $orange;
+    &::before{ background-image: url(../images/dashboard/3-5.png);}
+  }
+}
+.comparison li{
+  &:nth-child(1) a{ background:$purple;
+    &::before{ background-image: url(../images/dashboard/4-1.png);}
+  }
+  &:nth-child(2) a{ background:$green ;
+    &::before{ background-image: url(../images/dashboard/4-2.png);}
+  }
+  &:nth-child(3) a{ background:$blue;
+    &::before{ background-image: url(../images/dashboard/4-3.png);}
+  }
+  &:nth-child(4) a{ background:$yellow ;
+    &::before{ background-image: url(../images/dashboard/4-4.png);}
+  }
+  &:nth-child(5) a{ background:$lightBlue ;
+    &::before{ background-image: url(../images/dashboard/4-5.png);}
+  }
+  &:nth-child(6) a{ background:$orange ;
+    &::before{ background-image: url(../images/dashboard/4-6.png);}
+  }
+  &:nth-child(7) a{ background:$pink ;
+    &::before{ background-image: url(../images/dashboard/3-5.png);}
+  }
+}
+
+.comparison.ifec li{
+  &:nth-child(1) a{ background:$yellow ;
+    &::before{ background-image: url(../images/dashboard/4-4.png);}
+  }
+  &:nth-child(2) a{ background:$orange ;
+    &::before{ background-image: url(../images/dashboard/4-6.png);}
+  }
+}
+
+
+// anumation
+@keyframes flipInY {
+  from {
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+    transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+  40% {
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+    transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  60% {
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+    transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+    opacity: 1;
+  }
+  80% {
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+    transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+  }
+  to {
+    -webkit-transform: perspective(400px);
+    transform: perspective(400px);
+  }
+}
+
+
+// 20210205 新增 EP, EC 的 SU 首頁
+.dashboard { @extend %marginSet1; @extend %paddingEven; background: #fff;border-radius: 6px;
+
+  .websiteEffects, .listTable, .welcome{margin: 1em 0;}
+  .listTable{ padding-left: 0; padding-right: 0;}
+
+  .welcome{display: flex; position: relative; padding: 0 0 1em; align-items: flex-end;
+    border-bottom: 3px solid $border-color-pale;
+    time{ position: absolute; padding:0 12px 0 36px; line-height:34px; height: 32px; top: 0; border-radius:20px; box-shadow:$border-color-light 0 0 0 1px ;
+      &::before{content: ''; position: absolute; left: 3px;top: 2px; width: 28px; height: 28px;background: url(../images/icon_menus.png) no-repeat center -131px; background-size:24px; }
+    }
+    .member{ font-size: 1.6em; flex:1 1 54%; justify-content: space-between; margin: 44px 0 4px;
+      // outline: 1px dashed #d99;
+
+      em{font-style: normal; font-weight: bold; color: #000;}
+    }
+    .memberStatus{ flex: 1 1 30%; margin-left: 20px; padding: 5px 0 5px 3%; margin: 0 0 0 3%;
+      list-style: none; line-height: 1.5;  border-left: 1px solid $border-color-light;
+      // outline: 1px dashed #d99;
+      li{margin: 0;padding: 0; clear: both; 
+        &+li{margin-top: .5em;}
+        .dt, .dd{display: inline-block;font-size: 1.15em;}
+        .dt{color: $font-color-lighter;
+          &::after{content: '： ';}
+        }
+        .icon_i{/* position: absolute; right: 0;top: 0; float: right;*/ vertical-align: top; margin-left: 4px;}
+        .hint{margin-top: .5em;}
+      }
+    }
+  }
+}
+
+// 本月營運摘要
+.monthlyOverview{ border-bottom: 3px solid $border-color-pale; padding: 0 0 2.6em; margin: 0 0 3em;
+  .unread{margin: 0 0 1em;
+    ul{list-style: none; display: flex; margin: 0; padding: 0; text-align: center;
+      li{ flex:1 1 30%;margin: 10px 0 10px 10px; padding: 0;
+
+        h4{padding:8px 8px 6px; line-height: 1.3; margin: 3px; background: $btn-bg1; color: #fff; border-radius: 4px; font-weight: normal;
+          &::before{content: ''; display: inline-block;vertical-align: middle; width: 32px;height: 32px; margin-right: 5px; background: url(../images/icon_unread.png) no-repeat center 0; background-size: 32px; }
+        }
+        .count{display: inline-block; font-size: 2.8em; line-height: 3em; height: 3em; font-weight: bold; color: $red;}
+        a{position: relative; display: block;border: none;border-radius: 6px; transition: .2s;
+          @extend %shadowBorder; overflow: hidden;
+          &:hover{box-shadow:$hiLight2 0 0 0 2px, rgba(0,0,0,.3) 0 0 12px 3px;
+            h4{background-color: $hiLight2;}
+          }
+        }
+
+        &:first-child{margin-left: 0;}
+        &:nth-child(2) h4::before {background-position: center -40px;}
+        &:nth-child(3) h4::before {background-position: center -80px;}
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+.applyLogo{@extend %marginSet1;background: #fff;padding:12px;border-radius: 6px;
+  .listTbNew{margin:10px 0;box-shadow: $border-color-pale 0 0 0 1px;}
+  .siteURL{margin:-6px -6px 10px;padding: 12px 10px 10px; background:$bg-color; border-radius: 4px ;
+    input[type="url"], input[type="text"]{ width: 55%; margin-top: 0;}
+  }
+  .applyStep{ text-indent: -2em; padding-left: 2em;
+    & ~ .applyStep{margin-top: 3em;}
+    &::first-letter{font-size: 2.5em; margin-right: .3em; margin-left: .1em; font-weight: bold;}
+  }
+
+  .formLayout{border-top: 1px solid #ddd;width: 100%;
+    td{vertical-align: middle;padding:6px; border-bottom: 1px solid  $border-color-pale;}
+  }
+
+  .options{
+    .optionPool{
+      label{ padding-top:10px;padding-bottom: 10px;
+        &+label{margin-left: 22px;}
+      }
+      &.pattern{
+        label{width:14.2em;}
+        img{height: 60px; vertical-align: middle; margin-left: 8px;}
+      }
+      &.size label,
+      &.format label{min-width: 4em;}
+    }
+
+  }
+  .presenting{background:$bg-color; border-radius: 6px;padding:3px;margin-top: 10px;overflow: hidden;
+    .logoImage{display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; padding: 10px 1px 4px;
+      img{margin: 0 30px; display: block; flex: 0 0 auto;}
+      button{margin:0; flex: 0 0 auto;
+        &:hover{box-shadow: none;}
+      }
+    }
+    
+    textarea{display: block;width:calc(100% - 20px); padding: 9px; margin: 0 auto; height: 12em; resize: none; font-family: monospace;background: #fff; border-radius: 5px;}
+     
+  }
+
+  @media screen and (min-width: $wwMedium){
+    .presenting{
+      textarea{height: 10em;}
+    }
+  }
+  @media screen and (min-width: $wwWide){
+    .presenting{ 
+      textarea{height: 7em;}
+    }
+  }
+}

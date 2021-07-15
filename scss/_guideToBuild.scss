@@ -1,0 +1,152 @@
+.guideToBuild{@extend %marginSet1;background: #fff; border-radius: 6px;padding:16px 16px 32px;
+  .noteDv{margin: 0 0 15px;}
+  .guide{position: relative; padding: 15px 10px; margin: 0; border-radius: 4px; border: 1px solid $border-color-light;
+    display: flex; justify-content: space-between; flex-wrap: wrap;
+    &+.guide{margin-top: 12px;}
+    .left{flex: 1 1 auto;}
+    .right{flex: 0 1 auto; margin-left: 15px;}
+
+    .left{
+      p{margin: 0;}
+      h3{font-size: 1.25em; margin: 3px 0 0; line-height: 1.5; font-weight: normal;}
+      .statusNow{ margin: .8em 0 0;}
+      .hint{margin-top: 1em;}
+    }
+
+    &.yourUrl{position: relative; 
+      .left{padding-right: 90px;min-height: 70px;}
+      .urlNow{display: inline-block; margin: .5em .5em 0 0; height: 2em; line-height: 2em;
+        word-wrap: break-word;font-weight: bold;letter-spacing: 1px; font-size: 1.2em; 
+        
+        .lang{color: $border-color-dark;}
+      }
+      .qrCode{position: absolute;width: 70px; background: #fff;padding: 4px; border: 1px solid $border-color-pale;
+        margin: 0 0 0 10px; top: 14px; vertical-align: bottom;
+        img{display: block; width: 100%;}
+        &.showLightbox{cursor: pointer;}
+      }
+    }
+
+
+    .guide{flex: 0 1 100%; padding:15px 0 0; margin-top: 15px; border: none; border-radius: 0; border-top: 1px dotted $border-color-light;}
+  }
+}
+
+// 在燈箱中開啟 QR CODE 的大圖
+.lightbox .qrCodeEnlarge{margin:  0 40px 40px;
+  img{display: block; margin: 0 auto; max-width: 512px; max-height: 512px;}
+}
+
+
+.applyUrl{
+  .urlNow, .urlNew{font-weight: bold;letter-spacing: 1px; font-size: 1.2em; margin:0 3px;padding: 3px 8px;
+    .lang{color: $border-color-dark;}
+  }
+  .urlNow{display: inline-block;word-wrap: break-word; height: 2em; line-height: 2em;  margin-bottom: 15px;
+    border: 1px dashed $border-color-light; border-radius: 4px;
+  }
+  .urlNew{
+    input[type="text"]{font-size: 1.4em;line-height: 1.6em; height: 1.6em; margin: -2px 4px 0; width:9em;}
+  }
+  // input[type="submit"]{ margin-left: 1em;}
+
+}
+
+// 設定企業網語系
+.webLang{ border: 1px solid $border-color-pale;padding: 10px 10px 15px; background: #fff;
+  .optionPool{
+    &>div{clear: both; overflow: hidden; border-bottom: 1px solid $border-color-pale;}
+    label{margin: 3px 2px;
+      width: calc(100% - 6em - 52px);
+      overflow: hidden; white-space: nowrap; text-overflow: ellipsis;
+      box-shadow: none;
+      &:hover{box-shadow: none;}
+    }
+    .dataStatus{ color: $hiLight1;  cursor: pointer;box-shadow: none;
+      float: right;line-height: 2.3em; height: 2.2em; margin: 4px 2px 1px; border-radius: 1.2em;
+       &.fine{color:#fff;}
+       &[disabled]{color: #aaa; cursor: default;}
+    }
+  }
+  .hint{margin: 0 0 .5em !important;
+    em{font-size: 1.5em; font-weight: bold;}
+  }
+}
+.guide.lang .webLang{display: none;width: 16em; border-radius: 4px; @extend %shadowWide;
+  position: absolute;top: .9em;right: 9em;  z-index: 99;
+}
+
+
+
+
+// ----------------------------導覽列設定 20200922
+
+.navSetting{@extend %marginSet1;
+
+  .pageName{font-size: 1.25em; margin:0; line-height: 1.5;font-weight: normal; 
+    .hint{display: inline-block ;margin-left: .3em; font-size: .75em; color: $font-color-lighter;}
+  }
+
+  .noteDv{margin: 0 0 15px;}
+  .hint{margin-bottom: 6px;}
+
+  // --------------------------------
+  .threeColumn{ display: flex; justify-content: space-between; flex-wrap: nowrap; align-items: center;
+    .pageName{flex-basis: calc(65% - 260px);flex-grow: 0; flex-shrink:0;margin-left: 10px;overflow: hidden;}
+    .langList{flex-basis: 35%;flex-grow: 1;flex-shrink:0;margin-left:15px; margin-right:15px; }
+    .right{flex-basis:210px;flex-grow: 0; flex-shrink: 0;width: 210px; margin-right: 10px; text-align: right; white-space: nowrap;
+      .editThis{ height: 44px;
+        li{margin-top: 0; margin-bottom: 0;}
+      } 
+    }
+  }
+
+  .navItem{position: relative; padding:10px; margin: 0; border-radius: 6px; clear: both;
+    background: #fff; 
+    &+.navItem{margin-top: 10px;}
+    &>.threeColumn{position: relative;padding:8px 0;border: 1px solid $border-color-light;border-radius: 4px;min-height: 50px;
+      &>.dragStick{position: absolute;left:6px; top: 50%; margin-top: -10px;
+        &+.pageName{margin-left: 50px; flex-basis: calc(65% - 305px); }
+      }
+    }
+  
+    // .funcBtn{position: relative;width: 0; padding: 0; margin-left: 0; width: 44px; vertical-align: middle;
+    //   background-color: $btn-bg1;  box-shadow: none;transition:.2s;
+    //   &::after{content: attr(data-title);position: absolute; top:-1em; left:-3px; height: 1.3em; line-height: 1.3;
+    //     padding: 0 3px; border-radius: 4px;font-size: .85em;color: $font-color;opacity: 0;transition: .2s; min-width: 44px; text-align: center;}
+    //   &:hover{background-color: $btn-bg2;box-shadow: $btn-bg2 0 0 0 2px;
+    //     &::before{background-color: $btn-bg2;}
+    //     &::after{top: -1.4em;opacity: 1; background-color: rgba(255,255,255, .7); color: $font-color; }
+    //   }
+    // }
+  }
+
+  .navItemSub{position: relative; padding: 8px 0; margin:10px 0 0 20px;
+    border: 1px solid $border-color-light;border-radius: 4px;
+    .dragStick{position: absolute; left:6px; top: 50%; margin-top: -10px;
+      & + .threeColumn{margin-left: 40px;}
+    }
+    .threeColumn{
+      .pageName{flex-basis: calc(65% - 286px);}
+      .langList{flex-basis:calc(35% - 14px)}
+    }
+  }
+
+
+
+
+
+
+  .right .icon_i{ margin: 0 10px;}
+}
+
+// button元件，單獨存在的功能按鈕圖示
+// button.funcBtn{position: relative;width: 0; padding: 0; margin-left: 0; width: 44px; vertical-align: middle;
+//   background-color: $btn-bg1;  box-shadow: none;transition:.2s;
+//   &::after{content: attr(data-title);position: absolute; top:-1em; left:-3px; height: 1.3em; line-height: 1.3;
+//     padding: 0 3px; border-radius: 4px;font-size: .85em;color: $font-color;opacity: 0;transition: .2s; min-width: 44px; text-align: center;}
+//   &:hover{background-color: $btn-bg2;box-shadow: $btn-bg2 0 0 0 2px;
+//     &::before{background-color: $btn-bg2;}
+//     &::after{top: -1.5em;opacity: 1; background-color: rgba(255,255,255, .7); color: $font-color; }
+//   }
+// }

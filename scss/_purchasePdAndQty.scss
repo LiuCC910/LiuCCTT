@@ -1,0 +1,88 @@
+@charset "utf-8";
+/* 產品小照片＋採購數量與預估金額 */
+.quantity{padding:8px 8px 4px;border-radius:5px;background:$bg-color-pale;}
+// .product_quantity, .product_offer {position:relative;}
+
+@media screen and (min-width: $wwMedium){
+	.quantity{margin-left:0;margin-right:0;margin-bottom:1.5em;}
+	.quantity .fieldWarning{display: none;height:auto;line-height: 1.2;margin-right:0;padding:0 5px;}
+}
+@media screen and (min-width: $wwWide){
+	.quantity{
+		.product_quantity{float: left;width:49%;}
+		.product_offer{float: right;width:49%;}
+		&:after{content:'';display:block;width:100%;clear:both;}
+	}
+}
+
+// 數量與單位
+.product_quantity{
+	// outline: 1px dashed #fcc;
+	&>label{line-height:2.5em;margin-right: 5px;font-weight: bold;}
+	.inc_dec{display:inline-block;vertical-align: top;margin:2px 0;padding: 0 2.1em;background:$bg-color-dark; border-radius: 5px;position: relative;
+		&>*{float:left;}
+		.minus, .plus{position: absolute;top: 0;left: 0;bottom: 0;line-height:2.2em;width:2.1em;text-align:center;border-radius:5px;text-decoration:none;color: #fff;border: none;}
+		.plus{left: auto;right: 0;}
+		.minus:hover, .plus:hover{background:$btn-bg1;color:#fff;}
+		input[type="text"], input[type="number"]{position: relative;width:3em;height:2.3em;margin:0;border:none;box-shadow: $border-color-light 0 0 0 2px;z-index: 9;}
+		input[type="text"]:focus, input[type="number"]:focus{box-shadow:$btn-bg1 0 0 0 3px}
+
+		// 唯讀
+		&.disabled{padding: 0; background: none;
+			&>a{display: none;}
+			input[type="text"], input[type="number"]{box-shadow:$border-color-pale 0 0 0 1px;background-color: rgba(255,255,255,.5);}
+		}
+	}
+	select{width:calc(100% - 14em - 35px);height:2.2em;margin:2px 0;float: right;}
+}
+@media screen and (max-width: 499px){
+	.product_quantity{
+		select{float: none;width:calc(100% - 36px);margin: 4px 0 0;}
+	}
+}
+@media screen and (min-width: $wwMedium){
+	.product_quantity{
+		select{float: none;max-width: 16.2em;margin-left: 1em;}
+	}
+}
+@media screen and (min-width: $wwWide){
+	.product_quantity{padding-bottom: 2px;
+		select{width:calc(100% - 13.5em - 35px);height:2.4em;margin:1px 0 1px .5em;}
+	}
+}
+
+// 預估採購金額
+.product_offer{margin-top: 12px;padding: 13px 0 2px;border-top: 1px solid $border-color-light;
+	// outline: 1px dashed #bbb;
+	&>label{height: 2.4em;line-height: 2.4em;float: left;font-weight: bold;}
+	.currency{line-height:2.4em;display: inline-block;text-align: right;margin-left:1em;}
+	input[type="text"],
+	input[type="number"]{float: right;height:2.2em;line-height:2.2em;width:calc(100% - 17.5em);margin: -2px 0 0 3px;}
+}
+@media screen and (max-width: 499px){
+	.product_offer{
+		&>label{display: block;float: none;}
+		.currency{margin:0;}
+		input[type="text"], input[type="number"]{width:calc(100% - 2.2em - 24px);}
+	}
+}
+@media screen and (min-width: $wwSlim){
+	.product_offer{
+		input[type="text"], input[type="number"]{margin-top: 0;max-width: 15em;}
+	}
+}
+@media screen and (min-width: $wwMedium){
+	.product_offer{
+		input[type="text"], input[type="number"]{float: none;}
+	}
+}
+@media screen and (min-width: $wwWide){
+	.product_offer{margin-top: 0;padding: 0; border: none;text-align: right;
+		&>label{float: none;}
+		.currency{margin-left: .5em;}
+	}
+}
+
+
+
+.thumbAndQuant .quantity>div+div{margin-top:.5em;}

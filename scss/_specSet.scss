@@ -1,0 +1,23 @@
+.specSet{position: relative;padding: 10px; margin: 5px 0 12px;
+  @extend %shadowThin; border-radius: 4px;
+
+  &>.dragStick{position: absolute; left: 5px;top: 5px; height: 32px; }
+  .funcBtnGp{position: absolute;right: 12px;top: 12px; margin: 0; z-index: 9;}
+  .formLayout{width: calc(100% - 40px); margin: 0 0 0 auto;
+    td:first-child{width: 5em;}
+    input.specName{width: 40%;}
+
+  }
+  
+
+}
+
+.specValue{ list-style: none;margin: 0;padding: 0; /* display: flex; flex-flow: row wrap; */  
+  li{margin:3px;padding:0; display: flex; align-items: center;
+    & + li{margin-top: 8px;}
+    .dragStick{flex:0 0 auto; position: static}
+    .ficon{ flex:0 0 auto;}
+    input[type="text"]{flex: 1 1 80%; margin-left: 5px;margin-right: 5px; }
+
+  }
+}

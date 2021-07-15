@@ -1,0 +1,16 @@
+.processIndicator{margin: 0 auto 10px;padding: 20px;
+  ol, li{list-style: none;margin: 0;padding: 0; line-height: 1.1;}
+  ol{margin: 0 -20px;display: flex; justify-content: space-between;position: relative; color: $font-color-lighter; font-size: 1.15em; font-weight: bold;}
+  li{ text-align: center;position: relative;flex: 1 1 12%;padding-top: 34px;
+    &::after{content: '';position: absolute;top: 3px;left: 50%;width:16px;height:16px; border-radius: 50%; margin: 0 auto 0 -10px;background: #fff;box-shadow: $btn-bg1 0 0 0 4px;}
+    &.now{color: $font-color;}
+    &.now::after{box-shadow:#fff 0 0 0 4px, $hiLight2 0 0 0 8px;background:$hiLight2;}
+    &::before{content: '';position: absolute;left: 0;right: 0;height: 6px; background: $border-color-light;top: 8px;}
+    &:first-child:before{left: 50%;}
+    &:last-child:before{right: 50%;}
+  }
+
+  &.twoSteps{
+    ol{margin: 0 -20%;}
+  }
+}

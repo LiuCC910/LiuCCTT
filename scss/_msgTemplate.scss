@@ -1,0 +1,82 @@
+//回覆函範本列表，含「自訂樣板」「系統樣板」兩個頁籤
+
+//僅用於此版型
+.check label{position:relative;display:inline-block;width: 16px;height: 16px;padding:0;margin:0;cursor:pointer;transition:.15s;
+  input{width: 5px; font-size: 5px;}
+  //  模擬 checkbox
+  &:before, &:after{content:'';position:absolute;left:0;top:0;z-index:9;transition:.15s;}
+  &:before{width:16px;height:16px;background:$bg-color-pale;border:1px solid $font-color-lighter;border-radius:2px;}
+  &:after{display:none;border:2px solid #fff;width:10px;height:6px;margin:3px auto auto 3px;transform:rotate(-45deg);border-top:none;border-right:none;}
+  //  已選項目
+  &.checked:before{background:$font-color;border-color: $font-color;box-shadow:#fff 0 0 0 1px, $font-color-lighter 0 0 0 2px;}
+  &.checked:after{display:block;}
+}
+
+.msgTemplate{@extend %marginSet1;@extend %paddingSet2;@extend %shadowNormal;background: $bg-color;border-radius: 6px;
+  time{display:inline-block;font-size: .93em;min-width: 5.7em;}
+  .funcBtnGp{margin: 0;overflow: hidden;
+    ul{float: right;}
+  }
+  .searchOnTop{margin:-10px 0 5px;}
+}
+
+table.msgTempList{width:100%;margin:0 auto 20px;line-height: 1.3;
+  // caption{font-weight: bold;padding: 0 0 .3em;font-size: 1.1em;}
+  tr{border-bottom: 1px solid $border-color-pale;
+    &:first-child{border-bottom: 2px solid $border-color-dark;
+      &:hover{background: #fff;}
+    }
+    &:last-child{border-bottom: 2px solid $border-color-pale;}
+  }
+  tr:hover{background:$bg-color-pale;
+    .dragStick{background-color: #fff;}
+  }
+  th, td{padding:.8em .5em .5em;vertical-align: top;word-break: break-word;text-align: center;}
+  // th{background: #fff; }
+  td{
+    &.title{text-align-last: left;
+      a{display: block;border:none;text-align: left;}
+      a:hover{text-decoration: underline;}
+    }
+  }
+}
+@media screen and (max-width: $wwMedium - 1){
+  table.msgTempList{
+    tr{position: relative;display: block;padding: .4em 0;overflow: hidden;padding-left: 48px;}
+    th, td{display: inline-block;padding:.3em 2px;
+      &.check{width: 24px;
+        &:first-child{margin-left: -40px;
+          & ~ .status{margin-left: 2.2em;}
+          & ~ .title{width: calc(100% - 2.2em - 10px );}
+        }
+      }
+      &.serialNum{width: 2.2em;}
+      &.title{width: calc(100% - 2.2em - 52px);border-bottom: 1px dashed $border-color-pale;}
+      &.status{margin-left: calc( 2.2em + 43px);}
+      &.time{float: right;}
+    }
+    th{
+      &.changeOrder{width: 44px;position: absolute;left: 0;top: 0;bottom: 0;}
+      &.check{margin-left: 4px;}
+      &.title{text-align-last: left;}
+    }
+    td{
+      &.changeOrder{width: 0;padding: 0;}
+      &.title{
+        a:before{content: '';position: absolute;left:88px;top:4px;right: 0;bottom: 4px;}
+      }
+      .dragStick{position: absolute;left: 3px;top:4px;bottom: 4px;height: auto;}
+    }
+    label{
+      &:before{width: 20px;height: 20px;}
+      &:after{width:14px;height:8px;}
+    }
+  }
+}
+@media screen and (max-width: $wwSlim - 1){
+  table.msgTempList{
+    th, td{
+      &.status{margin-left:4px;text-align: left;}
+    }
+  }
+}

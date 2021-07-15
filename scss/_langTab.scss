@@ -1,0 +1,51 @@
+.langTab{clear:both;  @extend %marginSet1; z-index: 99;position: relative;
+  ul, li{margin: 0;padding: 0;list-style: none;}
+  li{cursor: pointer;
+    .count{display: inline-block;min-width: .7em;text-align: center;height: 1.3em;line-height: 1.35; vertical-align: middle; border-radius: 1em; font-size: .85em; margin-left: .1em; padding: 0 .35em; background: $btn-bg1; color: #fff;}
+  }
+  a{display: block;text-decoration: none; border-bottom: none;}
+  &>ul{ background: #fff; border-radius: 4px; display: inline-block;padding: 0;
+    &>li{float: left; margin: 0 3px;padding: 0;line-height: 1.1;
+      &:first-child{margin-left: 1px;}
+      &:last-child{margin-right: 1px;}
+      &>a{padding: 0 1em; height: 2.3em;line-height: 2.3; border-radius: 2px; transition: .2s;
+        &:hover{background-color: #fff;color: $btn-bg2; box-shadow: $btn-bg1 0 0 0 2px }
+      }
+      &.active>a{background: $btn-bg2; color: #fff; box-shadow: $btn-bg2 0 0 0 3px, $btn-bg1 0 0 8px 3px;border-radius: 1px;}
+      &>ul{display: none;position: absolute;top: auto;left:-8px; margin-top: -2px; min-width:9em;background: #fff;box-shadow:rgba(0,0,0,.3) 0 0 7px; border-radius: 4px;line-height: 1.3;
+        li{padding: 0;margin: 5px;
+          a{padding:.5em .5em .4em;  border-radius: 3px; transition: .2s;
+            &:hover{box-shadow:$btn-bg1 0 0 0 2px; color: $btn-bg2;}
+          }
+          &.active>a{background: $btn-bg2; color: #fff;}
+        }
+      }
+    }
+
+    // 其他語系
+    &>li.moreLang{position: relative;
+      &>a{padding-right: 1.6em;
+        &::after{content: '';position: absolute;right: 10px;top: .9em;width: 0;height:0; border-width: 5px 5px 0; border-style: solid;border-color: $btn-bg2 transparent transparent;}
+      }
+      &.active>a::after{border-top-color: #fff;}
+    }
+    &::after{content: '';clear: both;display: block;}
+
+
+    //20201217 加警示樣式
+    li.warnMark{
+      &>a{color: $red;
+        &:hover{color: $red;}
+        &::before{content: '!'; color: $red; font-weight: bold; margin-right: .3em;}
+      }
+      &.active>a{ background-color:$red ; color: #fff; box-shadow: $red 0 0 0 3px, $btn-bg1 0 0 8px 3px;
+        &::before{color: #fff;}
+      }
+    }
+    &>li.moreLang li.warnMark.active>a{box-shadow:none;}
+
+  }
+
+}
+
+.lightbox>.langTab>ul{ background-color: $bg-color-pale;}

@@ -1,0 +1,16 @@
+.brief{@extend %marginSet1;padding:16px 20px;background: #fff;border-radius: 6px;
+  display: flex; justify-content: space-between;position: relative;
+  &::before{content: '';position: absolute;top: 12px;bottom: 12px; width: 1px;left: 50%;background: $border-color-pale;}
+  ul{margin: 0;padding: 0;list-style: none;line-height: 1.5;}
+  &>ul{flex: 0 1 48%;}
+  &>ul>li{padding: .3em 0 .3em 1em; margin:0 0 .2em;position: relative;
+    &::before{content: '';position: absolute;left: .3em;top:.96em; width: 6px;height: 6px;background: $btn-bg2;}
+    .dt{display: inline-block;color:$font-color-lighter;
+      &::after{content: '：';}
+    }
+  }
+
+  ul ul{margin-left: 1em;}
+  
+}
+

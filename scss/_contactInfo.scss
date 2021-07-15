@@ -1,0 +1,54 @@
+
+/* Contact Infomation */
+.contactInfo {clear:both;padding:15px;margin:2em 0;background:$bg-color-pale;box-shadow:rgba(0,0,0, .3) 0 0 5px inset;border-radius:5px;overflow:hidden;
+	&>header {border-bottom:2px solid #bbb;padding:8px 0;margin:0 0 20px;font-size:1.2em;font-weight:bold;overflow: hidden;}
+	&>header button{float: right;font-size: 13px;font-weight: normal;margin-top:-6px;}
+	&>header+p {margin:-.6em 0 2em 1.5em;font-size:1.1em;}
+	&>header+p:first-letter {font-size:1.3em;display:inline-block;margin-right:-.1em;}
+	.toggleCtrl{float:right;margin: 10px 0;background: $btn-bg1;color: #fff;
+		&:before{border-color: $hiLight1;}
+		&:hover{background: $btn-bg2;}
+	}
+	.toggleArea {clear:both;display:none;padding:15px 0;margin-top:-12px;}
+	.toggleArea:before {clear:both;content:'';display:block;height:20px;border-top:1px dotted #bbb;}
+  .hint {clear:both;}
+  
+  .formLayout{
+    select:only-child{width:calc(100% - 1.5em - 14px);}
+    .stateAndOther{
+      select{width:calc(100% - 1.5em - 14px);}
+    }
+  }
+}
+@media screen and (min-width: $wwMedium) {
+	.contactInfo{
+		.toggleCtrl{margin:5px 0 0;}
+
+		.formLayout{width: auto;max-width: 100%;clear: both;
+			td:nth-child(odd){width: auto;}
+			input[type="text"],
+			input[type="email"],
+			input[type="url"]{width: 25em}
+			select:only-child{width: 24.9em}
+		}
+		&>.formLayout:first-of-type{
+			td:nth-child(odd){min-width: 6em;}
+		}
+		&>.formLayout{
+				.nameWithTitle{
+					input[type="text"]{width: 20em}
+				}
+		}
+		.toggleArea .formLayout{
+			td:nth-child(odd){min-width: 11em;}
+			input[type="text"],
+			input[type="email"],
+			input[type="url"]{width: 23em}
+			select:only-child{width: 21.9em}
+			.stateAndOther{
+				select{width: 21.9em}
+				.subField label{margin: .5em 3px -2px;display: block;color: #000;}
+			}
+		}
+	} 
+}

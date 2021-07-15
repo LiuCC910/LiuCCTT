@@ -1,0 +1,434 @@
+// 功能圖示，沒有文字，hover 才顯示說明文字
+.editThis{margin: 0; padding: 0;
+  li{display: inline-block;margin: 3px 2px !important;text-align: center; padding: 0;
+    a{display: block;position: relative; width: 44px; height: 44px;  border: none; border-radius: 50%; transition: .2s; cursor: pointer;background: $btn-bg1 url(../images/icon_function.png) no-repeat center 0; background-size: 24px auto; 
+      &::before{content: attr(title);position: absolute; top: 0; left: 0; white-space: nowrap; border-radius: 3px;
+         font-size: .85em; text-align: center;background-color:rgba(255,255,255,.8); color: $font-color;
+        padding: 0 2px;width: 40px; opacity: 0; transition: .2s;
+      }
+      &:hover{box-shadow: $btn-bg2 0 0 0 3px; background-color: $btn-bg2;
+        &::before{opacity: 1; top: -1.75em;}
+      }
+    }
+
+    &.add a{background-position: center 10px;}
+    &.edit a{background-position: center -30px;}
+    &.delete a, &.remove a{background-position: center -70px;}
+    &.duplicate a{background-position: center -150px;}
+    &.copyLink a{background-position: center -190px;}
+    &.changeGroup a{background-position: center -230px;}
+    &.changeOrder a{background-position: center -270px;}
+    &.preview a{background-position: center -310px;}
+
+    // &.edit a{background-position: center -34px;}
+    // &.remove a{background-position: center -74px;}
+  
+  }
+
+  &.vertical{width: 44px;
+    li{margin:0 !important; display: block;
+      // a:hover::before{ top: auto; left: -44px;}
+    }
+    li + li{margin-top: 6px !important;}
+  }
+}
+.listTable td .editThis{ width: 100%;text-align: center;}
+
+
+
+// 20201110 各語系型錄狀態（啟用、銷售、審核）
+.cataStatus{
+  &>span[class^="icon_"], li>span[class^="icon_"] {display: block; width: 30px;height: 30px;background: url(../images/icon_cataStatus.png) no-repeat center 0; background-size: 30px;
+    &.icon_activate{ background-position: center 0;} //已啟用
+    &.icon_inactivate{background-position: center -30px;} //未啟用
+    &.icon_trade{ background-position: center -60px;} //已販售
+    &.icon_tradeNot{ background-position: center -90px;} //未販售
+    &.icon_contentCheck{ background-position: center -120px;} //內容審核通過
+    &.icon_sellCheck{ background-position: center -150px;} //販售審核通過
+
+    // 內容、販售審核不通過
+    &.icon_contentCheckNot{ background-position: center -180px;}
+    &.icon_sellCheckNot{ background-position: center -210px;}
+
+    // 內容、販售審核中
+    &.icon_contentChecking{ background-position: center -240px;}
+    &.icon_sellChecking{ background-position: center -270px;}
+
+  }
+  &>span + span{margin-top: 4px;}
+}
+
+// 用於 pop message 的圖示說明
+ul.cataStatus{ list-style: none; line-height: 1.5; margin: 0;padding: 0;
+  li { margin: 0 0 .5em;padding: 0;
+    &>span[class^="icon_"]{display: inline-block; vertical-align: middle; margin-right: 1em; }
+  }
+
+}
+
+// 20201110 產品類型
+.cataTypes{ list-style: none; margin: 0;padding: 0; overflow: hidden;
+  li{float: left;;width: 32px; height: 32px; margin: 0 2px 4px !important;padding: 0;
+    background:url(../images/cacaTypes.png) no-repeat center 0; background-size: 30px auto;
+    &.m360{ background-position: center 0;}
+    &.m3D{ background-position: center -40px;}
+    &.mVideo{ background-position: center -80px;}
+    // &.feature{background-position: center -120px;}
+    &.lock{background-position: center -160px;}
+    // &.new{ background: none; text-align: center; line-height: 1.1; 
+    //   &::before{content: "new";color: #d30000; font-weight: bold; display: inline-block; margin: 0 0 8px; vertical-align: middle;;}
+    // }
+    &.feature{background-image: url(../images/label_feathured.png); background-size: auto 26px; width: 70px;}
+    &.new{background-image: url(../images/label_new.png);background-size: auto 26px;width: 60px;}
+  }
+}
+// <label><input type="checkbox">NEW Product <img class="pdLabelImg" src="../images/label_new.png" alt="新產品標籤"></label>
+// <label><input type="checkbox">Featured <img class="pdLabelImg" src="../images/label_feathured.png" alt="特色產品標籤"></label>
+
+
+
+// 一段文字或一個數字 加 一個編輯（設定）圖示 20210106
+.countAndSetting{display: flex; justify-content: space-between; align-items: center;
+  &>*:last-child{margin-left: 6px;}
+  em{font-weight: bold; display: inline-block; margin: 0 3px;}
+}
+.formLayout td .countAndSetting{float: left; margin: 0 4px; max-width: 92%; min-width: 12em;
+  p{margin: 0;}
+  .ficon{margin-left: 1em;}
+}
+
+// 產品圖與序號
+.pdNumbAndImg{
+  .pdNumber{ display:block; }
+  .pdImage{display:block; @extend %shadowBorder;width: 100px;height: 100px; background: #fff;
+    img{display: block;width: 100%;height: 100%; object-fit: contain;}
+  }
+  .pdNumber + .pdImage{margin-top: 4px;}
+
+}
+
+// 產品圖、編號、名稱
+.pdImgInfo{ line-height: 1.3;  text-align: left;
+  .pdImage{ width: 100px;height: 100px; @extend %shadowBorder; 
+    float: left; margin: 0 8px 5px 0; background: #fff;
+    img{display: block; width: 100%;height: 100%; object-fit: contain;}
+  }
+  .pdNumber{display: block; margin-bottom: .6em;}
+  .pdName{display: block; font-size: 1.1em; font-weight: bold;}
+}
+
+// 條列表格中的產品簡要資訊
+.pdinfoIntd{ line-height: 1.3;
+  li{
+    & + li{margin: .3em 0 0 !important;}
+    &.pdName{ font-size: 1.1em; font-weight: bold; margin-bottom: .8em;}
+  }
+}
+
+
+// 模擬 select 樣式的下拉選單 --------------------------------------------------------------------
+.selectImitating{position: relative; z-index: 199;
+  div.selectBtn{color: $font-color; cursor: default;  
+    @extend %textInput;@extend %selectStyle;display: block;height: auto;
+    overflow: hidden; /* white-space: nowrap;  text-overflow: ellipsis;*/
+    &:hover{border-color:$bg-color-dark;}
+    .placeholder{color: $font-color-lighter;}
+  }
+  .optionGroup{display: none;padding:6px;margin: 0 3px; z-index: 220;
+    position: absolute; left: 0; right: 0;overflow-y: auto;
+    background: #fff; color: $font-color; box-shadow: rgba(0,0,0,.3) 0 1px 6px; border-radius: 4px;
+    
+    // 有 checkbox 可複選
+    &>label{display: block !important;line-height: 1.3;margin:2px 0;padding: .4em 3px .3em; border-radius: 3px;
+      padding-left: 1.2em !important; text-indent: -1.2em;
+      &.cascade{margin-left: 1.1em;}
+      &:hover{background: $bg-color-pale;}
+
+      .count{float: right; font-size: .92em; text-align: right; padding: 0 5px;margin-left: .3em; height: 1.4em; line-height: 1.35em;  border-radius: 1em; font-weight: bold; text-indent: 0; background-color: $border-color-pale; }
+    }
+  }
+
+  // 單選列表
+  .selectOption{line-height: 1.3;list-style: none; margin:0;padding: 0;
+    &>li{ margin:2px 0;padding: .45em 6px .4em;list-style: none; border-radius: 3px; cursor: pointer;
+      &:hover{background: $bg-color-pale;}
+      &.selected{background-color: $hiLight2; color: #fff;}
+    }
+
+    // &.pdCateList{ width: 22em;}
+  }
+
+  .pdCateSearch{ display: flex; align-items: center; margin: 0 0 8px; padding: 0 0 10px; border-bottom: 1px solid $border-color-pale; 
+    flex-flow: row wrap;
+    .label{flex: 0 1 20%; display: inline-block; white-space: nowrap;}
+    input[type="text"]{flex:1 1 45%; min-width:5em;}
+    input[type="submit"], input[type=".buttons"]{flex: 0 0 2.4em; white-space: nowrap;
+      text-indent: -20em; overflow: hidden;height: 2.4em;width:2.4em;padding:0;background:$btn-bg1 url(../images/icon_searchClose.png) no-repeat -22px 8px; background-size: 50px;
+      &:hover{background-color: $btn-bg2;}
+    }
+  }
+
+}
+
+// 20201127
+// 產品型錄設定 上方的過濾條件
+.filterByDevices{@extend %marginSet1;display: flex; flex-flow: row nowrap; align-items: center;
+  padding: 5px 10px;border-radius:6px;background: $bg-color-dark;color: #fff;
+  .selectImitating{
+    .selectBtn{ display: inline-block; border: none; }
+  }
+
+  &>.device{flex: 1 1 16%;white-space: nowrap;margin-right: 20px;display: flex;align-items: center;
+    &.status{flex-basis: 12%;}
+    &.category{flex-basis:26%;}
+    &.categoryMy{flex-basis:26%;}
+
+    &:last-child{margin-right: 0;}
+    &>*{ white-space: normal;}
+    &>.selectBtn, &>select{flex:1 1 90%; border:none;}
+    // &>.selectBtn{max-width:15em;}
+    &>input[type="text"], &>input[type="number"]{border: none;}
+    .optionGroup{align-self: flex-start;}
+    &.category .optionGroup{min-width: 20em;}
+    .pdCateList li{white-space: normal;}
+  }
+
+  &>button{flex: 1 1 2em; white-space: nowrap;
+    // background-color: $hiLight2;
+    // &:hover{box-shadow:$hiLight2 0 0 0 2px;background-color: $hiLight2;}
+    box-shadow: rgba(255,255,255,.7) 0 0 3px;
+  }
+}
+
+
+
+
+
+// 產品分類選單，一層
+.pdCateSelect{ padding: 10px 0; background: #fff; color: $font-color; box-shadow: rgba(0,0,0,.3) 0 1px 6px; border-radius: 4px;
+  // outline: 1px solid red;
+}
+
+
+
+
+
+.inputWithClear{ position:relative;
+  input.textHere{ width: calc(100% - 54px); padding-right: 40px; }
+  input.reset{ position: absolute; top: 50%; right:3px; text-indent: -20em; overflow: hidden;
+     width: 30px; height: 30px; margin-top: -15px; padding: 0; border-radius: 50%;
+     background:url(../images/icon_clear.png) no-repeat center center;
+     background-size: 24px;opacity: .5;
+       &:hover{box-shadow: none;opacity: 1; background-color: transparent; }
+  }
+
+}
+
+
+// 目前點數彙整 來自2018
+.pointSummary{@extend %marginSet1;position: relative;padding:10px 15px; border-radius: 6px;background-color: #fff;
+  display: flex; align-items: center; justify-content: space-between;
+  &::before{content: '';position: absolute;left:19%;top: 5px;bottom: 5px;width: 3px;background: $border-color-pale;}
+   
+  &>h3{flex: 0 1 18%;padding: 0;margin: 0;font-size: 1.2em;min-width:5em;line-height: 1;text-align: center; }
+  &>table{flex: 0 1 80%;margin: 0;line-height: 1.6;}
+  tr{border-bottom: 1px solid $border-color-pale;
+    &:last-child{border: none;}
+    &.bonus1 th::before,
+    &.bonus2 th::before{content: '';display: inline-block;width: 24px;height: 24px;vertical-align: top;margin-top: -.1em;;background: url(../images/icon_bonus.png) no-repeat 0 0 / 24px;margin-right:8px;}
+    &.bonus1 th::before{background-position: 0 -50px;}
+    &:hover th, &:hover td{color: #000}
+  }
+  th, td{padding: .7em 0 .4em;}
+  th{font-weight: normal;text-align: right;width: 5.5em;white-space: nowrap;padding-left: 2em;}
+  td{text-align: right;padding-right: 3em;
+    em{font-style: normal; font-weight: bold; color: $font-color-darker; font-size: 1.2em; margin-right: .2em; transition: .1s;}
+  }
+
+
+  & ~ .searchDv label{padding:0 0 0 2em;position: relative;line-height:2.4;
+    &.bonus1:before,
+    &.bonus2:before{content: '';position: absolute;left: 1.5em;top:50%;margin-top: -13px;width: 24px;height: 24px;background:url(../images/icon_bonus.png) no-repeat 0 0 / 24px;margin-right:10px;}
+    &.bonus1:before{background-position: 0 -50px;}
+
+    input{margin:0 36px 0 -1.8em ;}
+  }
+}
+
+
+// 上傳圖的預覽、上傳、從圖庫挑選、刪除、還原
+.uploadImgEdit{width:120px;padding:5px; margin:0 3px 0 0; border-radius:4px; background:#fff;box-shadow:rgba(0,0,0,.4) 0 0 3px;
+  label{
+    span{ display:inline-block; font-size:.85em; margin-left:.5em;}
+  }
+  .previewImage{position:relative;width:100px;height:100px; margin:5px auto; background:#eaecef;
+    box-shadow:$border-color-pale 0 0 0 1px inset;
+    img{display:block;width:100%;height:100%; object-fit:contain; margin:0 auto;}
+    .removeThis{border-radius:0;top:0;right:0; width:24px;height:24px; background-color:rgba(0,0,0,.65);
+      &:hover{background-color:$red; box-shadow:none;}
+    }
+  }
+  .buttons{margin:5px auto;
+    button{display:block;width:80px; margin:4px auto; height:2em; line-height:2;}
+  }
+}
+
+
+// 最少訂購量：數量與單位
+// 產品型錄設定＞採購資訊
+.quantityAndUnit{
+  input[type="number"], input[type="text"]{ width: 15em !important}
+  select{width:14em;}
+}
+.formLayout .quantityAndUnit{width: 90%;}
+
+// 帶標籤（label）的文字輸入框
+.textInputWithLabel{ display: flex; justify-content: end; align-items: center;
+  .label{ display: inline-block; min-width: 4em; text-align: right;}
+  input[type="text"], input[type="url"]{ flex:1 1 90%;}
+}
+// 一個標籤（label）文字＋一個input輸入框＋一個button
+.textInputWithLabelAndButton{display: flex; justify-content: end; align-items: center;
+  .label{ display: inline-block; min-width: 4em; text-align: right;}
+  button{flex:1 1 10%; white-space: nowrap;}
+  input[type="text"], input[type="url"]{ flex:1 1 80%;}
+
+}
+.formLayout td{
+  .textInputWithLabel,
+  .textInputWithLabelAndButton{width: 91%;}
+}
+
+// 一標籤＋一文字資料 之 inline-block
+.labelAndData{ /* border: 2px solid $border-color-pale; */ border-radius: 4px; background:$border-color-pale; display: inline-block; padding: 0; height: 2em; line-height: 2em; font-size: 1.1em; overflow: hidden;
+  .label{display: inline-block; background: $border-color-dark; padding: 0 .8em; color: #fff;}
+  .data{display: inline-block;padding:0 .8em 0 .5em;}
+}
+
+// 編輯、確定、取消（管理常用運費）
+.editConfirmSet{display: flex; align-items: center; justify-content: flex-start;
+  width: 42em;
+  input[type="text"]{ flex: 0 1 70%; margin-right: 5px;
+    &[readonly]{border-color:transparent;background: transparent;}
+    // &:focus{background: transparent;}
+  }
+  .ficon{margin-left: 10px;}
+  input[type="button"], input[type="reset"], input[type="submit"]{ flex: 1 1 3em; }
+
+  .btnDv{ white-space: nowrap; margin: 0 5px; overflow: hidden; padding: 3px 0;
+    input[type="button"], input[type="reset"], input[type="submit"]{display: inline-block; min-width: 2.5em;}
+    &.hidden{width: 0;}
+  }
+}
+
+
+// arrivalTimeSetting , shippingFeeSetting （自訂運費送達時間＋自訂運費）20210114
+.arrivalTimeSetting, .shippingFeeSetting{
+  .oneSet{ position: relative;margin:0; padding: 10px 10px 10px 3.5em;@extend %shadowThin; border-radius: 6px;
+    &+.oneSet{margin-top: 15px;}
+    &>.rowOrder{position: absolute; width: 1.8em; left: 10px;top: 20px; text-align: right; font-weight: bold; font-size: 1.15em; line-height: 1;}
+
+    .label{display: inline-block; vertical-align: middle; white-space: nowrap; height: 2.4em; line-height: 2.4em;}
+
+    .addAndRemove{margin-top: .6em; margin-right: 60px;
+      &>.label{margin-top: 3px;}
+      .optionPool{margin-left: 6px; height: 7.8em;}
+      .buttons{
+        button{white-space: nowrap; width: auto;}
+      }
+    }
+
+    .ficon{position: absolute; right: 10px; bottom: 10px; margin-left: 3.3em; align-self: flex-end; margin-right: -3px; margin-bottom: -3px;
+      a::before{right: -5px; left: auto; width: auto;}
+    }
+  }
+}
+
+.arrivalTimeSetting{
+  .oneSet{ display: flex; flex-flow: row wrap;
+    .shipBy{flex: 1 1 40%;
+      select{width: calc(100% - 12em);}
+    }
+    .daysRange{flex: 1 1 40%;margin-left: 1em;
+      input{width: 4em;}
+    }
+    .addAndRemove{flex:1 1 80%;}
+  }
+}
+// 20210204
+.shippingFeeSetting{
+  .oneSet{
+    .feeType{ margin-bottom: .6em;
+      .optionPool{display: inline-block;vertical-align: middle;}
+    }
+    .feeRange{ 
+      input{width: 5em;}
+    }
+  }
+}
+
+
+// li inline-block 排列
+.inlineList{ list-style: none; margin: 0;padding: 0;
+  &>li{display: inline-block; padding: 0; margin: 0 1px; 
+    &>a{display: block; border-bottom:none;height: 2.4em; line-height: 2.4em; cursor: pointer;
+     padding: 0 .5em; border-radius: 4px;
+      &:hover{@extend %shadowBorder}
+    }
+    &+li{margin-left: .7em;}
+  }
+}
+.formLayout td .inlineList{
+  margin: 3px;
+}
+
+
+// .permissionList 會員帳號權限，顯示每項功能是否有權限使用
+.permissionList{list-style: none; margin:0 ; padding: 0; line-height: 1.2;
+  li{ display: inline-block;  margin: .3em 1.3em .5em .2em !important; padding: 0 0 0 20px; position: relative; color: $font-color-lighter; cursor: default;
+    &::before{content: ''; position: absolute; left: 0; top: 50%; margin-top: -9px; width: 16px; height: 16px; box-shadow: $border-color-pale 0 0 0 1px; border-radius: 2px;}
+    &::after{ display: none;content: ''; position: absolute; left: 4px; top: 50%; margin-top: -8px; width:5px; height: 9px; border: 3px solid #000; border-left: none; border-top: none; transform: rotate(45deg);}
+
+    &.checked{color: $font-color;
+      &::before{box-shadow: $border-color-dark 0 0 0 1px;}
+      &::after{display: block;}
+    }
+  }
+}
+
+.dataTable td ul.permissionList{margin:0; padding: 0;}
+
+
+
+
+
+// 商品快照燈箱內的圖 20210126
+.productSnapshot{margin:0 0 30px;
+  overflow: auto;
+  img{display: block; width: 100%;
+    // min-width: 100%; max-width: 1600px;
+  }
+}
+
+// 20210201
+.shippingNumberSet{width: 12em;  margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: center;
+  align-items: center;
+  input{flex: 1 1 100%}
+  .btnLook{ font-size: 1em; flex:0 1 calc(100%  - 60px); margin: 0;
+    a{height:40px ; line-height: 40px;}
+  }
+}
+
+// .twoSelect : 引用範本
+.formLayout td .twoSelect{text-align: right; width:calc(90% + 20px); }
+
+
+// seo 網路搜尋最佳化 20210408
+.seo{ padding: 1em;margin: 0 auto 1em; background: $bg-color-pale; /* border: 1px solid $border-color-pale; */ border-radius: 4px;
+  p{margin: 0; line-height: 1.5;
+    &+p{padding-top: .6em; margin-top: .5em; border-top: 1px dashed $border-color-light;}
+  }
+  .title{font-size: 1.3em; font-weight: bold; color: $font-ahover-color;}
+  .keywords{font-weight: bold;}
+}
+.langTab + .seo{margin-top: -12px;}

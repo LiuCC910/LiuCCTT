@@ -1,0 +1,181 @@
+// 供應商摘要資訊
+.briefInfo{clear:both;margin-left: 0;
+  &>li{margin:0 0 .1em;padding:5px 0 5px 12px;overflow:hidden;line-height:1.4em;transition:box-shadow .2s;}
+  &>li.ellipsis{position: relative;white-space:nowrap;text-overflow:ellipsis;cursor: ns-resize;
+    &:before{content: '';width: 4px;position: absolute;left: 0;top: 7px;bottom: 7px;background:$border-color-pale;transition: .2s;}
+    &:hover{box-shadow:$bg-color-dark 0 0 0 1px;white-space:normal;}
+    &:hover:before{background:$bg-color-dark;top: 0;bottom: 0;}
+  }
+}
+@media screen and (min-width: $wwMedium){
+  .briefInfo{
+    &>li{width:45%;padding:6px 1%;display:inline-block;vertical-align:top;
+      &:nth-child(even) {margin-left:4.5%;}
+    }
+  }
+}
+
+//產品資訊
+.pdInfo{
+  &>li{margin:12px 0;}
+
+  // 產品特性描述，可開合
+  .feature{clear: both;position:relative;overflow:hidden;padding:.25em 7px .3em;border-radius:4px;background: $bg-color-pale;
+    .readMore{position: relative;width: 2.5em;height:1.5em;line-height:1.5em;padding:0 .5em 0 1.6em;margin: .3em -2px 0 7px;font-size:12px;color:#fff;border-radius:1em;transition:.5s;background-color: $hiLight2;float: right;text-align: center;}
+    .readMore:before{@include arrowBefore($width:6px, $bdWith:2px, $bdColor:#fff, $deg:225deg);position: absolute;left: 6px;top: 7px;}
+    &.min .readMore:before{transform:rotate(45deg);top:4px}
+  }
+
+  // 產品規格
+  .specific{
+    ul{display:inline;margin-left:.5em;}
+    li{display:inline-block;margin:0 0 2px 0;padding:0 .4em;border:1px solid $border-color-light;font-size:.82em ;border-radius: 4px;background: #fff;}
+  }
+
+  // 原始價格
+  .oriPrice{
+    em{font-size:1.2em;font-weight:bold;margin-left:0;}
+    &.through,
+    &.through em{text-decoration:line-through;font-weight:normal;font-size:inherit;}
+  }
+  // 折扣資訊
+  .discountInfo{
+    ul{margin: 0;padding: 0;}
+    li{position:relative;display:inline-block;padding:0 .8em;margin:2px 8px 2px 0;line-height:24px;height:25px;
+      &.discount{background-color:#fc5e87;color:#fff;font-weight:bold;
+        &:before, &:after{content:"";position:absolute;top:50%;left:0;width:12px;height:12px;background-color:#fff;border-radius:50%;margin:-6px 0 0 -6px;border:none;transform: scale(1);} 
+        &:after{left:auto;right:0;margin-right:-6px;}
+      }
+      &.dcDayRemain{color:#f83064;border:1px dashed #fc5e87;line-height:22px;height:22px;}
+    }
+  }
+  .dcPrice{padding: 0;
+    em{color:#f83064;font-weight:bold;font-size:1.2em;}
+  } 
+  .freeShipping{display: inline-block;padding:0 .8em;margin:2px;line-height:24px;height:25px;background-color:#32c8ee;color:#fff;background:#32c8ee url(../images/icon_shipping.png) no-repeat 3px 0;background-size:24px;padding-left:30px;}
+}
+@media screen and (min-width: $wwMedium){
+  .pdInfo{
+    .feature{cursor:pointer;transition:box-shadow .2s;overflow: hidden;clear: none;
+      .readMore{width:0;padding: 0 0 0 1.6em;overflow: hidden;white-space:nowrap;margin-top: 0;height: 1.55em;}
+      &:hover{box-shadow:$bg-color-dark 0 0 0 2px;background: #fff;}
+      &:hover .readMore{width: 2.5em;padding-right: 5px;}
+    }
+  }
+}
+
+// checkbox 疑似無用
+// label.checkAlone{position:relative;padding:0;margin:0;cursor:pointer;transition:.15s;
+//   &:before,
+//   &:after{content:'';position:absolute;z-index:9;transition:.15s;}
+//   &:before{width:16px;height:16px;left:2px;top:2px;background:#fff;border:1px solid #bbb;border-radius:2px;}
+//   &:after{display:none;border:2px solid #fff;width:10px;height:6px;top:5px;left: 5px;transform:rotate(-45deg);border-top:none;border-right:none;}
+//   &.checked{
+//     &:before{background:$hiLight2;border-color:$hiLight2;box-shadow:#fff 0 0 0 1px,$hiLight2 0 0 0 2px;}
+//     &:after{display:block;}  
+//   }
+//   input{margin:3px 0 0 4px;vertical-align:top;}
+// }
+
+/* 喜好的產品、供應商列表 */
+.pdList{@extend %marginSet2;padding: 0;
+  ul{list-style:none;margin:0;padding:0;line-height:1.5;}
+  &>ul>li{position:relative;overflow:hidden;padding:.8em 2vw 1.5em;margin: 8px 0;background: #fff;border-radius: 6px;
+    .listCheck{position: absolute;left: 1.8vw;top: 14px;width: 24px;height: 30px;}
+  }
+  li{
+    em{font-style:normal;color:$font-color-darker;}
+    .label{color: $font-color-lighter;}
+    .date {clear:both;display:block;text-align:right;font-size:.9em;color:$font-color-lighter;margin-top: .5em;
+      &:last-child{margin-bottom:-.6em}
+      time{font-size:inherit;color:$font-color-darker;margin-left:.5em;}
+    }
+  }
+
+  h4{font-weight:bold;margin:0 0 .7em 0;font-size:1.2em;line-height:1.5;padding: 0;}
+  input[type="checkbox"] + h4{margin-left: 1.3em;}
+
+  // 產品照片
+  .pdPhoto{width:32vw;height:32vw;margin:0 10px 15px 32px;float:left;border:1px solid $border-color-light;text-align:center;
+    img{display:block;margin:0 auto;width:100%;height:100%;object-fit:cover;}
+    &:empty{background:#eee;color:#888;}
+    &:empty:before{content:'暫未提供圖片';display:inline-block;margin-top:30%;}
+  }
+
+  //產品資訊
+  .pdInfo{clear: both;}
+
+  // 供應商摘要資訊
+  .briefInfo{clear:both;}
+  .briefInfo + .suAward{border-top: 1px solid $border-color-pale;margin-top:7px;padding-top: 10px;}
+
+  // 獎章
+  .pdAward{margin-top:10px;
+    li{display: inline-block;vertical-align:bottom;width:auto;height:80px;}
+    li + li{margin-left:10px;}
+    img{display:inline-block;vertical-align:bottom;width:auto;height:100%;}
+  }
+  .suAward{clear:both;
+    li {display:inline-block;vertical-align:middle;margin:0 0 5px;padding:0;height:40px;line-height:40px;
+      &.lastForNYear{
+        &:before {content:"";float: left;width:35px;height:40px;background:url(../images/icon_suAward.png) no-repeat 0 center;vertical-align:middle;}
+        em {font-size: 1.5em;margin-right:1px;font-weight:bold;color:$red;font-family: Arial, Helvetica, sans-serif;}
+      }
+    }
+    li + li{margin-left:10px;}
+    li img{display:block;max-height:100%;width:auto;}
+  }
+  & ~ .note{margin-top: 1em;}
+  & ~ .page{margin-top: 1.3em;margin-bottom: 1.5em;}
+}
+@media screen and (min-width: $wwMedium){
+  .pdList{
+    &>ul>li{padding:16px 16px 16px 40px;
+      .listCheck{ left: 9px;}
+    }
+    input[type="checkbox"] + h4{margin-left:0;}
+    .pdPhoto{width:120px;height:120px;margin-left: 0;}
+    .pdPhoto ~ ul{margin-left:135px;}
+    .pdInfo{clear: none;}
+  }
+}
+
+
+// 條列上方的過濾條件＋排序依據選擇
+.listFilter{@extend %marginSet2;position: relative;background:rgba(255, 255, 255, .5);border-radius: 6px;padding:.5em 2vw;
+  label.ofallCheck {
+    // position: absolute;width: 28px;left: 1.8vw;top: 18px;
+    &+label{margin-right: 10px;}
+  }
+  .pcount{float: right;margin:4px 0;line-height:2em;height: 2.4em;line-height: 2.4em;
+    em{font-weight: bold;font-size: 1.1em;color: #000;margin: 0 2px;}
+  }
+  &:after{content:'';display:block;clear:both;margin-right:0;}
+}
+@media screen and (min-width: $wwMedium){
+  .listFilter{padding-right:20px;padding-left: 20px;
+    label.ofallCheck{margin: 1px 2em 0 -12px;}
+    .pcount{margin-right: -6px;}
+  }
+}
+
+
+
+// .pdList{
+  // li .icon2_remove{position:relative;float:right;margin-top:-5px;color:#fff;transition:.3s;}
+  // li .icon2_remove:before{content:attr(title);position:absolute;right:0;top:0;opacity:0.6;line-height:29px;height:28px;width:0;overflow:hidden;font-size:.9em !important;transition:.3s;}
+  // li .icon2_remove:hover{text-align:left;background-position:3px center;padding-left:52px;}
+  // li .icon2_remove:hover:before{opacity:1;width:50px;right:4px;}
+  // li li .ih{display:inline-block;margin-right:.5em;white-space:nowrap;}
+  // 以上疑似無用
+// }
+
+// 以下待檢查
+.pdList ~ .noteDv{padding-top:.5em;}
+
+.noteDv em{font-style: normal;font-weight: bold;color: #c00;font-size: 1.2em;}
+
+.funcBtnGp + .inlineDv{margin-top: 12px;}
+
+.btnDv.aLeft + .inlineDv{margin-top: 16px;}
+.dataTables_paginate + .btnDv.aLeft {margin-top: 16px;}

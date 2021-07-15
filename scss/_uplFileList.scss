@@ -1,0 +1,43 @@
+.uploadFile{padding: 4px 4px 0;}
+.uploadFile:hover{background-color: $bg-color-pale;}
+.uploadFile:after {content: '';float: left;width: 72px;height: 72px;border: 1px dashed $border-color-light;background:$bg-color-pale url(../images/icon_fileupload.png) no-repeat center center;background-size: 24px;overflow: hidden;transition: .2s;}
+.uploadFile:hover:after{background-color:$bg-color-light;}
+.uploadFile.dropzone{min-height: 74px;text-align: left;overflow: hidden;
+  .dz-message{display:inline-block;margin:28px 0 0 .5em;text-align: left;color:#888;}
+  &:hover .dz-message{color:#333;}
+  .dz-preview{float:left;position:relative;width:74px;height:74px;margin:0 5px 0 0;min-height:0;margin-bottom: 5px;
+    &.dz-image-preview img{display:block;margin:0 auto;width:100%;height:100%;object-fit:contain;}
+    .dz-remove{font-size:0;position:absolute;}
+    &.dz-file-preview, &.dz-image-preview{opacity: 1;
+      .dz-details {top:0;bottom: 0;padding:3px;line-height:1.3;opacity: .6;
+        &:hover{opacity: 1;}
+        .dz-size {display:none;}
+        .dz-filename {margin-top: 15px; text-overflow:clip;}
+        .dz-filename>span{display:inline-block;text-align: left;margin: 0 -2px;padding: 1px 2px;border-radius:3px;transition: .15s;height: 1.3em;white-space: nowrap;}
+        .dz-filename:hover>span{background: rgba(0,0,0,.65);color: #fff;}
+      }
+    }
+    .dz-progress{top:80%;width:64px;margin:0 auto 0 -32px;height:10px;}
+    .dz-error-message{padding:5px;width: 110px;margin-left:-11px;top: 55px;}
+    .dz-error-message:after {left: 50px;}
+  }
+
+  //縮圖右上的小 X 
+  .dz-remove {font-size:0;position:absolute;top:0;right:0;left:auto;width:18px;height:18px;padding:0;background:rgba(0,0,0,.7);cursor:pointer;
+    &:before,
+    &:after {content:'';position:absolute;top:50%;left:50%;width:2px;height:12px;margin:-6px auto auto -1px;transform:rotate(45deg);background:#fc0;}
+    &:after {transform:rotate(135deg);}
+    &:hover {background:#fc0;}
+    &:hover:before,
+    &:hover:after {background:#000;}
+  }
+}
+
+.replyDrawer .uploadFile{
+  &:after{width: 62px;height: 62px;background-position: center 19px;}
+  &.dropzone{
+    .dz-preview{width: 64px;height: 64px;}
+  }
+}
+
+

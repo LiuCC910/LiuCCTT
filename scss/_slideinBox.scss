@@ -1,0 +1,79 @@
+
+// $sideBarWidth: 240px;
+.slideinBox{display: none;@extend %marginSet1;position: fixed;top: 100px; left: 101vw; bottom: 0;padding: 20px 0 10px;
+ width: calc(100vw - 280px);
+  overflow: auto; overflow-y: auto; overflow-x: hidden; z-index:8800;
+  background: #fff; border-radius: 6px;box-shadow:rgba(0,0,0,.6) 0 0 28px;box-sizing: content-box;
+  transition: left .4s;
+  .closeThis{
+    // position: sticky;right: auto; top: 4px; margin: 0 0 20px;left: 100%;left:calc(100% - 40px);
+    position: fixed;top: 60px;right: -200px;z-index:99;transition: right .4s,  box-shadow .15s;
+  }
+  // .closeThis{position: fixed; right:calc(2% + 4px); /* top: 54px; */ top: 8px;  margin: 0 0 4px;z-index:99; border-radius: 50%;padding: 5px;} 
+  &.show{ display: block;
+    &.in{left: $sideBarWidth;
+      .closeThis{right: 25px;}
+    }
+  }
+
+
+
+
+  &>.formLayout, &>.searchRow, &>.thumbnail,
+  &>.head, &>.page, &>.btnDv, &>.countdown{margin-left: 16px; margin-right: 16px;}
+  // 20201105 ------ 上傳圖片至圖庫（mediaUpload： 媒體上傳，圖庫設定、影音上傳）
+  &>.mediaUpload{margin:20px 16px;}
+  
+  .formLayout{width:calc(100% - 32px);}
+  .head{border-bottom: 3px solid $border-color-light;padding-bottom: .2em; margin-bottom:16px;
+    h3{margin: 0;padding: 0;}
+
+    & + .funcBtn{ float: right; margin-right: 16px; margin-top: -6px;}
+  }
+  // .closeThis + .head{margin-top: -30px; padding-right: 36px;}
+
+  .btnDv{padding: 20px 0 30px;}
+  
+}
+
+
+
+// 大圖輪播「新增」「編輯」從右滑入編輯區
+.bbImgEdit{margin-left: 16px; margin-right: 16px;
+  .image{position: relative; display: block; margin: 0 0 10px;
+    img{ display: block; margin: 0 auto; width: 100%; min-height: 36px;}
+    .removeThis{position: absolute;right: 5px;top: 5px;}
+
+  }
+
+  .formLayout td.presentation{ width: auto; padding:10px 0;
+    img{display: block; width: 94%; margin: 0 auto;}
+  }
+
+  .fileDragDrop{margin: 10px 0;}
+
+  .formLayout{margin-top: 30px;}
+
+  .optionPool.bbUrl{
+    label{ float: none; display: block;}
+    .none{ display: inline-block;}
+    .typein,  .select{ padding-top: 0; padding-bottom: 0; margin-top:8px;
+      input[type="text"], input[type="url"]{ width:30em; margin-left: 3px !important; margin-right:3px !important; vertical-align: middle;}
+    }
+    .typein{
+      input[type="text"], input[type="url"]{width:  calc(100% - 6em);}
+    }
+    .select{
+      input[type="text"], input[type="url"]{width:  calc(100% - 12em);}
+    }
+
+  }
+}
+
+  // 型錄設定
+
+
+
+.sideBar.hidden ~ .main .slideinBox.show{left: $sideBarWidthMini; right: 0; width: auto;}
+
+.coverMain{display: none;background: rgba(0,0,0,.3); position: fixed; left: 0;right: 0;bottom: 0;top: 0;z-index:8000;}

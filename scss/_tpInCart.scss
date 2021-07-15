@@ -1,0 +1,32 @@
+.tpInCart{ @extend %marginSet1;
+  h3{margin:2em 0 .3em;}
+  ul, ol {list-style: none;margin: 0;padding: 0;}
+  &>ul>li{padding:25px 10px 10px; margin-bottom: 12px;background: #fff;border-radius: 6px;}
+  .head{display: flex;line-height: 1.5;border-bottom: 2px solid $border-color-light; margin-bottom: 1.2em;padding-bottom: .3em; align-items: flex-end;
+    li{flex:1 1 auto;padding: 0;}
+    .programName{font-size: 1.6em; flex-basis: 50%; line-height: 1.3;}
+    .unitPrice , .subTotalPrice{text-align: right;}
+    .unitPrice{margin-left:1.5em; margin-right: 1.5em;}
+    .dt , em{display: inline-block;}
+    .dt{color: $font-color-lighter; margin-right: .3em;}
+    .subTotalPrice{
+      em{font-size: 1.3em; }
+    }
+  }
+
+
+  .duration{ overflow: hidden;
+     p{float: left;}
+     .btn_delete{float: right; margin: 4px;}
+  }
+  .btn_delete{display: block; width: 44px; height: 44px; background-color: $btn-bg1; background-repeat: no-repeat; background-position: center center;background-image: url(../images/icon_delete.png); background-size: 24px; border: none; border-radius: 50%; transition: .2s; cursor: pointer;
+    &:hover{box-shadow: $btn-bg2 0 0 0 3px; background-color: $btn-bg2 ;}
+  }
+
+
+  .totalPrice{background: #fff;border-radius: 6px;padding: 16px; border-bottom: 2px solid $border-color-light; color: $font-color-lighter; text-align: right;
+    em{display: inline-block; font-size:2em; margin-left:10px;color: #000;}
+  }
+
+}
+

@@ -1,0 +1,79 @@
+.menu{color: #333;font-size: 15px; }
+.menu ul{list-style: none;margin: 0;padding: 0;line-height: 1.4;}
+.menu li{position: relative;margin: 0;padding: 0;}
+.menu li a{position: relative;display: block;text-decoration: none;color:$font-color;cursor: pointer;transition:background-color .2s;padding:14px 12px 13px;transition: .2s;outline: none;border: none}
+.menu>ul>li>a:hover,
+.menu>ul>li.activated>a{color:#fff;background-color: $btn-bg1;}
+.menu li ul{display: none;font-size: .9em;font-weight: normal;background-color: $bg-color-pale;}
+
+.menu li.hasChild>a{padding-right: 18px}
+.menu li.hasChild>a:after{content: '';position: absolute;right: 14px;top: 18px;width: 7px;height: 7px;border:2px solid #6e8083;border-left: none;border-top: none;transform: rotate(45deg);transition: .2s;}
+.menu li.hasChild>a:hover:after{border-color: #fff;}
+.menu li.hasChild.activated>a:after{transform: rotate(225deg);top: 20px;border-color: #fff;}
+
+
+.menu>ul>li{border-bottom: 1px solid $bg-color-light;}
+.menu>ul>li>a{white-space: nowrap;}
+.menu li li a{padding-left:13px;}
+
+.menu li li a:before{content: '';position: absolute;left: 0;top: 0;width: 4px;height: 100%;background: $bg-color-dark;transition: .2s;}
+.menu li li.activated>a{box-shadow: #afc2c7 0 0 0 1px inset}
+.menu li li.activated>a:before{background: $hiLight2;width: 7px;}
+.menu li li a:hover{background-color: $btn-bg2;color: #fff;box-shadow: #76898e 0 0 0 1px inset}
+.menu li li a:hover:before{background: $hiLight2;}
+
+.menu li .count{position: absolute;right: 24px;top: 2px;
+  background: $red;color: #fff;padding: 0 .3em;height: 1.3em;line-height: 1.35em;border-radius:2em;font-size:12px;min-width: .7em;text-align: center;}
+.menu li li .count{top: 14px;right: 8px;}
+.menu>ul>li.activated>a>.count{display: none;}
+.hidden .menu>ul>li>a>.count{position: absolute;top:2px;right: 2px;}
+
+.hidden .menu li>a{padding-right: 0}
+
+@media screen and (min-width:$wwMedium){
+  .menu>ul>li>a{padding-left:56px;}
+  .menu li li a{padding-left:20px;}
+  
+  .menu .menuIcon {position: absolute;left: 0;top: 0;width: 48px;height: 48px;transition: .2s;}
+  .menu .menuIcon:before{content:'';display: block;width: 18px; height: 18px;background: url(../images/icon_menus.png) no-repeat center 0;background-size: 100% auto;margin:15px auto 0;}
+  .menu a:hover .menuIcon,
+  .menu .activated .menuIcon{background-color: $hiLight1;}
+  .menu .menuIcon.weblink:before{background-position: center 0;}
+  .menu .menuIcon.inquiry:before{background-position: center -20px;}
+  .menu .menuIcon.merchandise:before{background-position: center -40px;}
+  .menu .menuIcon.myaccount:before{background-position: center -60px;}
+  .menu .menuIcon.content:before{background-position: center -80px;}
+  .menu .menuIcon.weblink:before{background-position: center -80px;}
+  .menu .menuIcon.myep:before{background-position: center -100px;}
+  
+  .hidden .menu>ul>li>a{overflow: hidden;width:0;width: 0;padding-left:48px;}
+  .hidden .menu li li a{padding-left:12px;padding-right:12px;}
+  .hidden .menu li ul{position: absolute;top: 0;left: 48px;width: 14em;box-shadow: rgba(0,0,0,.3) 6px 6px 15px -4px;}
+  .hidden .menu li li a:before{background:$hiLight1;}
+  .hidden .menu li li>a:hover:before{background: $hiLight2;width: 4px;}
+
+  .hidden .menu li.hasChild>a:after{right:-5px;bottom: -5px;top: auto;left: auto;width: 0;height: 0;
+    border-style: solid;
+    border-width: 5px;
+    border-color: transparent transparent transparent #6e8083;
+    transform: rotate(45deg);
+    transition: .2s;}
+  /* .hidden .menu li.hasChild>a:hover:after{ right:-4px;bottom:0;transform: rotate(0);} */
+}
+@media screen and (min-width: $wwMedium) and (max-width:$wwWide - 1){
+   // 20191105 高度超過 viewport 出現垂直捲軸
+   .hidden .menu{
+     li ul{overflow-y: scroll;}
+     li:nth-child(1) ul{max-height:calc( 100vh - 54px);}
+     li:nth-child(2) ul{max-height:calc( 100vh - 103px);}
+     li:nth-child(3) ul{max-height:calc( 100vh - 152px);}
+     li:nth-child(4) ul{max-height:calc( 100vh - 201px);}
+     li:nth-child(5) ul{max-height:calc( 100vh - 250px);}
+     li:nth-child(6) ul{max-height:calc( 100vh - 299px);}
+     li:nth-child(7) ul{max-height:calc( 100vh - 348px);}
+   } 
+}
+@media screen and (min-width:$wwWide){
+  .menu>ul>li{display: block;}
+  .menu>ul>li>ul{display: none;}
+}

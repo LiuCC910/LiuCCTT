@@ -1,0 +1,267 @@
+%textInput {
+  -webkit-appearance: none;
+  height:2.4em;line-height:2.4em;padding:0 6px;margin:3px;border-radius:4px;border:1px solid $border-color-light;vertical-align:middle;font-size: inherit;background-color: #fff;
+}
+%selectStyle{
+  -webkit-appearance: none;
+
+  height:2.4em;line-height:2.4em;padding:0 1.5em 0 6px;margin:3px;border-radius:4px;border:1px solid $border-color-light;vertical-align:middle;font-size: inherit;
+
+  background: #fff url(../images/selectBg.png) no-repeat right 1em;
+  background-size: 16px auto;
+  box-sizing: content-box;
+}
+$disabled-color: #565959;
+
+// 存放帶入表單中，不可編輯的文字欄位
+.asAnInput{min-height:2.4em;line-height:2.4em;padding:0 6px;margin:4px 3px;border-radius:4px;vertical-align:middle;font-size: inherit;display: inline-block;
+  em{font-weight: bold; display: inline-block; margin: 0 3px;}
+  ul{margin: 0;padding: 0; list-style: none; line-height: 1.5;
+    li{padding: 0; margin:.5em 0; 
+      &+li{margin-top: .8em;}
+    }
+  }
+}
+
+form{margin:0;padding:0;}
+label{display:inline-block;font-weight:normal;}
+
+
+input, textarea, select, button{font-size: inherit;font-family: inherit;}
+
+// select,
+input[type="text"],
+input[type="date"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="file"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+input[type="week"]{@extend %textInput;
+  &.digit4{width: 5em !important;}
+  &.fullWidth{ width:calc(100% - 20px);}
+}
+// 語系是阿拉伯語時，輸入欄位需自右書寫
+input.forAr, textarea.forAr{ direction: rtl}
+
+select::-ms-expand {
+  display: none; /* Hide the default arrow in Internet Explorer 10 and Internet Explorer 11 */
+}
+select{-webkit-appearance:none; -moz-appearance: none; @extend %selectStyle;
+  &.fullWidth{width: calc(100% - 1.5em - 14px);}
+}
+
+
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"]{-webkit-appearance: none;height:2.4em;line-height:2.4em;padding:0 .8em;margin:0 3px;border-radius:4px;border:none;box-sizing: content-box;transition:.2s;font-size:inherit;background-color:$btn-bg1;color:#fff;
+  &.round{border-radius: 1.5em;}
+}
+
+
+
+// 20201030 移除，因為「公司資料設定」的「權益審核」
+// input[type="file"]:first-child{height:1.3em;padding:5px;line-height:1.4em;}
+
+textarea{@extend %textInput;resize:vertical;line-height:1.6;height: 10em;}
+.labelPool{height:6em;overflow:auto;padding:5px;margin:0 3px;border-radius:4px;border:1px solid $bg-color-light;background:#fff}
+// select+select,
+// select+input[type="text"],
+// input[type="text"]+select,
+// input[type="text"]+input[type="text"]{margin-left:0;} 20200505 修改電話、地址組時註解此
+
+select:hover,
+textarea:hover,
+input[type="text"]:hover,
+input[type="date"]:hover,
+input[type="datetime-local"]:hover,
+input[type="email"]:hover,
+input[type="file"]:hover,
+input[type="month"]:hover,
+input[type="number"]:hover,
+input[type="password"]:hover,
+input[type="search"]:hover,
+input[type="tel"]:hover,
+input[type="time"]:hover,
+input[type="url"]:hover,
+input[type="week"]:hover{border-color: $border-color-dark;}
+
+
+%inputFocus{border-color:$btn-bg1;box-shadow:$btn-bg1 0 0 0 2px;}
+select:focus,
+textarea:focus,
+input[type="text"]:focus,
+input[type="date"]:focus,
+input[type="datetime-local"]:focus,
+input[type="email"]:focus,
+input[type="file"]:focus,
+input[type="month"]:focus,
+input[type="number"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="time"]:focus,
+input[type="url"]:focus,
+input[type="week"]:focus{@extend %inputFocus}
+
+select[disabled],
+textarea[disabled],
+textarea[disabled]:hover,
+textarea[disabled]:focus,
+input[disabled],
+input[disabled]:hover,
+input[disabled]:focus{background-color: #f3f4f5;border-color: $border-color-pale; color: $disabled-color; box-shadow:none; }
+textarea[readonly],
+textarea[readonly]:hover,
+textarea[readonly]:focus,
+input[readonly],
+input[readonly]:hover,
+input[readonly]:focus {background-color: #f3f4f5;border-color: $border-color-light;box-shadow:none;}
+select[disabled],
+// input[readonly]{color: $font-color}
+input[disabled]{color:$font-color-lighter}
+
+
+
+button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover{background-color:$btn-bg2;color:#fff;box-shadow:$btn-bg2 0 0 0 2px;cursor:pointer;}
+
+/*readonly and disabled*/
+// input[type="text"][readonly]:focus,
+// input[type="text"][readonly="readonly"]:focus{border-color:#888;box-shadow:none;}
+
+button[disabled],
+button.disabled,
+input[type="button"][disabled],
+input[type="submit"][disabled],
+button[disabled]:hover,
+input[type="submit"][disabled]:hover,
+button[disabled]:focus,
+input[type="submit"][disabled]:focus{background-color:#ddd;color:#888;border-radius:4px;box-shadow:none;cursor:default;}
+
+
+// 背景色 hiLight2（橘色）
+// input[type="submit"],
+// button[type="submit"],
+// input[type="button"].confirm,
+// input.confirm,
+// button.confirm{background-color: $hiLight2;
+//   &:hover{box-shadow:$hiLight2 0 0 0 2px;}
+// }
+
+
+fieldset{ 
+  & + fieldset{margin-top: 1em;}
+  // border: none; @extend %shadowBorder; 
+  border: 1px solid $border-color-pale;border-radius: 6px;
+  legend{ background: #fff; font-size: 1.2em; font-weight: bold; padding: 0 8px;}
+}
+
+// 填單送出後的回饋訊息
+.reactMsg{display:block;color: $red; margin: 2px 3px 8px;line-height: 1.3;display: none;font-size: .9em;}
+@media screen and (max-width: $wwMedium){
+  .reactMsg{font-size: .88em;}
+}
+
+
+// 必填未填或格式錯誤
+// .formLayout .hilight td:nth-child(odd){color:$red;}
+.hilight input{border-color:#f33;}
+.hilight input:hover,
+.hilight input:focus{border-color:#f33}
+.hilight input:focus{box-shadow:rgba(255,0,0,.5) 0 0 0 2px;}
+
+.hilight .fr-box.fr-basic.fr-top .fr-wrapper{border:1px solid #f00;margin-top: 0;}
+.hilight .fr-box .fr-wrapper:focus{box-shadow:rgba(255,0,0,.5) 0 0 0 2px;}
+.fr-box + .reactMsg{margin-top: 4px;}
+
+// 表單錯誤訊息: 必填未填或格式錯誤
+.fieldWarning{font-size: .9rem;line-height: 1.2; display:block;
+  &:empty{display: none;}
+  &.error{color:$red;}
+}
+input.invalid,
+textarea.invalid,
+select.invalid{border-color:$red;}
+input.invalid:hover,
+input.invalid:focus,
+textarea.invalid:hover,
+textarea.invalid:focus,
+select.invalid:hover,
+select.invalid:focus{border-color:$red;}
+input.invalid:focus,
+textarea.invalid:focus,
+select.invalid:focus{box-shadow:rgba(240, 20, 20, .5) 0 0 0 2px;}
+.templates + .fieldWarning{position: absolute;right: 8px;top:-1.3em}
+@media screen and (min-width: $wwMedium){
+  .templates + .fieldWarning{top: -.15em}
+}
+
+
+// --------------------------------------------------- 2020
+// 20200525 改 class name
+// .listCheck：置於條列項前方的 checkbox
+label.listCheck{position:relative;padding:0;margin:0;cursor:pointer;transition:.15s;text-align: left;
+  &::before,
+  &::after{content:'';position:absolute;z-index:9;transition:.15s;}
+  &::before{width:16px;height:16px;left:2px;top:2px;background:$bg-color-pale;border:1px solid $font-color-lighter;border-radius:2px;}
+  &::after{display:none;border:2px solid #fff;width:10px;height:6px;top:5px;left: 5px;transform:rotate(-45deg);border-top:none;border-right:none;}
+  &.checked{
+    &.checked::before{background:$font-color;border-color: $font-color;box-shadow:#fff 0 0 0 1px, $font-color-lighter 0 0 0 2px;}
+    &::after{display:block;}  
+  }
+  input[type="checkbox"]{margin:3px 0 0 4px;vertical-align:top;}
+
+  &.disabled{cursor: not-allowed;
+    &::before{background: $bg-color-pale; border-color: $bg-color;}
+    &.checked{
+      &::before{background:$bg-color; border-color: $bg-color;box-shadow:#fff 0 0 0 1px, $bg-color 0 0 0 2px;}
+    }
+  }
+}
+
+// 單選（radio） 2020
+label.listRadio{display: inline-block;position:relative;padding:0;margin:0;cursor:pointer;transition:.15s;text-align: left;
+  width:24px;height:24px;
+  &::before{content:'';position:absolute;top:50%;left: 50%;margin-top:-10px;margin-left: -10px; border-radius:50%;width:18px;height:18px;background:#fff;border:1px solid $border-color-light;z-index:9;transition:.15s;}
+  &.checked{
+    &::before{background:$btn-bg2; box-shadow:#fff 0 0 0 3px inset,  $border-color-light 0 0 0 1px; border-color: transparent;}
+  }
+  input{margin:4px 0 0 3px !important}
+
+
+} 
+
+// .aloneCheck： checkbox 後方跟著文字，且單獨存在的 check 項目
+// .ofallCheck： 全選，在條列的上方，條列項前方有 checkbox
+label.ofallCheck, label.aloneCheck {position: relative;display: inline-block;height: 2.4em;line-height: 2.4;margin: 0; padding:0;cursor: pointer;
+  input[type="checkbox"]{margin: 3px 6px 0 8px;}
+  &.disabled{cursor: not-allowed;}
+  &:before,
+  &:after{content:'';position:absolute;left:3px;top:50%;margin-top:-9px;z-index:9;transition:.15s;}
+  &:before{width:16px;height:16px;background:$bg-color-pale;border:1px solid $font-color-lighter;border-radius:2px;}
+  &:after{display:none;border:2px solid #fff;width:10px;height:6px;margin-left:3px;margin-top: -6px;;transform:rotate(-45deg);border-top:none;border-right:none;}
+  &.checked{
+    &:before{background:$hiLight2;border-color:$hiLight2;box-shadow:#fff 0 0 0 1px, $hiLight2 0 0 0 2px;}
+    &:after{display:block;}  
+  }
+}
+// label.yesCheck{
+//    &:hover{box-shadow: $border-color-light 0 0 0 1px; border-radius: 3px;}
+// }
+label.aloneCheck{margin: 3px;}
+label.ofallCheck{
+  &.checked{
+    &:before{background:$font-color;border-color:$font-color;box-shadow:#fff 0 0 0 1px, $font-color-lighter 0 0 0 2px;}
+  }
+}
+
+

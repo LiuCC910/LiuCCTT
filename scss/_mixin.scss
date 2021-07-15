@@ -1,0 +1,87 @@
+$wwSlim: 500px; //更小的螢幕斷點
+$wwMedium: 700px; //min-width此值以下是手機
+$wwWide: 1000px;  //min-width此值以上是電腦
+$wwMaximum: 1300px;
+//$wwMedium-1: 699px; max-width值
+//$wwWide-1: 999px;  max-width值
+
+$sideBarWidth: 240px;//側欄寬度
+$sideBarWidthMini: 48px;//平板時側欄隱藏文字只留圖示
+
+// $bdRadius1: 6px;
+// $bdRadius2: 4px;
+@mixin arrowBefore($width:6px, $bdWith:2px, $bdColor:$btn-bg2, $deg:45deg) {
+  content: '';display: inline-block;margin:0 auto;
+  width: $width;height: $width;
+  border-width: $bdWith;
+  border-color: $bdColor;
+  border-style: solid;
+  border-left: none;border-top: none;
+  transform: rotate($deg);
+  transition: .3s;
+}
+%tableInit{
+  margin: 0 auto;width: 100%;border-collapse: collapse;line-height: 1.5;
+  th, td{border-collapse: collapse;vertical-align: top;}
+}
+%listInit{
+  line-height: 1.3;margin: 0;padding: 0;list-style: none;
+}
+
+%paddingSet{
+  padding:16px 2vw;
+  @media screen and (min-width: $wwMedium){
+    padding:16px 20px;
+  }
+}
+%paddingSet1{
+  padding:  25px 3vw 20px;
+  @media screen and(min-width: $wwMedium){
+    padding: 40px 20px 35px;
+  }
+}
+%paddingSet2{
+  padding:20px 3vw;
+  @media screen and (min-width: $wwMedium){
+    padding:30px 20px;
+  }
+}
+%paddingSet1m{
+  padding: 25px 0 20px;//手機版時，沒有左右內距
+  @media screen and(min-width: $wwMedium){
+    padding:  35px 20px 30px;
+  }
+}
+%paddingEven{padding:16px;}
+
+%marginSet1{
+  margin: 0 2vw 2vw;
+  @media screen and (min-width:$wwWide){
+    margin: 0 20px 20px;
+  }
+  @media screen and (min-width: $wwMaximum){
+    margin-right: 48px;
+  }
+}
+%marginSet2{
+  margin: 5px 2vw;
+  @media screen and (min-width:$wwWide){
+    margin: 5px 20px;
+  }
+  @media screen and (min-width: $wwMaximum){
+    margin-right: 48px;
+  }
+}
+
+%bigRoundBtn{font-size: 1em;height: 3em;line-height: 3em;min-width:3em;padding: 0 .8em;background-color: $hiLight2; border-radius: 2em;overflow: hidden;
+  a{display: block;height: 100%;border: none;text-decoration: none;}
+  &:hover{box-shadow: $hiLight2 0 0 0 2px, rgba(0,0,0,.5) 0 4px 7px -1px;}
+}
+
+
+
+
+%shadowWide{box-shadow: rgba(0,0,0,.3) 0 5px 16px -5px;}
+%shadowNormal{box-shadow:$border-color-dark 0 0 6px;}
+%shadowThin{box-shadow: rgba(0,0,0,.3) 0 0 3px;}
+%shadowBorder{box-shadow:$border-color-light 0 0 0 1px;}

@@ -1,0 +1,91 @@
+.infoCard{background: #fff;
+  .header{padding-bottom: .2em;
+    .companyName{font-size: 1.1em;font-weight: bold;margin-bottom: .5em;}
+  }
+  .locationLabel{font-size: 14px;display:inline-block;vertical-align: middle;}
+  .alertLabel{vertical-align: middle;width: 22px;height: 22px;}
+  .ratings{float: right;text-align: right;font-size: 13px;line-height: 18px;height: 18px;margin-top: .3em;
+    .gotPoint{background: none;margin:0;white-space: nowrap;vertical-align: middle;transform: scale(.8); margin-right: -9px;
+    }
+  }
+  .middle{clear: both;border-top: 1px solid $border-color-light;border-bottom: 1px solid $border-color-light;padding: .5em 0;overflow: hidden;}
+  .avatar{float: left;width: 56px;height: 56px;line-height: 56px;border-radius:50%;color: #fff;font-size: 32px;background-size: 32px;}
+  .thePerson{font-size: 1.25em;margin:4px 0 1px 66px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+  .email, .website{margin-left: 66px;word-break: break-all;}
+  .url{clear: both;color:$font-color-lighter;padding:.7em 0 .5em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    em{color: $font-color;display: inline}
+  }
+  .contactTime{clear: both;font-size: 13px;color:$font-color-lighter;margin:1em 0 .5em;
+    time{font-size: 1.1em;color: $font-color;display: inline-block}
+  }
+  h4{font-size: 1em;margin: .5em 0 .4em;text-align: center;font-weight: normal;}
+  .statistics{margin: 10px auto 0;line-height: 1.3;padding: 0;
+    &:after{content: '';display: block;clear: both;}
+    li{float: left;width: 32%;padding:10px 0;margin:2px 2% 2px 0; border-radius: 4px; box-shadow:$border-color-light 0 0 3px;background: #fff;text-align: center;line-height: 1.1;
+      &:last-child{float: right;margin-right: 0;}
+      span{display: block;margin:0 8px;overflow: hidden;height: 1.2em;
+       &+span{margin-top: 6px;}
+      }
+      .value{font-size: 2em;}
+      .caption{font-size: 14px;}
+    }
+  }
+  .myLabels{clear: both;margin:.5em 0 0;padding: 0;list-style: none;font-size:13px;line-height: 1.3;overflow: hidden;max-height: 1.7em;
+    li{float: left;margin: 2px 3px 2px 0;padding: 1px 5px;border-radius: 3px;background: $bg-color-dark;color: #fff;}
+  }
+  .navBtnsDv{text-align: center;margin:8px 0 0;padding: 0;
+    .btnLook{margin: 0;}
+  }
+}
+
+
+.contactList{@extend %marginSet2;
+  ul{list-style: none;margin: 0;padding: 0;}
+  &>ul>li{padding: 10px 3%;margin: 16px auto;box-sizing: border-box;width: 100%;max-width: 460px;background: #fff;@extend %shadowNormal;border-radius: 6px;line-height: 1.4;
+    &>a{color: $font-color;display: block;border-bottom: none;text-decoration: none;}
+  }
+}
+@media screen and (min-width: $wwMedium){
+  .contactList{
+    ul:after{content: '';display: block;clear: both;height: 10px;}
+    &>ul>li{width:calc(100% - 16px);margin: 5px auto 16px;padding: 10px;}
+  }
+  .sideBar.hidden ~ .main .contactList {
+    &>ul>li{float: left;margin: 5px 16px 11px 0;width:calc(50% - 8px);
+      &:nth-child(2n){margin-right: 0;}
+    }
+  }
+
+  .infoCard{  
+    .header .companyName{height: 1.4em;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+    .middle{height: 6em;overflow: hidden;}
+    .myLabels{height: 1.7em;white-space: nowrap;overflow: hidden;text-overflow: ellipsis}
+    .email, .website{white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+  }
+}
+@media screen and (min-width: $wwWide){
+  .contactList{
+    &>ul>li{float: left;margin: 5px 16px 11px 0;width:calc(50% - 8px);transition: .2s;
+      &:nth-child(2n){margin-right: 0;}
+
+      &:hover{box-shadow: $hiLight1 0 0 0 3px, rgba(0,0,0,.4) 0 0 25px;}
+      &>a:hover{color: $font-a-color;}
+    }
+  }
+  .sideBar.hidden ~ .main .contactList{
+    &>ul>li{width: calc(33.33% - 11px);
+      &:nth-child(2n){margin-right: 16px;}
+      &:nth-child(3n){margin-right: 0;}
+    }
+  }
+}
+@media screen and (min-width: $wwMaximum){
+  .contactList{
+    &>ul>li{width: calc(33.33% - 16px);
+      &:nth-child(2n){margin-right: 16px;}
+    }
+  }
+}
+@media screen and (min-width: 1748px){
+  .contactList>ul>li{width: calc(25% - 16px);}
+}

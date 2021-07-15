@@ -1,0 +1,79 @@
+.paymentSetting{@extend %marginSet1;@extend %paddingSet; background: #fff; border-radius: 6px;
+  .paymentMethod{padding: 5px 0 15px; 
+    p{padding:10px 6px;margin: 4px 4px 30px; line-height: 1.7;position: relative; box-shadow: $border-color-dark 0 0 0 4px; border-radius: 3px;
+      &:before,  &:after{content: '';position: absolute;bottom: -22px; left: 50%;}
+      &:after{ width:14px;height:14px; border:4px solid $border-color-dark; transform: rotate(45deg); border-left: none; border-top: none; margin-left: -7px;}
+      &:before{width: 4px; height: 20px; background: $border-color-dark;}
+    }
+    .pMLinks{display: flex;line-height: 1.1;
+      list-style: none; padding:0; margin: 0;
+      li{margin: 0;padding: 0;  flex: 1 1 30%; text-align: center;
+        &+li{margin-left: -1px;}
+        a{display: block; padding:1em;;border-bottom: none; white-space: nowrap; background: #fff;border: 1px solid $border-color-light; transition: .2s;
+          &:hover{background:$btn-bg1; color: #fff; box-shadow: rgba(0,0,0,.4) 0 0 9px inset;}
+        }
+        &:first-child a{border-radius: 4px 0 0 4px;}
+        &:last-child a{border-radius: 0 4px 4px 0;}
+        &.now a{background: $btn-bg2; color: #fff;}
+      }
+    }    
+  }
+  h3{margin: 0; font-size: 1.5em;}
+  
+
+  .paySet{padding: 20px 14px 15px; margin: 10px auto;background:$bg-color; border-radius: 4px;
+    h3{display: inline-block;
+      &+.funcList{float: right; margin-right: 0; margin-top: -.5em;}
+    }
+  
+    .formInline{ clear: both; margin-top: 20px; margin-bottom: 20px; padding-top: 20px;padding-bottom: 20px;
+      .formLayout{flex: 1 1 80%;
+        td:first-child{width: 10em;}
+        td input[type="text"]{width:90%;}
+      } 
+    }
+
+    // .PayPalID 疑似無用了
+    .PayPalID{background:$bg-color-dark;padding:4px 4px 4px 10px; border-radius: 4px; color: #fff;display: inline-block;margin: 0;
+      em{font-size: 1.6em; height: 1.5em;line-height: 1.55; display: inline-block; margin-left: .5em; background: #fff;color: $font-color; padding: 0 8px;border-radius: 3px; vertical-align: middle;}
+    }
+
+
+  }
+
+  .currencySet{position: relative;margin: 25px auto 0; border-top: 2px dotted #fff;padding: 20px 0;
+    button{position: absolute;right:0;top: 15px;margin: 0; background-color: $hiLight2;
+      &:hover{box-shadow:$hiLight2 0 0 0 2px;}
+    }
+  }
+  .optionPool{display: flex; flex-wrap: wrap; justify-content: space-between;margin: .5em 0 0;
+    label{flex: 0 1 calc(31% - 42px); border-bottom: 1px solid #fff;margin: 12px 0 3px; border-radius: 0; color: $font-color-darker; 
+      &.isSelected{color: inherit;box-shadow: none;}
+    }
+
+    label.isSelected{
+      &:before{background:$btn-bg2;box-shadow:$btn-bg2 0 0 0 1px;} //20201029 修改checkbox顏色
+    }
+  
+  }
+
+  .listTbNew{margin:10px 0; box-shadow: rgba(0,0,0,.3) 0 1px 5px;
+    h3{padding: 10px 0;}
+  }
+
+  .noteDv{margin:2em 0 0;padding: 2em 0 1em; background: none;}
+
+
+
+  @media screen and (min-width: $wwMedium){
+    .paymentMethod{display: flex;align-items: center; justify-content: space-between;
+      p{flex: 1 1 calc(40% - 50px);margin: 0 30px 0 4px;
+        &:before,  &:after{top:50%;left: auto; }
+        &:before{width: 20px; height: 4px;right:-22px;margin: -2px auto auto auto;}
+        &:after{margin-top: -9px; right: -22px; left: auto;transform: rotate(-45deg); }
+      }
+      .pMLinks{flex: 1 1 55%;margin: 0 0 0 1%;}
+    }
+
+  }
+}

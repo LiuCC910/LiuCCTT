@@ -1,0 +1,71 @@
+/* 關鍵字組，可新增刪除 */
+/* Key words of products you are looking for */
+.keywordPool {padding:5px;background:$bg-color-pale;border-radius:4px;margin-bottom:5px;
+	&>ul {overflow:hidden;list-style:none;margin:0 !important;padding:0 !important;}
+	li {float:left;min-height:1.4em;line-height:1.4em;
+		&.pdLabel {position:relative;margin:3px !important;padding:.3em 36px .3em .7em;border-radius:2em;background:#fff;border:1px solid $border-color-light;}
+		&.pdLabel + .addOne{padding-top: 12px;}
+		.removeThis {position:absolute;right:2px;left:auto;top: 50%;margin-top: -.875em;
+			 width:1.75em;height: 1.75em; border-radius:50%;background: none;
+			&:before, &:after{background: $border-color-dark;}
+			&:hover{box-shadow: none;background: $hiLight2;
+				&:before, &:after{background: #fff;}
+			}
+		}
+		// &.addOne {display:block;float: none;clear:both;width:auto;height:auto;font-size:1.2em;padding: 5px 0 0;overflow: hidden;
+		// 	input[type="text"]{float:left;height:2em;line-height:2em;border-radius:2em;padding:0 .8em;margin:2px 3px;width:calc(100% - 4.2em);
+		// 		&:focus{background:#fff;box-shadow: $hiLight2 0 0 0 2px;border-color: $hiLight2}
+		// 	}
+		// 	.addThis {float:right;width:2em;height:2em;line-height:2em;margin-top: 2px; text-align:center;background:$hiLight2;color:#fff;border-radius:2em;cursor:pointer;
+		// 		&:before{content: '+';display:block;font-size: 1.5em;}
+		// 		&:hover, &:focus{background:$hiLight2;}
+		// 	}
+		// }
+
+		&.addOne {display:block;float: none;clear:both; overflow: hidden; border:1px solid transparent;font-size:1.2em;padding: 5px 2px 2px; 
+			input[type="text"]{float:left;font-size: 1em;height:2em;line-height:2em;border-radius:2em;padding:0 .8em;width:calc(100% - 4.2em); border: none; 
+				&:focus {background:#fff; box-shadow: $hiLight2 0 0 0 2px; border-color: $hiLight2}
+				&.typing{background:#fff; box-shadow: $hiLight2 0 0 0 1px; padding:0 .8em;text-indent: 0; opacity: 1;}
+			}
+			.addThis {float:left; margin: 5px auto auto 5px; width: 1.8em; height: 1.8em;
+				text-align:center;background:$hiLight2;color:#fff;border-radius:2em; cursor:pointer; transition: .2s;
+				&::before{content: '+';display:block;font-size: 1.5em; line-height:1.25em;}
+				&:hover, &:focus{ box-shadow:$hiLight2 0 0 0 2px ;}
+			}
+		}
+
+	}
+	&+.hint {margin-top:8px;}
+}
+@media screen and (min-width:$wwMedium) {
+	.keywordPool li{
+		&.pdLabel{padding-right: 32px;}
+		&.pdLabel + .addOne{padding-top: 0;}
+
+		// &.addOne{float:left;width:12em;margin:4px 2px 0 !important;clear:none;font-size:1em;overflow:visible;padding: 0;
+		//  .addThis{display:none;}
+		//  &:after{content:'';float:left;width:2em;height:2em;line-height:2em;text-align:center;background:$hiLight2 url(../images/icon_plus.png) no-repeat center -16px;background-size: 12px;color:#fff;border-radius:50%;}
+
+		//  input[type="text"]{position:relative;float:left;width:1em;height:2em;line-height:2em;font-size:1em;margin:1px -2em 2px 0;border:none;background:transparent;padding: 0 0 0 1em;text-indent:1.5em;transition:width .6s, margin-right .4s, text-indent .4s;opacity: 0;}
+		// 	input[type="text"]:hover,
+		// 	input[type="text"]:focus{background:#fff;width:10em;padding:0 10px;text-indent: 0;box-shadow: $hiLight2 0 0 0 1px; opacity: 1;}
+		// 	input[type="text"]:focus{box-shadow:$hiLight2 0 0 0 2px;}
+		// }
+
+		&.addOne{float:left;width:14em;margin:4px 2px 0 !important;padding:2px 0;clear:none;font-size:1em;overflow:visible;
+
+			input[type="text"]{float:left;background:transparent;width: 0; padding: 0;margin:0;opacity: 0;	transition:width .6s; box-shadow: $hiLight2 0 0 0 1px;
+				&:focus{box-shadow:$hiLight2 0 0 0 2px;}
+
+				&.typing{margin-right: 6px; padding: 0 10px;}
+			}
+
+			&:hover input[type="text"]{ opacity: 1; background:#fff;margin-right: 6px;padding: 0 10px;}
+
+			.addThis{ height: 30px; width: 30px; line-height: 30px; margin: 0;
+				&::before{font-size: 1.8em; line-height: 1.2em;}
+			}
+		}
+
+	}
+}

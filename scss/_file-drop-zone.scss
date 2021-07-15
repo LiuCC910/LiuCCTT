@@ -1,0 +1,27 @@
+.formLayout{
+  .waterMarkSetting , .file-drop-zone{width:calc(90% + 14px);}
+}
+.file-drop-zone{ margin: 3px;
+  .file-drop-zone-title{border: 1px dashed $border-color-pale; min-height: 120px;line-height: 120px; border-radius: 4px; text-align: center;}
+
+  .inputFileSet{margin-top:8px;}
+}
+
+
+
+// 是否加「浮水印」
+.waterMarkSetting{
+  .waterMark-text , .waterMark-position{margin: 3px;display: flex;
+    .label{white-space: nowrap; display: inline-block; height: 2.5em; line-height: 2.5; margin:3px 5px 3px 0;}
+  }
+  .waterMark-text{ margin-bottom: 8px;
+    input{flex: 1 1 auto;}
+  }
+  .optionPool{ margin: 0 0 0 3px;}
+  &.disabled{color: $font-color-lighter;
+    input, .optionPool label{cursor: not-allowed;box-shadow: none; }
+  }
+}
+
+label.applyWaterMark  + .waterMarkSetting{display: none;}
+label.applyWaterMark.checked  + .waterMarkSetting{display: block;}

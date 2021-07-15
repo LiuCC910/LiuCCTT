@@ -1,0 +1,42 @@
+.instantData{position: fixed;right: 10px;top: 60px;padding: 12px 10px 5px; font-family:"微軟正黑體", Arial, sans-serif;
+  background: #fff; color: #4a4949;border-radius: 6px;border: 1px solid #d6d6d6;border-bottom: none; box-shadow:rgba(0,0,0,.2) -1px 5px 7px; z-index: 8877;
+  table{width: auto;margin: 0 auto; border-collapse: collapse;line-height: 1.2;}
+  th{padding:5px 10px;text-align: center;font-weight: normal;}
+  td{padding: 5px 10px 10px;text-align: center;font-weight: bold;}
+  th[colspan]{border-top: 1px solid #c3cbce;padding-top: 15px;}
+
+  .langSwitch{ text-align: right; padding: 5px 0; text-align: center;
+    select{ width: calc(100% - 1.5em - 10px); margin: 0;}
+  }
+
+  .insController{position: absolute;right: 8px;top: -28px;background: #fff; border-radius: 6px 6px 0 0;padding: 2px 2px 1px;z-index: -2; border: 1px solid #d6d6d6; border-bottom: none;overflow: hidden;
+    .insCtrl{float: left; width: 24px;height: 24px; color:#2e89ba;text-align: center;cursor: pointer;padding: 0;line-height: 25px;  margin: 0 0 0 2px; border-radius: 4px;cursor: pointer;background-color: #eef3f4;
+      &:first-child{margin: 0;}
+      &.shortInfo{
+        &::before{content: 'i'; font-family: Georgia, 'Times New Roman', Times, serif; font-weight: bold;}
+      }
+      &.minimize:before{content: '';display: inline-block;width: 0;height: 0;border-width: 5px 5px 2px;border-color: transparent;border-top-color: #2e89ba;border-style: solid;}
+      &.hideMe{position: relative;
+        &:before, &:after{content: '';position: absolute;top: 50%;left: 50%;width: 2px;height: 12px;background: #2e89ba;  margin-top: -6px;margin-left: -1px;  border-radius: 1px;}
+        &:before{transform: rotate(45deg);}
+        &:after{transform: rotate(-45deg);}
+      }
+      &:hover{background: #2e89ba;
+        &.shortInfo{color: #fff;}
+        &.minimize:before{border-top-color: #fff;}
+        &.hideMe:before, &.hideMe:after{background-color: #fff;}
+      }
+      &:after{content: '';display: block;clear: both;}
+    }
+  }
+  &.mini{padding: 0;top: 50%;right: 45px;margin-top: -25px;
+    table, .langSwitch{display: none;}
+    .insController{position: static;border: none;padding-bottom: 2px;border-radius: 6px;
+      .insCtrl{float: none;display: block;margin:0;
+        & + .insCtrl{margin-top: 2px;}
+        &.minimize:before{ transform: rotate(180deg); margin-bottom: 3px;}
+        &.hideMe{display: none;}
+      }
+    }
+  }
+}

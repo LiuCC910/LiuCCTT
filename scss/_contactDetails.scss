@@ -1,0 +1,124 @@
+.contactDetails{@extend %marginSet2;@extend %paddingSet2;background: #fff;overflow: hidden; border-radius: 6px;margin-bottom:5px;
+  h3{margin:.5em 0;font-size: 1.3em;font-weight:bold;}
+  h4{font-size: 1.1em;}
+
+  .thisCompany{margin: 0 0 6px;position: relative; padding-left: 80px;
+    .avatar{position: absolute;left: 0;top: 0;width: 72px;height: 72px;line-height: 72px;border-radius:50%;color: #fff;font-size: 32px;background-size: 32px;}
+    .companyName{font-size: 1.1em;font-weight: bold;line-height: 1.2;padding: 5px 0 0;}
+    .reRate{margin:0 0 5px;padding:0;
+      // &:after{content: '';display: block;clear: both;}
+      .myRating{display: block;line-height: 1.3;margin:0;padding:6px 0 0;min-height:42px;
+        .gotPoint{float: left;margin:0 10px 0 0;padding: 0;}
+        .andComment{clear: both;margin:0 ;padding:12px 0 0;width: 100%;}
+      }
+    }
+    .myLabels{margin:6px 0 10px -80px;padding: 0;list-style: none;font-size:.9em;line-height: 1.3;overflow: hidden;
+      li{float: left;margin: 2px 3px 2px 0;padding: 2px 5px;border-radius: 3px;background: $bg-color-dark;color: #fff;}
+    }
+  }
+  .doThis{clear: both;text-align: right; margin: 0 0 15px;
+    .btnLook{display: inline-block;margin: 0;}
+  }
+
+  .infoInquiry, .basicInfo{
+     h3{border-bottom: 3px solid $border-color-dark;}
+     h4{margin:1em 0 0;padding: 0 0 .2em;border-bottom: 2px solid $border-color-light;}
+  }
+
+  .ttRecords{margin: 0 0 30px; padding: 15px 0; border-radius: 4px;background:#f4e88e;
+    h3, table, .statistics{width: 94%;}
+    h3{margin: 5px auto;}
+    table{margin: 10px auto;line-height: 1.3;/* border-top: 1px solid #fff; */}
+    // tr{border-bottom: 1px solid #fff;}
+    th, td{padding: .4em 0;}
+    th{font-weight: normal;text-align: left;width: 8em;
+      &:after{content: '：';}
+    }
+    td:first-child{width: 1.5em;padding-right: .5em;text-align: right;}
+    // th{ text-align: right;white-space: nowrap;}
+    // td:last-child{width: 50%;}
+    .statistics{margin:15px auto 0;}
+  }
+  .interactiveRec{ background:$bg-color-dark ;padding:14px 0 0;margin: 0 -5px; border-radius: 6px;clear: both;
+    h4{text-align: center;margin: 0;color: #fff;}
+    ul{list-style: none;margin:0;padding:12px 0 2px;font-size:.85em;
+      &:after{content: '';display: block;clear: both;}
+    }
+    li{float: left;padding:10px 0 0;margin:0 2.5% 2.4vw 0; border-radius: 6px;background: #fff;box-shadow: rgba(0,0,0,.4) 0 0 5px;width: 30%;text-align: center;
+      &:nth-child(1), &:nth-child(3){margin-left: 2.5%;}
+      &:nth-child(1), &:nth-child(2){width: 46.25%;}
+      span{display: block;margin:0 10px;overflow: hidden;}
+      .caption{height: 2em;}
+      .precentage{font-size:2em;height: 1.8em;line-height: 1.8em;text-align: center;border-top: 1px solid $border-color-pale;font-weight: bold;}
+    }
+  }
+
+  .infoContact, .infoCompany {margin: 0 auto 2em;vertical-align: top;
+    table{line-height: 1.3;width: 100%; margin: 0;word-break:break-word;}
+    tr{position: relative;/* border-bottom: 1px solid $border-color-pale; */
+      // &:before{position: absolute;left: .7em;top: .9em;content: '';width: 6px;height: 6px;background: $btn-bg2;}
+    }
+    th, td{text-align: left;vertical-align: top ;/*width: 50%; */ padding: .5em 0 .4em;}
+    th{position: relative;font-weight: normal;width:49%;
+      &:after{content: '：';/* position: absolute;right: .7em;top: 3px;bottom: 3px;width: 1px;background: $border-color-pale; */}
+    }
+    
+  }
+
+  .infoCompany{
+    th{width: 7.5em;}
+  }
+ .infoContact{
+    th{width: 11.6em;}
+  }
+
+
+  .infoInquiry{margin: 2em auto;
+    ul{list-style: none;margin: 0;padding: 0 0 .8em;/* border-top: 1px solid $border-color-light; *//* border-bottom: 1px solid $border-color-pale; */}
+    li{position: relative; /* border-bottom: 1px solid $border-color-pale; */text-indent: 0;margin:0;padding: .4em 0 .4em 1.5em;line-height: 1.3;
+      &:before{position: absolute;left: .7em;top: .9em;content: '';width: 6px;height: 6px;background: $btn-bg2;}
+      .count{display: inline-block;margin-left: .5em;
+        &:before{content: ' ( ';color:$font-color-lighter }
+        &:after{content: ' )';color:$font-color-lighter}
+      }
+    }
+    p{margin: 1em 0 .3em;color:$font-color-darker;color: #000;}
+  }
+}
+
+@media screen and (min-width: $wwMedium){
+  .contactDetails{
+    h3{margin: 0;padding: 0;}
+    .interactiveRec{margin:2em 0;padding:12px 0 6px;
+      ul{font-size: 1em;}
+      li{float: left;padding:8px 0 0;
+        &:nth-child(n){margin:0 1% 0 0;width: 18.8%;}
+        &:first-child{margin-left: 1%;}
+      }
+    }
+    .basicInfo{float: left;width: 48%;margin: 0;}
+    .ttRecords{float: right;width: 48%;}
+  }
+
+  .infoInquiry{overflow: hidden;
+    .leftBk, .rightBk{width: 48%;}
+    .leftBk{float: left;}
+    .rightBk{float: right;}
+  }
+}
+@media screen and (min-width: $wwWide){
+  .contactDetails{
+    .thisCompany{
+      .reRate{
+        .myRating{
+          .andComment{clear: none; width: calc(100% - 200px);padding-top: 0;}
+        }
+      }
+    }
+
+   .infoContact, .infoCompany{
+      th{width:auto;white-space: nowrap;}
+    }
+
+  }
+}

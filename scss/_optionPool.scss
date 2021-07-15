@@ -1,0 +1,171 @@
+/* 單選與複選 checkbox or radio group (用於 Insert a template, 問卷	)*/
+.optionPool{overflow: hidden;
+  label{position:relative;float: left;line-height:1.4;padding:8px 10px 8px 32px;margin:3px;overflow:hidden;border-radius:4px;cursor:pointer;transition:.15s;line-height: 1;
+    &:hover{box-shadow:$border-color-pale 0 0 0 1px;}
+    input[type="radio"], input[type="checkbox"]{margin-left:-5em !important;margin-right:4.2em !important;}
+
+    /* 複選（checkbox） */
+    &::before,
+    &::after{content:'';position:absolute;left:7px;top:50%;margin-top:-9px; z-index:9;transition:.15s;}
+    &::before{width:16px;height:16px;background:#fff;border:1px solid $border-color-light;border-radius:2px;}
+    &::after{display:none;border:2px solid #fff;width:10px;height:6px;margin-left:3px;margin-top: -6px;;transform:rotate(-45deg);border-top:none;border-right:none;}
+    &.isSelected{box-shadow: $btn-bg1 0 0 0 1px;color: $font-color;
+      &::before{background:$hiLight2;border-color:#fff;box-shadow:$hiLight2 0 0 0 1px;}
+      &::after{display:block;}
+      &:hover{box-shadow:$btn-bg1 0 0 0 1px;}
+    }
+    &.disabled{color: $font-color-lighter; cursor: default;
+      &::before{border-color: $border-color-pale; background-color: $bg-color-pale;}
+      &:hover{box-shadow: none;}
+    }
+    &.isSelected.disabled{box-shadow: $border-color-pale 0 0 0 1px;color: inherit;
+      &::before{background:$border-color-light;border-color:#fff;box-shadow:$border-color-light 0 0 0 1px;}
+      &::after{display:block;}
+      &:hover{box-shadow:$border-color-pale 0 0 0 1px;}
+    }
+
+
+    &.bonus1, &.bonus2{
+      padding-left: 60px;
+      background: url(../images/icon_bonus.png) no-repeat 32px 5px / 24px;;
+    }
+    &.bonus1{background-position: 32px -45px;}
+  }
+
+    // label 內含文字 input 元件， 20210113
+    &.hasTextInput{
+      &>label{ /* padding-top: 12px; padding-bottom: 12px; */ 
+        line-height: 1.7;
+        input[type="number"], input[type="text"]{display: inline-block; width: 12em !important; margin:-5px 0 -5px 3px; vertical-align: top;}  
+      }
+    }
+
+  .groupLabel{float: left;line-height:1.4;padding:8px;margin: 3px 5px 3px 0;}
+
+
+
+   /* 單選（radio） */
+  &.singleSelection{
+    label{
+      &:before{width:18px;height:18px;border-radius:50%;left:6px;top:50%;margin-top: -10px;}
+      &.isSelected:before{box-shadow: #fff 0 0 0 2px inset, $hiLight2 0 0 0 1px; border-color: $hiLight2;}
+      &.isSelected:after{display:none;}
+    }
+  } 
+
+  
+  &:after{content:'';display:block;width:100%;clear:both;}
+
+  &.templates{border-radius:4px 4px 0 0;padding:4px 4px 2px;background:$bg-color-pale;
+    .toggleCtrl{background: transparent;padding-left: 2px;height:2em;line-height:2em;display: block;}
+    .toggleCtrl:hover{color: #000;}
+    .toggleArea{display: none;padding: 2px 0 0;}
+  }
+
+
+
+  
+  // --------------------------2020
+  label>select{ margin-top:-.3em; margin-bottom: -.28em; height: 2.2em; line-height: 2.2em;}
+  label>input[type="text"],
+  label>input[type="url"],
+  label>input[type="number"]{height: 2.2em; line-height: 2.2em;}
+
+  // 一個選項佔一行
+  &.block{
+    &>label{float: none; display: block; margin: 5px 3px;line-height: 1.3;
+      // &::before, &::after{top: 8px; margin-top: 0;}
+      &>input[type="text"],
+      &>input[type="number"],
+      &>input[type="url"]{width: 20em;margin: 0 3px;}
+
+      &+p{margin: 0 0 1em 2.4em;}
+
+      &.cascade1{ margin-left: 2em;} // 層級結構
+      &.cascade2{ margin-left: 4em;} // 層級結構
+    }
+
+    // 20210204
+    .percentageInput{ display: inline-block; margin-top: -.8em;
+      input[type="number"]{width: 4em;}
+    }
+  }
+
+  // 固定高度，有捲軸
+  &.scroll{padding:0 2px; border: 1px solid $border-color-light; border-radius: 4px; height: 11.8em; overflow: auto;
+    &>label{
+      &:hover{background-color: $bg-color-pale;}
+      &.isSelected{background-color: $bg-color-pale; box-shadow: none;
+        &:hover{box-shadow:$btn-bg1 0 0 0 1px;}
+      }
+    }
+  }
+  &.grid2{ display: flex; flex-flow: row wrap;
+    &>label{flex: 1 1 calc(50% - 60px); margin:3px 10px 10px 3px; line-height: 1.3;
+      // &::before, &::after{top: 8px; margin-top: 0;}
+
+      &.hasSub{flex-basis: 100%;}
+    }
+  }
+
+
+
+
+  .subOption{margin-left: 1.5em; display: block; clear: both; overflow: hidden;
+    &.lang{display: flex; flex-flow: row wrap;
+      &>label{flex: 0 0 8.5em;}
+    }
+  }
+
+  // 分類階層 20210120
+  &.cascading{
+    label{ display: block; float: none;
+      &.cascade{margin-left: 2em;}
+    }
+  }
+
+  img.pdLabelImg{height: 26px; vertical-align: middle; margin-left:5px;}
+}
+.formLayout td>.optionPool.scroll{width: calc(92% - 14px);}
+
+
+
+ul.optionPool{list-style: none; margin: 0;padding: 0;
+  &.nested{
+    &>li{border-bottom: 1px solid $border-color-pale; margin-top: 5px;
+      &>label{display: inline-block; width: 6em;}
+      &>label~.optionPool{display: inline-block; width: auto;}
+    }
+  }
+}
+
+.optionPool.templates + textarea{border-radius: 0 0 4px 4px;}
+@media screen and (min-width:$wwMedium){
+  .optionPool.templates{
+    .toggleArea{display: block;}
+    .toggleCtrl{display: none;}
+  }
+}
+
+
+// 產業別，複選，燈箱中
+.lightbox{
+  .head + .pdCategory{margin-top: -10px;}
+  .pdCategory{ margin-left: 3%; margin-right: 3%; overflow: visible;
+    .checkAll{float: right; margin-top:-52px ;}
+    ul{clear: both;  list-style: none; margin: 0; padding: 0;}
+    li{ padding: 0; margin:0 0 7px;
+      label{ display: block; float: none;line-height: 1.4;}
+    }
+
+    & ~ .btnDv{margin-top: 20px;}
+  }
+
+  @media screen and (min-width: $wwMedium){
+    .pdCategory{
+      ul{display: flex; flex-flow: row wrap; justify-content: space-between;}
+      li{flex: 0 1 49%;margin:0 0 1px;}
+    }
+  }
+
+}

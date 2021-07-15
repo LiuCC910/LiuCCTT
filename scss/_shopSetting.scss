@@ -1,0 +1,45 @@
+.shopSetting{@extend %marginSet1;background: #fff; border-radius: 6px;padding:16px 16px 32px;
+
+  .onOff{
+    .optionPool{display: inline-block; vertical-align: middle;}
+  }
+
+  .noteDv{ margin: 15px 0; background-color: $bg-color-pale;}
+
+  .siteTemp{
+    label{
+      .preview{position: absolute; right: 40px;
+        a{ display: block;border: none; background:$btn-bg1; padding: 0 8px; height: 1.5em; line-height: 1.6; border-radius: 3px;color: #fff;
+          &:hover{background:$btn-bg2;}
+        }
+      }
+      .schema{width: 210px;}
+    }
+  }
+}
+
+
+.shopModuleList{
+  h3{font-size: 1.2em;}
+  ul{margin: 0;padding: 0;list-style: none;}
+  li{position: relative;margin: -1px 0 0; padding: 8px 10px 8px 40px; border: 1px solid $border-color-light;
+    display: flex; justify-content: space-between;cursor:grab;
+    &:active{cursor: grabbing;}
+    &::before{content: ''; width: 24px; height: 24px;position: absolute;left: 8px;top: 50%; margin-top: -12px;background: #f0f4f5 url(../images/icon_dragSticker.png) no-repeat center center;background-size: 16px auto; border-radius: 3px;}
+    &:first-child{border-radius: 4px 4px 0 0;}
+    &:last-child{border-radius: 0 0 4px 4px;}
+    &:only-child{ cursor: default; padding-left: 10px; border-radius: 4px;
+      &::before{ display: none;}
+    }
+    &>div{flex: 0 1 48%;
+      &:last-child{text-align: right;}
+      .title{display: inline-block; vertical-align: middle; padding-top: .7em;}
+      .aloneCheck{ float: right;}
+    }
+
+
+    .optionPool{display: inline-block; vertical-align: middle; margin-right: 15px;}
+    button{vertical-align: middle;}
+  }
+
+}

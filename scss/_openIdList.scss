@@ -1,0 +1,39 @@
+/* OpenId */
+.openIdList {@extend %marginSet1;}
+.openIdList h3{font-weight:bold;font-size:16px;margin:3em 0 10px;}
+.openIdList ul{list-style:none;margin:0;padding:0}
+.openIdList li{padding:0;margin:5px 0;}
+.openIdList .myOpenId{position:relative;display:inline-block;width:350px;padding:0 40px 0 15px;height:40px;line-height:40px;margin-left:40px;border-radius:20px;text-overflow:ellipsis;overflow:visible;white-space:nowrap;font-size:15px;background:#fff;box-shadow:#ccc 0 0 0 2px inset; vertical-align:top;}
+.openIdList .myOpenId .removeThis{position:absolute;right:8px;top:8px;border-radius:50%;width:24px;height:24px;}
+.openIdList .myOpenId:before{content:'●●●';display:inline-block;vertical-align:middle;margin:-1px 20px 0 -50px;line-height:35px;letter-spacing:1px;color:#aaa}
+.openIdList .signinbtn{background:#ffb92d;display:inline-block;border-radius:3px;margin-bottom:5px;color:#fff;font-size:16px;font-weight:bold;letter-spacing:.5px;cursor:pointer;width:220px;height:38px;line-height:38px;transition:.2s;}
+.openIdList .signinbtn:hover{text-decoration:none;cursor:pointer;box-shadow:#ffb92d 0 0 0 2px;}
+.openIdList .signinbtn.gmail,
+.openIdList .signinbtn.twitter,
+.openIdList .signinbtn.facebook,
+.openIdList .signinbtn.linkedin{position:relative;padding-left:46px;font-weight:normal;text-align:left ;}
+.openIdList .signinbtn.gmail:before,
+.openIdList .signinbtn.twitter:before,
+.openIdList .signinbtn.facebook:before,
+.openIdList .signinbtn.linkedin:before{content:"";position:absolute;height:34px;width:34px;left:2px;top:2px;background-image:url(../images/icon_openID.png);background-repeat:no-repeat;background-size:26px;margin:0;border-radius:2px;}
+.openIdList .signinbtn.gmail:hover,
+.openIdList .signinbtn.twitter:hover,
+.openIdList .signinbtn.facebook:hover,
+.openIdList .signinbtn.linkedin:hover{box-shadow:#bbb 0 0 0 2px;}
+.openIdList .signinbtn.gmail:hover:before,
+.openIdList .signinbtn.twitter:hover:before,
+.openIdList .signinbtn.facebook:hover:before,
+.openIdList .signinbtn.linkedin:hover:before{box-shadow:rgba(255,255,255,.7) 0 0 0 1px;border-radius:3px;}
+.openIdList .signinbtn.gmail:hover:before{box-shadow:#fff 0 0 0 1px;}
+.openIdList .signinbtn.gmail{background:#4385F4}
+.openIdList .signinbtn.twitter{background:#1da1f2}
+.openIdList .signinbtn.facebook{background:#3b579d}
+.openIdList .signinbtn.linkedin{background:#0077b5}
+.openIdList .signinbtn.gmail:hover{box-shadow:#4385F4 0 0 0 2px;}
+.openIdList .signinbtn.twitter:hover{box-shadow:#1da1f2 0 0 0 2px;}
+.openIdList .signinbtn.facebook:hover{box-shadow:#3b579d 0 0 0 2px;}
+.openIdList .signinbtn.linkedin:hover{box-shadow:#0077b5 0 0 0 2px;}
+.openIdList .signinbtn.gmail:before{background-position:4px 5px;background-color:#fff;}
+.openIdList .signinbtn.twitter:before{background-position:5px -34px;background-color:#1da1f2;}
+.openIdList .signinbtn.facebook:before{background-position:4px -72px;background-color:#3b579d;}
+.openIdList .signinbtn.linkedin:before{background-position:5px -114px;background-color:#0077b5;}

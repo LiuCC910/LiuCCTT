@@ -1,0 +1,101 @@
+/* 檢視報價單 （燈箱中以 iframe 方式載入的報價單）*/
+
+@import '_colorScheme';
+
+body{margin: 0;}
+// .qtTop{position:relative;margin:0;background:$bg-color-dark;padding:10px;min-width: 760px;
+//   input, button, select{font-size: inherit;height:2.2em;line-height: 2.2;vertical-align:top;margin: 0 2px 0 0;border: none;border-radius: 4px;outline: none;cursor: pointer; transition: .2s;
+//     &:hover{box-shadow:$hiLight2 0 0 0 2px;}
+//   }
+//   select:hover{box-shadow:#fff 0 0 0 2px;}
+//   input[type="button"], input[type="submit"],
+//   button[type="button"], button[type="submit"],button {-webkit-appearance: none;background-color: $hiLight2;color: #fff}
+// }
+
+.quotation {min-width: 760px;margin:0;padding:0 0 30px;background:#fff;font-size: 15px;line-height: 1.4;
+
+  &>*{width:92%;margin:15px auto;}
+  h3{font-size:20px;font-weight:bold;margin:0 0 .3em;}
+  p{margin: 0;}
+  p + p{margin-top: 1em;}
+  ul, ol{margin: 0 auto;padding: 0;list-style: none;}
+  li .itemLabel{display:inline-block;color:$font-color-lighter;padding-right:.5em;
+    &:after{content:":";}
+  }
+  table{border-collapse:collapse;line-height:1.5;font-size:inherit;margin-left: auto;margin-right: auto;}
+  th, td{padding:5px 5px 3px;vertical-align:top;}
+}
+
+.quotation header{overflow:hidden;border-bottom:3px solid $border-color-dark;padding-bottom:5px;
+  p{width:49%;margin:0;}
+  p em{font-size:18px;font-style:normal;margin-left:.3em;}
+  h2{font-size:36px;line-height:36px;text-align:center;font-weight:bold;border:none;padding:.8em 0 .5em;margin:0 auto;}
+  h2+p{float:left;}
+  p+p , p:last-child{float:right;text-align:right;font-size:1.2em;}
+}
+
+
+.quotation .qtFor{overflow:hidden;list-style:none;line-height:1.5;padding:0;margin:0 auto 10px;
+  li{display:inline-block;width:45%;vertical-align:top;padding:2px 0;margin:.3em 0;}
+  li:nth-child(odd){float:right;width:45%;}
+  li:first-child,
+  li:last-child{display: block;width:auto;max-width: none;float:none;clear:both;}
+}
+
+.quotation .qtList{border:2px solid $border-color-dark;margin: 15px auto;
+  th, td{border:1px solid $border-color-light;}
+  th{white-space:nowrap;text-align:center;}
+  td{text-align:center;
+    &.number{text-align:right;white-space:nowrap;}
+    li{text-align:left;}
+    .pdName{font-weight:bold;margin: 0 0 .5em;}
+    .currency{ display: inline-block; font-size: .85em; font-weight: normal;}
+  }
+  .snapshot{float:left;width:120px;margin:.3em 10px 5px .3em;
+    img{display:block;width:100%;height:120px;object-fit:contain;}
+    span{display:block;font-size:12px;border:1px solid $border-color-light;border-radius:2px;text-align:center;margin:5px auto 0;}
+  }
+}
+
+.quotation .summary{clear:both;
+  .note{float:left;width:60%;}
+  table{float:right;width:33%;position:relative;margin:10px;line-height:1.1;}
+  table:before{content:'';position:absolute;left:-10px;top:-10px;bottom:-10px;right:-10px;border:1px solid $border-color-dark;}
+  // tr{border-top: 1px solid $border-color-pale;
+  //   &:first-child{border: none;}
+  // }
+  th, td{text-align:right;padding:6px;position:relative;}
+  th{font-weight:normal;white-space:nowrap;}
+  td{text-align:right;font-weight:bold;width:55%;
+    .currency{ display: inline-block; font-size: .85em; font-weight: normal;}
+  }
+  .discount{border-top-color:$border-color-light;
+    th, td{color:#c33;}
+  }
+  .total{ border-top: 2px solid $border-color-dark; line-height: 1.4;
+    th, td{color:#000; font-weight: bold;}
+  }
+}
+
+.quotation .remark{clear:both;padding:50px 0 20px;
+  h3{margin: 1em 0 .5em;}
+  article{line-height: 1.8;}
+  // ol{overflow:hidden;padding-bottom:4px}
+  // li{list-style:decimal;width:48%;display:inline-block;vertical-align:top;padding:.8em 2px .05em;border-bottom:1px solid $border-color-pale;}
+  // li:nth-child(even){float:right;}
+}
+.quotation footer{position:relative;border-top:3px solid $border-color-dark;padding:20px 0 0;text-align: left;font-size:13px;line-height:1.5; 
+  table.qtFrom{width:62%;margin: 0;border-right: 1px solid $border-color-dark;
+    th, td{vertical-align:top;}
+    th{width:8em;text-align:left;font-weight:normal;color:$font-color-lighter;
+      &:after{content:":"}
+    }
+    td{padding-right: 2em;}
+  }
+  .signature{position:absolute;right:0;bottom:20px;width:34%;vertical-align:bottom;padding:120px 0 0;
+    &:before{content: 'Signature: '; color: $font-color-lighter;}
+    p{border-top:1px solid $border-color-light;padding:20px 0 0;}
+  }
+}
+
+.quotation .pageCount{clear:both;text-align:center;padding:30px 0 0;}

@@ -1,0 +1,77 @@
+// ------------------------------------------------
+// top 下拉的購物車內容 20191122
+// ------------------------------------------------
+.topZone li.cart:after{display: none;} //修正一個奇怪的錯誤
+
+.topZone .cart {position: relative;
+	.top-cart{display: none;position: absolute;top: auto;right: 0;text-align: left;width: 320px;background: $bg-color-dark;box-shadow:rgba(0,0,0,.4) 0 3px 13px -3px;
+		a{color: #222;}
+		.block-title{font-size: 20px;text-align: center;color: #fff;margin: 16px 6px 5px;font-weight: bold;text-shadow: #222 0 1px 3px; }
+		.block{font-size: 13px;margin:6px;padding:4px 6px;border-radius: 6px;line-height: 1.3;background-color: #fff;
+			& + .viewcart{margin-top: 16px; margin-bottom: 16px;}
+		}
+		.order-title{color: #222;padding: 4px 0;border-bottom: 1px solid  $border-color-light;font-weight: bold;position: relative;overflow: hidden; font-size: 1.15em;
+			.seller-name{float: left;max-width: 92%; max-width:calc(100% - 2em);
+        a{display: block;padding: 0;height: 2.2em;line-height: 2.2em; overflow: hidden;white-space: nowrap;text-overflow:ellipsis; border: none;
+          &:hover{text-decoration: underline;}
+        }
+			}
+			.number{float: right;padding: 0 .3em; min-width: 1.2em;height: 1.8em;line-height: 1.8em;margin-top: .15em; text-align: right; border-radius: 5px;font-weight: normal;font-size: 13px;background-color: $bg-color;color: #222;}
+		}
+    .product-info-detail{padding:8px 0;overflow: hidden;
+      a{ border: none;}
+      a:hover{text-decoration: underline;}
+			& + .product-info-detail {border-top: 1px solid $border-color-light;}
+			.product-pic{width: 85px;height: 85px;position: relative;margin-right: 10px;float: left;box-shadow:$border-color-light 0 0 0 1px ;margin-left: 1px;
+				img{position: absolute;top: 0;bottom: 0;right: 0;left: 0;max-width: 100%;max-height: 85px;margin: auto;z-index: 100;}
+				&:after {padding-top: 100%;content:"";display: block;}
+			}
+			.product-remove{position: absolute;left: 0;bottom: 0;color: #fff;z-index: 101;padding:0;text-align: center;width: 20px;height: 20px;background:$border-color-dark url(../images/icon_delete.png) no-repeat center center / 16px;
+				&:hover{background-color:$red;}
+			}
+		}
+    .product-info{font-size: 13px;line-height: 1.3;overflow: hidden;
+      .product-price{color: $red;font-weight: bold;display: inline-block;}
+      .product-name{font-size:1.1em;white-space: nowrap;text-overflow:ellipsis;overflow: hidden;font-weight: bold;padding: 0;margin: 3px 0 4px;
+        a{color: #000;}
+      }
+			.shipping-detail{color: #126fd7;display: inline-block;}
+			.old-price{color: #788;margin-left: 8px;}
+			.quantity{display: block; background: none;padding: 0;margin: 2px 0 0;}
+			.spec{color: #126fd7;padding: 0;margin: 3px 0 0;}
+      .unfinished{padding:1px;border: 1px solid #126fd7;color: #126fd7;border-radius: 8px;text-align: center;margin-top: 5px;}
+      .product-freeshipping, .discount{margin-top: 5px;}
+    }
+    
+		.viewcart{display: block;height: 2.55em;line-height: 2.6em;border-radius: 4px;box-shadow: rgba(0,0,0,.6) 0 2px 2px -1px;background: $hiLight1;color: #222;text-align: center;padding:0 6px;margin: 6px;font-size: 16px;text-transform:uppercase;cursor: pointer;transition: .2s;
+      &:hover{background: $hiLight2;color: #fff;}
+		}
+
+    // 行動版增加一個關閉購物車按鈕
+    .closeCart{position: absolute;right: 6px;top: 6px;border: none;border-radius: 4px;height: 2.6em;width: 2.6em;font-size: 16px;padding: 0;margin: 0; background: #455;text-indent: -200px;overflow: hidden; transition: .1s linear;
+      &:before, &:after{content: '';position: absolute;left: 50%;top: 50%;width: 20px;height: 2px;background: #fff;margin-left: -10px;margin-top: -1px;border-radius: 2px;transition: .1s linear;}
+      &:before{transform: rotate(45deg);}
+      &:after{transform: rotate(-45deg);}
+      &:hover{background-color:#000;box-shadow:none;
+        &:before, &:after{width: 28px;margin-left: -14px;}
+      }
+    }
+  }
+	//.cartNbr 疑似無用
+	// span.cartNbr {letter-spacing:0;position:relative;color: $hiLight1;;
+	// 	 &:before{@extend %icon;content: "\e116";margin-right: 5px;vertical-align: top;}
+	// }
+	// &:hover{
+	// 	&:after{content: "";position: absolute;top: -4px;left: 0;width:100%;height: 22px;background: #fff;border: 1px solid #9e9e9e;border-bottom: 0;z-index: 50;}
+	// 	span.cartNbr{color: #0066d3;}
+	// }
+}
+
+.topMenuClone li.cart .top-cart{display: none;position: fixed;top: 2vh;left:4vw;width: 92vw;max-height:94vh; overflow-y: auto;z-index: 9999;}
+
+.topMenuClone .top-cart .closeCart + .viewcart{margin-right: 3.4em;}
+
+@media screen and (min-width: $wwWide){
+  .topMenu .closeCart{ display: none;}
+  .topZone .cart .top-cart{max-height: calc(100vh - 40px);overflow-y: auto;}
+}

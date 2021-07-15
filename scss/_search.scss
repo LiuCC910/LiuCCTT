@@ -1,0 +1,256 @@
+// 列表頁上方的查詢區
+.search{@extend %marginSet1;@extend %shadowNormal;border-radius: 6px;
+  position: relative;background: #fff;transition: .4s;
+  &::after{content: '';display: block; clear: both;}
+  &.toggleDrawer{padding-top: calc( 2.25em + 8px);}
+}
+.search , .searchAndFilter{
+  .toggleArea{display: none;clear: both;}
+  .toggleCtrl{position: absolute;right:4px;top:4px;z-index: 9;
+    &:before{border: none;transform: none;width: 20px;height: 20px;right: 8px;margin-top: -10px;background:url(../images/icon_searchClose.png) no-repeat 0 0;background-size: 50px;transition: .2s;}
+    &.closeIt:before{background-position: 0 -30px;transform: none;/* margin-top: -10px; */}
+  }
+}
+
+
+
+.search {padding:1px 0;
+  .searchCaption{width: 96%;margin: 0 auto; padding:.8em 0 0; }
+  &.toggleDrawer{
+    .searchCaption{margin-top: -1.4em; padding: 0;}
+  }
+  .formLayout{width: 96%;
+    // select:only-child{width: calc(100% - 14px - 1.5em);}
+  }
+  .btnLook{margin: 4px 1%;}
+  
+  &.toggleDrawer{
+    .btnLook{float: left; margin-top: -2.8em;}
+  }
+
+  .icon_i:first-child{float: left; margin: 0 6px 0 12px;}
+}
+
+.addAndRemove{display: flex; 
+  .optionPool{flex: 1 1 90%;
+    padding:3px;margin:3px;border-radius:4px;border:1px solid $border-color-light;height: 10em; overflow: auto; overflow-y: auto;
+    label{float: none;display: block;margin:2px; white-space: nowrap;overflow: hidden; text-overflow: ellipsis;
+      &+label{margin:2px;}
+      &.isSelected{box-shadow:none; background: $bg-color-pale;}
+    }
+  }
+  .buttons{flex: 0 1 3em;
+    button{margin-top: 3px; white-space: nowrap; width: 2em; display: block;}
+  }
+}
+
+@media screen and (min-width:$wwMedium){
+  .search , .searchAndFilter{
+    .toggleCtrl{display: none;}
+    .toggleArea{display: block;}
+    &.always{
+      .toggleCtrl{display: block;}
+    }
+  }
+  .search{
+    .searchCaption{width: 96%; }
+    h4.searchCaption{font-weight: normal; font-size: 1.3em;height: 1.5em; line-height: 1.5em;}
+    &.toggleDrawer{
+      .searchCaption{margin: 0 6em 10px 12px; width: auto; transition:margin .3s;}
+      &.hidden .searchCaption{margin-bottom:1px;}
+    }
+    .formLayout{margin-top: 20px;}
+
+    //可收合區
+    &.toggleDrawer{padding-top: 20px;
+      &.hidden{padding-top: 7px;padding-bottom: 6px;}
+      .btnLook{float: right;margin-top: 0; margin-bottom: 10px; font-size: 1em;
+    }
+      &~.toggleArea{clear: both;padding-top: 0;}
+    }
+
+    .toggleArea{
+      .formLayout{margin-top: 0;}
+    }
+  }
+}
+
+
+
+
+// 查詢結果過濾條件，行動版呈現下拉
+.filterBy{clear: both;position: relative;margin: 0 auto;
+  &:after{content: '';display: block;clear: both;}
+
+  // .filterOptions{background: $bg-color-dark;color: #fff;}
+
+  &>span{float: left;height:2.4em;line-height:2.4em;margin-top: 1px;color: $font-color;}
+  // 行動版時，假的輸入框，觸發下拉選單
+  .simuInput{float: right;position: relative;width: calc(100% - 6.5em);margin:0;padding: 0 1.5em 0 .5em;height:2.4em;line-height:2.4em;border-radius: 4px;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;border-radius: 4px;border: 1px solid $border-color-light;background: #fff;
+    &:after{content: '';position: absolute;right:9px;top: 50%;width: 0;height: 0;border-style: solid;border-width: 7px 6px 0 6px;margin-top: -3px;border-color: $border-color-dark transparent transparent transparent;}
+  }
+  // 下拉選項
+  .filterOptions{display: none;margin: 0 3px;padding: 4px;list-style: none;box-shadow: rgba(0,0,0,.4) 0 2px 15px;background: rgba(255, 255, 255, .95);position: absolute;left: 0;right: 0;top: 2.4em; border-radius:4px;z-index: 199;
+    // background: $bg-color-dark;color: #fff;
+    li{position: relative;margin:4px;line-height: 1.3em;padding: .5em;border-radius: 3px;
+      .count{display: inline-block;margin-left:2px;background:rgba(0,0,0,.15);  font-size: .9em;height: 1.4em;line-height: 1.4;min-width: .6em;;padding: 0 .4em; text-align: center;border-radius:1em}
+      &.isPicked,
+      &.isPicked:hover{color: #fff;box-shadow:$btn-bg2 0 0 0 1px;background:$btn-bg2;
+        .count{color: $hiLight1;}
+      }
+    }
+  }
+}
+
+.main > .filterBy{@extend %marginSet1;}
+@media screen and (min-width: $wwMedium) {
+  .filterBy {padding: 5px 10px;border-radius:6px;background: $bg-color-dark;color: #fff;
+    &>span {color: #fff;float: left;height: 2em;line-height: 2em;margin: 4px 5px 0 0;}
+    .simuInput {display: none}
+    .filterOptions{position: static;display: block;overflow: hidden;background: none;box-shadow: none;margin: 2px 0 0;padding: 0;
+      li {float: left;margin: 2px 0 5px 7px;height: 2em;line-height: 2em;padding: 0 .5em;box-shadow: rgba(255,255,255,.8) 0 0 0 1px;cursor: pointer;transition: .2s;
+        &:hover {box-shadow: #fff 0 0 0 1px;background: rgba(0, 25, 30, .3);}
+        .count{color: $hiLight1;background:rgba(0,0,0,.3)}
+
+        &.isPicked, &.isPicked:hover{background:$hiLight1;box-shadow:$hiLight1 0 0 0 1px; color: $btn-bg2; cursor: default;
+          .count{background: $btn-bg2;}
+        }
+      }
+    }
+  }
+}
+
+
+// 查詢區和過濾條件
+.searchAndFilter{ @extend %marginSet1; position: relative;background:#fff;padding: 3em 2vw 15px; border-radius: 6px;box-shadow:rgba(0,0,0,.4) 0 0 4px inset; transition:.6s;
+  &.hidden{padding: 2em 2vw 1px;background: none;box-shadow: none;
+    & ~ .btnLook{margin-top: 8px;}
+  }
+  .filterBy{margin:12px auto 0;}
+  .searchOrders{padding: 0;}
+}
+.searchAndFilter.hidden + .page{margin-top:14px;}
+
+.searchOrders{
+  select{display: none}
+  input[type="text"]{width:calc(100% - 2.4em - 48px);margin: 0;padding-right:28px;}
+  input[type="submit"],
+  input[type="button"]{float: right;height: 2.4em;width:2.4em;margin:1px 0 0;padding:0;background:$btn-bg1 url(../images/icon_searchClose.png) no-repeat -20px 11px; background-size: 50px;text-indent: -20em;}
+  input[type="submit"]:hover,
+  input[type="button"]:hover{background-color: $btn-bg2;}
+
+  input[type="reset"]{display: inline-block;margin: 0 0 0 -36px;padding: 0 0 0 30px;height: 28px;width: 0;vertical-align: middle;background:transparent url(../images/icon_searchClose.png) no-repeat 8px -16px; background-size: 38px;border: none;opacity: .5;
+    &:hover{opacity: 1;box-shadow: none}
+  }
+
+  .during{display: block;width:calc(100% - 3em);float: left;margin-bottom:8px;
+    input[type="date"], input[type="text"]{width:calc(100% - 2.5em);}
+  }
+}
+@media screen and (min-width: $wwSlim + 100){
+  .searchOrders{
+    .during{
+      input[type="date"], input[type="datetime-local"], input[type="text"]{width: calc(50% - 2.1em);}
+    }
+  }
+}
+@media screen and (min-width: $wwMedium){
+  .searchAndFilter{background: none;padding: 0;box-shadow: none;
+    .filterBy{margin:5px auto 0;}
+    .searchOrders{background: #fff;border-radius: 6px;margin-bottom: 10px;padding: 4px 6px;}
+  }
+  .searchOrders{
+    select{width:20%;display:inline-block;
+      optgroup{margin: 0;text-indent: 0; /* font-size: 0; */
+        // &:before{content: '';display: block;height: 10px;background: #000;}
+      }
+    }
+    input[type="text"]{width:calc(80% - 4em - 58px);}
+    input[type="submit"],
+    input[type="button"]{margin-top: 4px;background-position:-22px 8px;}
+    .during{width:calc(80% - 5.5em );}
+  } 
+}
+
+
+// 2020
+// 一列式 search，須根據內含元件，調整各元件寬度
+.searchRow{overflow: hidden;margin: 0 0 12px;
+  select, input[type="text"]{/* float: left; */ margin: 3px;}
+  input[type="submit"],
+  input[type="button"],
+  button[type="submit"]{/* float: right; */height: 2.4em;width:2.4em;margin:4px 3px;padding:0;background:$btn-bg1 url(../images/icon_find.png) no-repeat 5px center; background-size: 24px;text-indent: -20em;}
+  input[type="submit"]:hover,
+  input[type="button"]:hover,
+  button[type="submit"]:hover{background-color: $btn-bg2;}
+
+  input[type="reset"]{display: inline-block;margin:5px 0 0 -38px;padding: 0 0 0 30px;height: 2.2em;width: 0;vertical-align: top;background:transparent url(../images/icon_clear.png) no-repeat center center; background-size: 24px;border: none;opacity: .5; 
+    &:hover{opacity: 1;box-shadow: none}
+  }
+  input[type="text"]{padding-right: 36px;}
+
+  // 只有一個輸入欄位加一個清除、一個送出
+  &.simple{
+    // input[type="text"]{ width: calc(100% - 3em - 50px);}
+    form{display: flex; justify-content: space-between;
+      input[type="text"]{flex:1 1 70%;}
+      input[type="submit"], input[type="button"]{ margin-left: 12px;}
+    }
+
+    // 一組日期區間 加 一個 查詢圖示
+
+    // display: flex;justify-content: space-between;
+    &>.during{ float: left; width: calc(100% - 4em); max-width: 60em;}
+    &>.during+input[type="button"]{float: right;}
+
+
+  }
+
+
+  &.newQtFrom{display: flex; align-items: center; justify-content: flex-start;
+    h3{font-size: 1em; margin: 0 1em;}
+    .optionPool{margin-right: 2em;}
+    input[type="button"].confirm{text-indent: 0; text-indent: 0; padding: 0 .6em;}
+    input[type="button"].confirm, button.confirm{ background: $hiLight2;
+      &:hover{box-shadow:$hiLight2 0 0 0 2px;}
+    }
+  }
+}
+.main>.searchRow{@extend %marginSet1;
+  background: #fff; border-radius: 6px; padding: 4px;
+}
+
+@media screen and (min-width: $wwMedium){
+}
+
+
+// 燈箱：從圖庫挑選圖
+.lightbox .searchRow{
+    // outline: 1px solid red;
+    select{width: 11em;}
+    input[type="text"]{width:calc(100% - 60px - 33em)}
+
+    .sortBy{float: right;
+      select{ width: 6em;}
+      &>*{vertical-align: middle;}
+    }
+    // select{width: 10em;}
+    // input[type="text"]{width:calc(100% - 24px - 30em) ;}
+    &>select:only-child{width: 18em;}
+}
+
+// 1.燈箱：挑選型錄帶入 url。 2.從右滑入的編輯區塊
+.cataLib, .slideinBox{
+  .searchRow{
+    select{width: 8em;}
+    input[type="text"]{width:calc(100% - 60px - 42em);}
+
+    .sortBy{float: right;
+      select{ width: 6em;}
+      &>*{vertical-align: middle;}
+    }
+
+  }
+}
+
+

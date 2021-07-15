@@ -1,0 +1,158 @@
+.formX{
+  @extend %paddingSet1;
+  @extend %marginSet1;
+	@extend %shadowNormal;
+	position: relative;
+	border-radius:6px;background:#fff;
+	&>h3:first-child, .formLayout+h3 {margin: 0;padding: 0 0 .2em;font-weight: normal;border-bottom: 3px solid $border-color-light;
+		&+form, &+.formLayout{margin-top: 1.2em;}
+	}
+	.formLayout+h3{margin-top: 3em;}
+	.btnDv {border-top:1px solid $border-color-pale;padding-top:1.2em;}
+	fieldset + .btnDv{margin-top: 2em;}
+
+	.agree{margin:1em 0 0;padding:0 .5em;
+		&+.agree{margin-top: 5px;}
+	}
+
+	.aloneCheck + .aloneCheck{margin-left: 1em;}
+
+}
+
+
+/*formRow :表單元件排版*/
+.formRow {position:relative;display:block;clear:both;margin:1.5em 0;padding:2px 0;
+	&:first-child{margin-top: 0;}
+	&.dropzoneHere{margin-top: -1.4em;margin-right:6.2em;}
+	&>label:first-child{display:block;width:auto;text-align:left;padding:0;margin:0 5px 5px;line-height: 1.2; letter-spacing: 2px;font-weight: bold;
+		&:after{content:'';display:block;clear:both;}
+	}
+	.hint{margin: 2px 5px;}
+	textarea{width:calc(100% - 14px);padding:6px; margin:0 0 3px;}
+
+}
+@media screen and (min-width: $wwMedium){
+	.formRow{margin-bottom:2em;
+		&.dropzoneHere{margin-top: -2.5em;}
+	}
+}
+
+// [lang="ar"] .formRow>label:first-child,
+// [lang="ar"] .formRow.pair>*>label:first-child,
+// [lang="ar"] .formRow.trio>*>label:first-child{text-align: right;}
+
+
+// 編輯回覆函範本 20191028
+.formX.templateEditing{
+	.formRow{margin-top:0;margin-bottom: 1em;
+		&.tContent{
+			&>label:first-child{float: left;height: 2.4em;line-height:3em;}
+			select{margin: 0 0 5px;width:calc(100% - 1.5em - 8px) ;}
+			textarea{clear: both;}
+		}
+		&.ifEnable{
+			&>label:first-child{float: left;height: 2.4em;line-height: 2.8em;}
+			.optionPool{background: none;margin-top: .2em;
+				label{margin-right: 1em;}
+			}
+		}
+	}
+}
+
+
+/* input 預設寬度 */
+.formRow {
+	input.seg00, select.seg00,
+	input.seg25, select.seg25,
+	input.seg37, select.seg37,
+	input.seg50, select.seg50,
+	input.seg62, select.seg62,
+	input.seg75, select.seg75,
+	input.seg87, select.seg87{width:calc(100% - 20px);}	
+}
+@media screen and (min-width: $wwMedium){
+	.formRow {
+		input.seg25, select.seg25{width:calc(25% - 20px);max-width: 230px;}
+		input.seg37, select.seg37{width:37.5%;width:calc(37.5% - 20px);max-width: 355px;}
+		input.seg50, select.seg50{width:50%;width:calc(50% - 20px);max-width: 480px;}
+		input.seg62, select.seg62{width:62.5%;width:calc(62.5% - 20px);}
+		input.seg75, select.seg75{width:75%;width:calc(75% - 20px);}
+		input.seg87, select.seg87{width:87.5%;width:calc(87.5% - 20px);}
+	}
+}
+
+
+
+// Contact Supplier: 同時與多項產品的供應商聯絡
+.multiPdSu{margin-bottom: 24px;}
+// 同一供應商的多項產品
+.pd_SameSu {background: #fff;border: 1px solid $border-color-light; border-radius: 4px;padding: 4px 4px 0;
+	& + .pd_SameSu{margin-top: 8px;}
+	p{margin: 0;background: $bg-color-pale;color: #000;border-radius: 3px;padding:10px 8px 8px;line-height: 1.3;}
+	figure {border-bottom:1px solid $border-color-pale;overflow:hidden;margin: 0;padding:4px 0;
+		&:last-child {border-bottom:none;}
+		img{width: 60px;height: 60px;object-fit: cover;float: left;margin: 0 8px 0 0;}
+	}
+	figcaption{float: left;width: calc(100% - 68px)}
+}
+
+// Contact Supplier: 同時聯絡多個供應商
+.multiSu{margin-bottom: 24px;
+	ol{counter-reset:su;line-height: 1.4;margin: 0;padding:1em 8px;background: $bg-color-pale;border-radius: 5px;}
+	li{counter-increment:su;position: relative;list-style: none;padding: .8em .5em .6em 2.5em;margin: 0;text-indent:0;border-bottom: 1px dotted $border-color-light;
+		&:first-child{border-top: 1px dotted  $border-color-light;}
+		&:before{content: counter(su) ;position: absolute;left: 0;top: .55em;min-width:1.6em;height:1.6em;line-height: 1.7em;border-radius:1em;background:#fff;text-align: center;box-shadow: #aaa 0 0 0 1px;font-family: 'Courier New', Courier, monospace;}
+	}
+}
+@media screen and (min-width: $wwMedium){
+	.multiSu{
+		ol{padding:1em ;}
+	}
+}
+
+// Product Requested 的建議關鍵字和分類
+.sugList {display:none;position:absolute;top:auto;left:0;right: 0;max-height: 20em;border:1px solid $border-color-light;padding:4px;overflow-y:scroll;overflow-x:hidden;background:rgba(255, 255, 255, .95);box-shadow:rgba(0, 0, 0, .3) 0 2px 8px;z-index:99;margin:-5px 5px 0;
+
+	&>.smallLabel {float:right;margin: 0;padding:2px 5px;font-size:11px;height:1.25em;line-height:1.2;border-radius:2px;border: 1px solid $border-color-pale; color: $font-color-lighter;background: #fff;}
+	ul {padding:0;margin:0;line-height:1.3;}
+	li {padding:.45em 5px .35em;border-radius: 3px;cursor: pointer;
+		&:hover {background:$bg-color-pale;}
+		&+li{margin-top: 2px;}
+	}
+	ul+ul {border-top:1px solid #bbb;margin-top:2px;padding-top:2px;}
+	.smallLabel+ul li:first-child {padding-right:6em;}
+}
+[lang="ar"]{
+	.sugList>span.smallLabel {float: left;}
+	.sugList .smallLabel+ul li:first-child {padding-right:1em;padding-left: 6em;}
+} 
+
+// 日期範圍 ~ 起訖日期
+.dateRange{
+	input[type="date"], input[type="text"]{width:calc(100% - 3em)}
+}
+@media screen and (min-width: $wwSlim){
+	.dateRange{
+		input[type="date"], input[type="text"]{width: 42%}
+	}
+}
+@media screen and (min-width: $wwMedium){
+	.dateRange{
+		input[type="date"], input[type="text"]{width: 31%;max-width: 14em;}
+	}
+}
+
+//已上傳的附件
+.formRow .attachList{margin: 1.2em 0 0;
+	h4{font-size: 1em;color: $font-color;margin: 0 5px;}
+	ol{list-style: decimal;padding: 0 0 0 2em;margin: 0;}
+}
+
+
+/* 「不是機器人」檢測 */
+.formRow{
+	.captcha{margin:1em auto;width: 360px;max-width: 88vw;
+		img{width: 100%;}
+} 
+}
+

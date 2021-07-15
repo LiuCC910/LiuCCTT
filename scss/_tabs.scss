@@ -1,0 +1,126 @@
+.orderDetail.tabset{margin-top: 0;background: transparent;padding: 0;}
+// 頁籤項目tabItem分開在每段頁籤內容的上方
+.tabset{position:relative;overflow:hidden;clear: both;
+  .tabItem{position:relative;float:left;text-align:center;
+   height:2.4em;line-height:2.5em;padding:0 10px;margin:5px 0 0 4px;font-size: 1em;
+   text-overflow:ellipsis;white-space:nowrap;overflow:hidden;text-decoration:none;
+   border-radius: 6px 6px 0 0;background:$bg-color-dark;color: #e6e6e6;
+   max-width: calc(50% - 22px);
+   &:first-child{margin-left: 0;}
+   &:hover{text-decoration:none;color: #fff}
+   &.active{background: #fff;color: #000;line-height: 2.2;}
+   &.active{padding-top: 5px;margin-top: 0;}
+  }
+  .tabContent{display:none;clear:both;position:absolute;top:auto;left:0;right:0;padding: 10px;overflow:hidden;background: #fff;border-radius:0 6px 6px 6px;z-index: 9;}
+  .active + .tabContent{display:block;}
+}
+
+.tabContent .listTable{margin: 0;padding: 0; border-radius: 0;
+  caption{text-align: left;}
+  tr{padding:8px 5px;
+    &>td:first-child{border-top: none;}
+    &>td:last-child{border-bottom: none;}
+  }
+}
+
+@media screen and (min-width:$wwMedium){
+	.tabset{
+    .tabItem{font-size:1.1em;border: none;cursor: pointer;}
+  }
+  .tabContent .listTable{
+    tr{padding: 5px;}
+  }
+
+}
+
+// 另一組頁籤
+.tabs{@extend %marginSet1; margin-bottom: 0;
+  ul, li{list-style: none;margin: 0;padding: 0; line-height: 1.1;}
+  ul{overflow: hidden; font-size: 1.1em;}
+  li{position: relative; padding: 12px 16px 6px; margin: 4px 4px 0 0;  float: left; border-radius: 4px 4px 0 0;
+    background:$btn-bg1;color: #fff;overflow: hidden; cursor: pointer;
+    &::before{content: ''; position: absolute;left: 0;right: 0;top: auto; bottom: -1px; height:1px;background: none; box-shadow: rgba(0,0,0,.7) 0 2px 8px 1px;}
+    &::after{content: '';display: block; height: 3px ;margin-top: 2px; width: 0; margin-left: 50%; transition: .3s;}
+    &:hover::after{background:$hiLight2; width: 100%; margin-left: 0;}
+    &.important{ background: $hintColor1;}
+    &.active{margin-top: 0; padding-top: 13px; padding-bottom: 9px;background: #fff; color: $font-color-darker;
+      &::before{display: none;}
+      &::after{content: '';background:$hiLight2; width: auto; margin-left: 0;transition: 0;}
+    }
+    &>.warning{ display: inline-block;vertical-align: top;margin: 0; min-width: 0;}
+  }
+}
+.tabContainer{display: none; @extend %marginSet1; background: #fff;padding:20px 10px 10px; border-radius: 0 6px 6px 6px;
+  &.show{display: block;}
+  &>.noteDv{margin: 0 0 20px; background:none ; border: 2px dotted $border-color-light; font-size: 1.15em;}
+
+  .langTab{margin:5px auto 20px; 
+    &>ul{background: $bg-color-pale;}
+  }
+
+}
+
+//20201105 移到.lightbox 外。20200702 製作
+.chartSet{padding: 15px 0 40px;
+  .noteDv{margin: 0;}
+  .formLayout{ width: 100%; margin: 10px 0 15px;}
+  .chartArea{ border-top: 1px solid $border-color-light; margin-top: 15px;
+    img.fakeChart{width: 100%;}
+  }
+  h3 select{font-size: 1rem;}
+
+  // 20201222 切換圖表的元件
+  .switch{ margin: 1em 0;padding: 0;line-height: 1.1;
+    // outline: 1px dashed red;
+    ul{list-style: none;margin:4px;padding:0; display: inline-block;background: $border-color-pale; border-radius: 4px;}
+    li{display: inline-block; margin: 2px 0;padding: 0; height: 1.8em; vertical-align: middle; 
+      &+li{margin-left: 4px;}
+      a{display: block; border: none; text-decoration: none;height: 2.2em; line-height: 2.3em; padding:0 .8em;transition: .15s; color: $font-color;margin-top: -.2em;
+        &:hover{color:$btn-bg2;}
+      }
+      &.active{
+        a{background-color: $btn-bg2; color: #fff; box-shadow:$btn-bg2 0 0 0 4px; border-radius: 1px; cursor: default;}
+      }
+    }
+  }
+}
+.tabContainer .chartSet{ padding-left: 10px; padding-right: 10px;
+  .listTable{margin:15px 0; padding: 0; overflow: hidden;
+    &>table + .btnLook{margin-top: 10px; float: right;}
+  }
+}
+
+// 20210505 製作 「My Taiwantrade／VR分析」時增加
+.statisticSet{ @extend %shadowBorder; overflow: hidden;
+   border-radius: 6px; padding: 20px 15px; margin: 10px 0 10px;
+  &>h3:first-child{margin-top: .5em;}
+
+  .listTbNew, .listTable{margin:10px 0; padding: 0;
+    &>table, &>.expArea{margin:8px 0;}
+
+    
+  }
+}
+
+// 20201222 圖表圖例
+.Chartjs-legend{ list-style: none; margin: 1.5em 0; padding: 0; line-height: 1.3; text-align: center;
+  ul{list-style: none; margin: 0;padding: 0;display: inline-block; vertical-align: middle; line-height: 1.5;}
+  li{margin: 0 0 0 1.5em;padding: 0; display: inline-block;
+    &:first-child{ margin-left: 0;}
+    i{display: inline-block; width: 1.4em; height: 1.4em; vertical-align: top; margin-right: 0.3em;
+    box-shadow: rgba(0,0,0,.1) 0 0 0 2px inset; }
+  }
+  .rate{display: inline-block; margin-left: 3em; border: 1px solid $border-color-light; border-radius: 4px; padding: 0 .6em; height: 1.8em; line-height: 1.9;}
+}
+
+
+//燈箱裡的頁籤
+.lightbox{
+  .tabGroup{background: #eef1f3;padding: 20px 30px; margin: -18px 0 20px;
+    border-top: 3px solid $border-color-light;
+    .tabs,
+    .tabContainer{margin: 0;}
+  }
+}
+
+

@@ -1,0 +1,44 @@
+/* 注意事項 */
+.noteDv{clear:both;  @extend %marginSet1;padding: 1.2em 20px 1em;
+  line-height:1.6;background:#fffce6;border-radius:6px;
+  h3{margin:0 0 .3em;padding: 0;line-height:1.2;}
+  ol,
+  ul{padding-left:2em;}
+  li{margin-bottom:.6em;line-height:inherit;}
+  &>ol{list-style:decimal;}
+  &>ul{list-style:square;}
+  li ol,
+  li ul{margin:.6em 0 .4em 0;}
+  li ol{list-style:lower-latin;list-style: lower-roman}
+  li ul{list-style:disc}
+  li li{margin-bottom:.5em;}
+  p{margin:0 0 .4em;}
+  em{color:$red;font-style:normal;font-size: inherit;
+    &.gold{color: #cb8b00;}
+  }
+  b{font-weight:bold;color:#000;}
+  .hint{ color:$hintColor1;}
+}
+/* jQ效果，可收合區，顯示完整內容  20191231 修改*/
+.noteDv.expansile{padding: 0 20px;}
+.expansile{position:relative; overflow: hidden;
+  height: 6em;
+  .readAll{position: absolute; bottom: 6px;right: 10px;padding:0 .6em 0 24px;margin: 0;font-size:.8em; height:1.6em;line-height:1.6;color:#fff;border-radius:1em;transition:.2s;background-color: $hiLight2;cursor: pointer;z-index: 9;
+    &:hover{box-shadow: $hiLight2 0 0 0 2px;}
+    &:before{@include arrowBefore($width:6px, $bdWith:2px, $bdColor:#fff, $deg:225deg);position: absolute;left: 8px;top:50%;margin-top:-3px; transition:.3s;}
+  }
+  .fadeout{display: none;position:absolute;right:10px;bottom:0;top:auto;height:2.4em;width: 16em;background:linear-gradient(to right, rgba(255,252,230,0) 1%, rgba(255,252,230,1) 50%);}
+  .innerPart{padding:1em 0 3em;}
+  &::after{content: '';position: absolute; left: 10px;right: 10px; top: auto; bottom: 0; height: 2.4em;
+    background:linear-gradient(to bottom, rgba(255,252,230,0) 1%, rgba(255,252,230,1) 70%);}
+  &.partial{
+    .readAll::before{transform:rotate(45deg);margin-top: -5px;}
+    .fadeout{display: inline-block;}
+    // &::after{height: 2.4em;}
+  }
+}
+@media screen and (min-width: $wwMedium){
+  .expansile{
+    .readAll{height:1.6em;line-height:1.8;}
+  }
+}

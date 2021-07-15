@@ -1,0 +1,165 @@
+.classify{@extend %marginSet1;
+  .label{float: left; height: 2.6em; line-height: 2.6em;margin: 6px 3px 0; }
+  ul, li{list-style: none;margin: 0;padding: 0;}
+  &>ul{padding: 4px; margin-right: -10px;
+    &:after{content: ''; display: block; clear: both;}
+  }
+  &>ul>li{ float: left;line-height: 1; margin: 2px 3px 4px;padding: 0;
+    a{ display: block; height: 2.6em; line-height: 2.6em; border-radius:2em; white-space: nowrap; background: #fff;padding: 0 1em; border: none;color: $font-a-color;  transition: .2s;
+      &:hover{box-shadow:$border-color-light 0 0 0 2px;}
+    }
+    .moreFunc{ display: none;position: absolute; top: .2em; right: .2em; width: 2.2em; height: 2.2em;border-radius: 50%; cursor: pointer; background: url(../images/icon_moreFunc.png) no-repeat center center; background-size: 21px auto;
+      &:hover{background-color: $btn-bg1;}
+    }
+
+    .action{display: none; position: absolute; top: auto; right: -20px; margin-top: -2px; z-index: 99;
+      background: #fff; border-radius:20px;padding: 3px; box-shadow: rgba(0,0,0,.3) 0 0 9px;
+      li{ margin: 0;padding:0 1em;min-width:3em;cursor: pointer; height:2.4em; line-height:2.4; border-radius:20px;text-align: center;
+        &:hover{ background: $bg-color;}
+        &+li{margin-top: 2px;}
+      }
+    }
+
+    &.active{ position: relative;
+      a{background: $btn-bg2; color: #fff; box-shadow: $btn-bg1 0 0 0 2px;}
+      .moreFunc{display: block; z-index: 9;}
+      &.hasMoreFunc a{padding-right: 3em;}
+
+    } 
+    &.addNew{position: relative; width:11.8em; height: 2.6em;border-radius: 2em; white-space: nowrap; cursor: pointer; overflow: hidden;
+      &::before{content: '';position: absolute; right: 9.2em; left: 0; top: 0; bottom: 0; border-radius: 2em; background: #fff; transition: .5s;} /* 用 ::before 模擬背景*/
+      input[type="text"]{width: 8em; height: 2.2em; border: none; border-radius: 2em; position: relative; margin: .2em 0 0 -9em; transition: .5s;}
+      .add{position: absolute; top:.2em; right: auto; height:2.2em; line-height:2.2em; width:2.2em; padding:0;margin:0 0 0 .4em;border-radius:50%; background:#fff url(../images/icon_plus2.png) no-repeat center 6px;background-size: 20px;
+      
+        &:hover{background-color: $btn-bg2; background-position: center -34px;}
+      }
+      
+      // 20210429 input 內不是空字串時，hover out 不要收合
+      // &:hover{
+      //   &::before{right: 0;}
+      //   input[type="text"]{margin-left: .2em;}
+      //   .add{background-color: $btn-bg2; background-position: center -34px;}
+      // }
+      // 20210429 以加入｜移除 class name 控制收合
+      &.typing{ 
+        &::before{right: 0;}
+        input[type="text"]{margin-left: .2em;}
+      }
+    }
+  }
+
+  &+.mediaList{margin-top: -15px;}
+  
+}
+
+
+// .onListTop{display: flex; flex-flow: row wrap; align-items:center; justify-content: space-between;padding:5px 0;
+//   h3{margin: 0;padding: 0;
+//     & ~ .funcBtnGp{margin: 0;}
+//   }
+// }
+
+// // 功能圖示
+// .editThis{margin: 0; padding: 0;
+//   li{display: inline-block;margin: 3px 2px;text-align: center;
+//     a{display: block;position: relative; width: 44px; height: 44px;  border: none; border-radius: 50%; transition: .2s; cursor: pointer;
+//       // background-color: $btn-bg1; background-repeat: no-repeat;background-position: center center; 
+//       background: $btn-bg1 url(../images/icon_function.png) no-repeat 0 0; background-size: 24px auto; 
+//       &::before{content: attr(title);position: absolute; top: 0; left: 0; white-space: nowrap;
+//          font-size: .85em; text-align: center;background-color:rgba(255,255,255,.8); color: $font-color;
+//         padding: 0 2px;width: 40px;  opacity: 0; transition: .2s;
+//       }
+//       &:hover{box-shadow: $btn-bg2 0 0 0 3px; background-color: $btn-bg2;
+//         &::before{opacity: 1; top: -1.75em;}
+//       }
+//     }
+//     // &.edit a{background-image: url(../images/icon_edit.png);}
+//     // &.delete a{background-image: url(../images/icon_delete.png);}
+
+//     &.edit a{background-position: 10px -30px;}
+//     &.delete a{background-position: 10px -70px;}
+//     &.changeGroup a{background-position: 10px -230px;}
+//     &.copyLink a{background-position: 10px -190px;}
+//   }
+// }
+
+
+
+// 圖、影條列
+.mediaList{@extend %marginSet1; background: #fff; border-radius: 6px;padding:16px 16px 32px;
+  ul, li{list-style: none;}
+  &>ul, &>ul>li{margin: 0;padding: 0;}
+
+  .onListTop {border-bottom:2px solid $border-color-pale;padding:5px 0;
+    &>*{margin-left: 3px;margin-right: 3px;}
+    .ofallCheck{white-space: nowrap;}
+    .funcBtnGp{ margin-top: 0; margin-bottom: 0;
+      &:last-child{margin-right: 0;}
+    }
+    .displayMode ul{width: 82px; }
+  }
+
+
+  // 可改變瀏覽模式(array / stack)的 ul
+  .exchangeView{ margin:0 1px;
+
+    .oneMedia{ position: relative; margin: 15px 0 0;padding: 12px 8px 12px 32px;@extend %shadowBorder;
+      box-shadow: $border-color-light 0 0 4px; border-radius: 4px;
+      clear: both; overflow: hidden; 
+      .listCheck{position: absolute; left:5px; top:9px;}
+      
+      iframe, .pdImage{float: left; margin: 0 8px 0 0;}
+      iframe{width: 200px; height: 120px;}
+      .pdImage{width: 160px;height: 160px; box-shadow: $border-color-pale 0 0 0 1px;
+        img{display: block;width: 100%;height: 100%; object-fit: contain;}
+      }
+
+    
+      .mInfo{line-height: 1.3;/* width: calc(100% - 170px); */margin-left: 170px; margin-right: 170px; padding: 0;
+        // outline: 1px solid red;
+        li{ margin-bottom: .6em; 
+          &:last-child{margin-bottom: 0;}
+          .label{ margin-right: .2em;}
+          // &:last-child, &:nth-last-child(2){margin-right: 100px;}
+          &.title{color: $font-color-darker; font-size: 1.1em;}
+          &.date{position: absolute; right: 8px;top: 8px;
+            .label{display: none;}
+          }
+        }
+      }
+    }
+    .editThis{position: absolute; bottom: 6px;right: 6px;text-align: right; height: 48px;}
+
+    // ---- 矩陣（卡片）式
+    &.grid{display: flex; flex-flow: row wrap; justify-content: flex-start;
+
+      .oneMedia{flex: 0 0 calc(33.33% - 26px);margin: 15px 15px 0 0;padding: 42px 8px 56px 8px; 
+        .listCheck{position: absolute; left:5px; top: 9px;}
+        iframe, .pdImage{ margin-bottom: 10px;}
+
+        &:nth-child(3n){ margin-right: 0;}
+      }
+
+      .mInfo{ margin-left:0; margin-right: 0;
+        li{
+          &.title{position: absolute; top: 9px; left:30px; 
+            // outline: 1px solid red;
+            white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width:calc(100% - 42px);
+            .label{display: none;}
+          }
+          &.date{position: static;
+            .label{display:inline-block;}
+          }
+        }
+
+      }
+    }
+
+
+
+  }
+
+
+
+
+}

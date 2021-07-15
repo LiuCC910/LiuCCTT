@@ -1,0 +1,699 @@
+// 必填欄位星號
+abbr.required{text-decoration: none;color: $red;font-size: 1.5em;line-height: .6;}
+.textCount{text-align: right;font-size: .7em; margin-top: 3px;
+  em{color: $font-color-darker;font-size: 1.4em; margin-right: 3px;}
+}
+
+
+.arrowUpDown{display: inline-block;background:$btn-bg1;padding: 0;width: 24px;height: 24px;border-radius: 50%;border: none;margin: 3px;transition: .2s;cursor: pointer;
+  &:hover{background:$btn-bg2;box-shadow:$btn-bg2 0 0 0 2px;}
+  &:before{@include arrowBefore(6px, 2px, #fff);margin-bottom: 1px;}
+  &.closeIt:before{transform: rotate(225deg);margin-bottom:-1px;}
+}
+
+.compoundHeading{
+  em{ display: inline-block; font-weight: bold;color: #000;}
+  span{display: inline-block; margin-left: .3em; 
+    &.count{background-color: $btn-bg1; color: #fff; border-radius: 1.5em; padding: 0 .4em; height: 1.5em; line-height: 1.5;}
+  }
+}
+
+@media screen and (max-width:$wwMedium - 1){
+  .listTable{
+    td{
+      .arrowUpDown{position: absolute;bottom: 3px;left: 50%;margin-left: -20px;padding: 8px;
+        &:before{margin-bottom: 5px;}
+        &.closeIt:before{margin-bottom: 2px;}
+      }
+      // 小頭像
+      .avatar{display: inline-block;width: 32px;height: 32px;background:#cdd url(../images/icon_avatar.png) no-repeat center center;background-size:contain;vertical-align: middle;border-radius:4px;overflow: hidden; margin-right: 4px;
+        img{display: block;width: 100%;height: 100%;}
+      }
+    }
+  }
+}
+
+.linkBtn{display: inline-block;background: $btn-bg1;color: #fff;padding:.4em .6em;line-height:1.2em;text-decoration: none;border-radius: 4px;transition: .2s;border: none;
+  a{display: block;text-decoration: none;}
+  &:hover{background: $btn-bg2;box-shadow: $btn-bg2 0 0 0 2px;border-radius: 2px;color: #fff;}
+}
+
+.unreadHint{color: $hintColor1;font-size: .86em;}
+
+/*可伸縮的報價單編號*/
+.quotationNo{position:relative;display:inline-block; /* height:1.7em; */
+  &.showLightbox{display: none}
+  a{display: block;padding:0 .2em;line-height:1.8em;text-decoration:none;box-shadow:$btn-bg1 0 0 1px 1px;background:#fff;color:#000;border-radius:2px;text-align:left;transition:.25s;border: none;word-break: break-all;}
+  a:hover{box-shadow:$btn-bg2 0 0 6px 1px;}
+}
+td .quotationNo{margin-top: .1em;margin-bottom:.1em;}
+@media screen and (min-width:$wwMedium){
+  .quotationNo{height:1.7em;
+    a{height:1.7em;}
+  }
+  .quotationNo.showLightbox{display: block;}
+  .quotationNo.downloadFile{display: none;}
+  td .quotationNo a{position:absolute;left:0;top:0;width:7em;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;}
+  td .quotationNo a:hover{width:12.5em !important;}
+}
+
+/* go top and go bottom */
+.goTopBottom {position:fixed;right:5px;bottom:5px;width:32px;padding:3px;z-index:888;border-radius:4px;background: rgba(89, 119, 131, .4);
+  &:after{content:'';position:absolute;top:34px;left:5px;right:5px;height:1px;background:#fff;}
+  span{display:block;height:28px;width:100%;border-radius:2px;color:#fff;background:none;transition:.2s;text-align: center;
+    &:hover{background:$btn-bg1;box-shadow:none;}
+    &:before{content:'';display:inline-block;width:10px;height:10px;border:3px solid #fff;transform:rotate(45deg);border-bottom:none;border-right:none;}
+    &+span{margin-top:7px}
+  }
+  .goTop:before{margin-top:10px;}
+  .goBottom:before{transform:rotate(225deg);margin-top:5px;}
+}
+@media screen and (min-width:$wwMedium){
+  .goTopBottom{top: 50%;margin-top: -32px;bottom: auto;}
+}
+
+
+
+
+// 大圓角連結按鈕
+.navBtnsDv{text-align: right;@extend %marginSet2;}
+@media screen and (min-width: $wwMedium){
+  .pageHeading + .navBtnsDv{margin-top: -10px;}
+}
+
+
+.btnLook{display: inline-block;margin: 0 0 5px;font-size: .86em;padding: 2px;
+  & + .btnLook{margin-left: 5px;}
+  a{position: relative;display: block;padding: 0 16px;height: 2.3em;line-height: 2.3em;box-shadow:$border-color-dark 0 0 0 1px;border-radius: 2em;border: none;background: #fff;color: $font-color;text-align: center;white-space: nowrap; cursor: pointer; transition: .2s;  
+    &:hover{box-shadow:$border-color-dark 0 0 0 2px;border: none;}
+  }
+  // 連結無效或不可點選時
+  &.forbidden a, &.forbidden a:hover{background: $bg-color-pale;
+    ;box-shadow:$border-color-light 0 0 0 1px;color:$border-color-light;cursor: not-allowed}
+  &.back a {padding-left: 30px;
+    &:before{@include arrowBefore($width:8px, $deg:135deg);position: absolute;left: 14px;top: 50%;margin-top: -5px;transition: .1s;}
+    &:hover:before{left: 12px;}
+  }
+  &.black {
+    a:hover{box-shadow:#000 0 0 0 20px inset, $border-color-dark 0 0 0 2px; color: $hiLight1;}
+    &.restore a{color:$hiLight1;box-shadow:#000 0 0 0 20px inset, transparent 0 0 0;
+      &:hover{color: $font-color;box-shadow:#000 0 0 0 0 inset, $border-color-dark 0 0 0 2px;}
+    }
+  }
+
+
+  // 此 class name 用於 <button> 元件，非連結目的button樣式
+  .btn{background:$btn-bg1;color: #fff; height: 2.4em;line-height: 2.4em;padding: 0 10px; border-radius: 4px;font-size: inherit;cursor: pointer; transition: .2s;
+    &:hover{box-shadow: $btn-bg2 0 0 0 2px;}
+  } 
+
+  // .btnLook.closePop a,
+  &.reply a, &.rate a{padding-left: 32px;}
+  
+  /* &.closePop,  */&.reply, &.rate {
+    a:before{content: '';width: 20px;height: 20px;position: absolute;left: 8px;top: 50%;margin-top: -10px;background:url(../images/icons_func.png) no-repeat 0 0;background-size: 20px auto;}
+  }
+  &.reply a:before{background-position: 0 0;}
+  &.rate a:before{background-position: 0 -30px;}
+  // &.closePop a:before{background-position: 0 -60px; background-color: #eee;}
+
+  // 
+  &.arrowR{font-size: 1em;
+    a{ padding-right: 26px;position: relative; line-height: 2.4;
+      &::before{content: '';position: absolute;right: 15px;top: 50%;margin-top: -5px; width: 7px;height: 7px; border: 3px solid $border-color-dark; transform: rotate(45deg); border-left: none;border-bottom: none; transition: .1s;}
+      &:hover::before{ right: 13px; border-color: $btn-bg2;}
+    }
+  }
+}
+.hint + .btnLook{font-size: 1em; margin-top: .5em;}
+
+
+.mailFunc{margin:0 auto;text-align: center;}
+.aMail + .mailFunc{margin-top: 35px;}
+.mailHeader .mailFunc{text-align: right;}
+
+.mailFunc.fixBtm .btnLook a{height: 3em;line-height: 3em;}
+.mailFunc.fixBtm .btnLook a:before{left: 12px}
+
+.btnLookSmall{display: inline-block; margin: 5px auto;
+  a{display: block;background:$btn-bg2; border-radius: 4px;padding: 0 8px;height: 1.6em;line-height: 1.6;border: none;text-align: center;color: #fff;transition: .2s;
+    &:hover{box-shadow:$btn-bg2 0 0 0 2px;background: $btn-bg2;border-radius: 2px;border: none; }
+  }
+
+  &.disabled{
+    a{cursor: not-allowed;background-color: $bg-color;
+      &:hover{background-color: $bg-color;box-shadow: none;}
+    }
+  }
+}
+
+.refuse{ @extend .btnLookSmall;
+  a:before{content:attr(data-title)}
+  &.hasRefused{
+    a{background: #bbb; box-shadow: none; cursor: default;
+      &:before{content:attr(data-altitle);}
+      &:hover{border-radius: 4px;}
+    }
+  }
+}
+
+.smallBtn{display: inline-block;
+  a{display: block; height: 1.6em; line-height: 1.65;padding: 0 .5em;margin:3px 2px; border-radius: 4px; text-decoration: none; background-color: $btn-bg1;border: none;color: #fff; white-space: nowrap;cursor: pointer; transition: .15s;
+    &:hover{background-color: $btn-bg2; box-shadow:$btn-bg2 0 0 0 2px;}
+  }
+
+  &.hilight{
+    a{padding: 0 .7em; border-radius: 1em; height: 1.8em; line-height: 1.9em; background-color: $hiLight2;
+      &:hover{background-color: $hiLight2; box-shadow:$hiLight2 0 0 0 2px;}
+    }
+  }
+}
+
+.smallBtnSet{list-style: none;margin: 0;padding: 0;overflow: hidden;clear: both;line-height: 1;}
+.smallBtnSet li{float: left;padding: 0;margin: 4px 2px;}
+
+
+
+
+// 關閉燈箱或彈出訊息
+.closeThis{position: absolute;width: 36px;height: 36px;line-height: 36px;left: auto; top: 4px;right: 4px;border-radius: 50%;padding: 5px;background: rgba(0,0,0,.4);cursor: pointer;transition: .15s;
+  &:before, &:after{content: '';position: absolute;width: 22px;height: 3px;background-color:#fff;top: 50%;left: 50%;margin-top: -1px;margin-left: -11px;}
+  &:before{transform: rotate(45deg)}
+  &:after{transform: rotate(135deg)}
+  &:hover{background: #333; box-shadow: #333 0 0 0 2px;/*  border-radius: 3px; */}
+  // &:hover:before, &:hover:after{background-color: #222;}
+}
+.coverAll, .sidebarMask, .coverLightbox{background: rgba(200,200,200,.5);position: fixed;left: 0;right: 0;top: 0;bottom: 0;display: none;}
+.coverAll{z-index: 8810;}
+.sidebarMask{z-index: 8700;}
+
+
+// 彈出訊息
+.popMsg{ display: none;position: fixed;width: 90vw;max-height: calc(90vh - 75px) ;overflow-y: auto;top:8vh;left: 2vw;right: auto;padding: 25px 3vw 30px;background: #fff;border-radius: 6px;@extend %shadowWide;z-index: 8899;
+
+  h3{margin: 0 0 25px;padding: 0 0 5px; font-weight: bold;border-bottom: 3px solid $border-color-pale;}
+  em{font-weight: bold; display: inline-block; margin: 0 4px;
+    &.bigger{font-size: 1.3em;}
+  }
+
+  .label{margin: 15px 0 5px;color: #000;font-size: 1.1em;}
+
+  .image{ margin: 10px auto;
+    img{display: block; max-width: 100%; margin: 0 auto;}
+  }
+  .popBody + .btnDv{border-top: 1px solid $border-color-light;}
+  .btnDv{text-align: right;padding-top:20px;
+    .btnLook{
+      &.closePop a{min-width: 3em;}
+    }
+  }
+  &.rate .btnDv{border: none;}
+
+
+  .popBody{margin-bottom: 20px;
+    p{line-height: 1.7;}
+    ul, ol{ line-height: 1.5; margin-left: 0; padding-left: 1.6em;}
+    li + li{margin-top: 1em;}
+    li>ul, li>ol{margin-top: .8em;}
+    .ok{position: relative;padding: 15px 0 22px 56px;margin: 0;
+      &:before{content:'︎';width: 40px;height: 40px;line-height:40px;padding: 4px;;position: absolute;left: 0;top: 0;background: $bg-color-pale url(../images/ok_or_not.png) no-repeat center 4px;border-radius: 50%;color:transparent;text-align: center;background-size: 40px auto;box-shadow: #bed2c9 0 0 0 2px inset;}
+      &.not{padding-left: 0;
+        &:before{display: none}
+      }
+    }
+
+    // --------------------------------------------- 202002
+    .formLayout{
+      td:first-child{white-space: nowrap;}
+      .asAnInput{border: 1px dotted $border-color-pale; width: 90%;}
+    }
+
+    .groupName{font-size: 1.3em; border-bottom: 1px solid $border-color-light;}
+
+    .dataTable{margin: 0 auto; padding: 0; border: $border-color-pale 1px solid;
+      &:first-child{margin-top: -10px;}
+      table{width:calc(100% - 8px);margin: 2px auto;}
+      tr{border: none;
+        &+tr{border-top: 1px solid $border-color-pale;}
+      }
+    }
+    &>textarea{ width:calc( 100% - 14px); height: 8em; margin:5px 0;}
+    &>input[type="file"]{width: calc(100% - 20px);}
+  
+  }
+
+  .btnDv{
+    button, button[type="submit"], button[type="reset"], input[type="button"], input[type="submit"], input[type="reset"]{min-width: 3em;}
+  }
+}
+.lightbox .popMsg{z-index: 8920; left: 7vw; width: 80vw; top: 15vw; margin: 0;}
+@media screen and (min-width:$wwMedium){
+  .popMsg{padding: 35px 20px 30px;left:50%;top:18%;margin-left: -300px;width: 560px;max-height: calc(80% - 70px);}
+  .lightbox .popMsg{width: 560px; left: 50%;margin-left: -300px; top: 30vh;}
+}
+
+
+// ---------------------------- 2020
+// 彈出訊息框選郵遞區號
+.twZipCode{ 
+  label{display: inline-block; margin-right: .8em;}
+  .result{ height: 2.4em; line-height: 2.4em; float: right; margin: 2px 0; 
+    em{display: inline-block; width: 5em; height: 2.4em; line-height: 2.4em;border: 2px solid $border-color-dark;padding: 0 12px;border-radius: 4px;}
+  }
+}
+
+// 彈出訊息框選「語系」
+// .chooseLang{border: 1px solid #f00;}
+
+
+//公司介紹設定 
+//  影音上傳
+.videoInputSet{width: calc(90% + 20px); display: flex; flex-wrap: wrap; align-items: center;
+  input[type="text"]:first-child{flex: 0 1 100%; margin-bottom: 8px;}
+  select{flex: 0 1 auto; margin-left: 6px;}
+  select + input{ flex: 1 1 50%;}
+  // .label{ align-self: center;}
+  .buttons{flex: 0 1 100%; margin-top: 8px;}
+
+  //已上傳的影片
+  iframe{ display: block; width: 560px; height: 315px; margin: 10px 0;}
+
+}
+
+//已上傳圖片預覽和相關功能按鈕
+.previewImage{position:relative;background:#fff; 
+  // width: 100px;height: 100px;@extend %shadowBorder;
+  .removeThis{background-color:rgba(0,0,0,.65); border-radius: 0; box-shadow: none;right: 0;top: 0;
+    &:hover{background-color:$red;box-shadow: none;}
+  }
+  img{display:block;margin: 0 auto;width: 100%;height: 100%; object-fit: contain;}
+  a{display:block;border-bottom:none;}
+  .imgFilename{height:1.5em;line-height:1.5;margin:5px 5px 0; padding: 0; width: 200px; white-space:nowrap; overflow:hidden;text-overflow:ellipsis;}
+
+  .buttons{margin:30px 5px 0;
+    button{width:calc( 100% - 1.6em); display: block; margin: 5px 0;}
+  }
+}
+.previewImage.ofNews{ max-width: 360px; max-height: 360px; @extend %shadowBorder;
+  img{max-width: 360px;max-height: 360px;}
+}
+img.showLightbox{cursor: pointer;}
+
+//公司介紹設定的圖片上傳
+// 輸入匡input與按鈕button組合
+.imageInputSet{width: calc(90% + 20px);
+  input[type="text"]:first-child{width:calc(100% - 1.5em);}
+  .buttons{ margin-top:8px;}
+
+  .previewImage{ margin-left: 4px;width: 210px; padding:5px 0; margin:10px 0;box-shadow:$border-color-light 0 0 0 1px;
+    img{width: 200px;height: 200px;}
+    .removeThis{right: 5px;top: 5px;}
+  }
+
+  & ~ .hint{width: 90%; margin-top: 1.5em;
+    p{margin: 0;}
+    ol{margin-top: 0;}
+  }
+}
+
+
+.inputButtonSet{ display: flex; align-items: center;
+  input[type="text"], input[type="url"]{ flex:1 1 65%};
+  button{flex: 1 0 auto; min-width:3em; white-space: nowrap; padding-left:.3em;padding-right:.3em;}
+}
+.formLayout td .inputButtonSet{width: calc(90% + 20px);}
+
+// 模擬 <input type="file">，含檔名顯示
+.inputFileSet{display: flex;
+  .filname{@extend %textInput; margin:3px 0; flex: 1 1 auto; overflow: hidden; text-overflow: ellipsis;}
+  input[type="file"]{ width: 6em !important;position: relative; border-color: $btn-bg1;background-color:  $btn-bg1; cursor: pointer;box-shadow:none; transition: .2s; 
+    &::before{content: attr(title); background-color:  $btn-bg1; color: #fff;position: absolute;left: 0;top: 0;right: 0;bottom: 0; text-align: center;transition: .2s;}
+    &:hover{ background-color: $btn-bg2;border-color: $btn-bg2;}
+    &:hover::before{background-color:  $btn-bg2;}
+  }
+  // .preLabel{padding: 0 6px; margin: 4px 3px;height: 2.4em; line-height: 2.4; vertical-align: middle;}
+  .preLabel{margin: 3px;height: 2.4em; line-height: 2.4; vertical-align: middle;}
+}
+.formLayout td .inputFileSet{margin-left: 6px;}
+
+
+
+// 文字輸入框 + 選擇按鈕（ <input type="text"> + <button>）
+.inputAndButton{ display: flex; width: calc(90% + 20px);
+  input{ flex: 1 1 90%;}
+  button{flex: 1 0 2.5em; margin: 4px 3px 0 0;}
+
+}
+
+// 數量紀錄， 目前筆數／最多筆數
+.countdown{text-align: right; font-size: .9em;
+  em{ display: inline-block; font-size: 1.2em; color: $font-color-darker; font-weight: bold;}
+}
+.page + .countdown{text-align: left; margin-top: 10px; margin-bottom: 10px;}
+
+// textArea 輸入文字計算
+.letterCount{font-size: .6em;text-align: right;display: block;color: $font-color-lighter;
+  em{font-size: 1.5em;font-weight: bold;color: #000;}
+}
+.formLayout .letterCount{width:calc(90% + 15px);}
+
+// on / off 圖像
+.switchOnOff{ display: inline-block;position: relative;font-size: 14px; font-weight: bold;
+  width: 64px; height: 32px; line-height: 32px; border-radius: 20px;
+  // border: 2px solid $border-color-light; 
+  background: $btn-bg1;color: #fff; 
+  // box-shadow:rgba(0,0,0,.35) 0 0 6px inset;
+  &::before{content: '';position: absolute;left: 3px;top: 3px;width: 26px;height: 26px;background:#fff; border-radius: 50%;
+     z-index: 2; cursor: pointer;transition: left .12s linear;
+    // box-shadow:$btn-bg1 0 0 3px inset, rgba(0,0,0,.3) 0 0 3px 1px;
+    }
+  &::after{content: 'Off'; position: absolute; right: 8px;}
+  &.on{ background: #3a0;
+    &::before{left: 36px;}
+    &::after{content: 'On'; left: 9px;right: auto;}
+  }
+
+}
+
+// on / off 項目
+.onOffItems{
+  ul{list-style: none; margin: 0;padding: 0; overflow: hidden;}
+  li{padding: 0; margin: 0 1.5em .6em 3px; float: left;
+    // outline: orangered 1px solid;
+    // li{margin:0 1.5em 1em 0; }
+    &>*{ vertical-align: middle;}
+    .switchOnOff{margin-left: 3px;}
+  }
+}
+.formLayout td .onOffItems{margin-top: 6px; margin-left: 4px;}
+
+
+
+//---------------------------- 2020 end
+
+//
+.changeGroup{margin-bottom: 20px; display: flex; align-items: center;
+  label{ white-space: nowrap; margin-right: .5em;}
+  select{flex: 1 1 40%;}
+}
+
+// 評分（星星）
+.gotPoint{overflow: hidden;padding: 0;
+  .point{float: left;width: 16px;height: 16px;background:url(../images/icon_score.png) no-repeat 0 0;background-size: 16px;margin:2px;padding: 0;}
+  .point.scored{background-position: 0 -20px;}
+}
+
+.rateThis{overflow: hidden;padding: 3px;margin: 10px auto 5px;
+  .point{float: left;width: 32px;height: 32px;background:url(../images/icon_score.png) no-repeat 0 0;background-size: 32px;margin:0;padding: 0 6px 0 0;cursor: pointer;
+    &:hover,
+    &.scored{background-position:0 -40px;}
+  }
+  & + input[type="text"]{width:calc(100% - 14px);margin: 0 0 5px;}
+}
+
+// 重新評分
+.reRate {position: relative;
+  .btnLook{position: absolute;top: 0;right: 0;}
+  .myRating{padding: 8px 0 0;
+    .gotPoint{
+      .point{background-position: 0 0;}
+      .point.scored{background-position: 0 -20px;}
+    }
+    .andComment{clear: both;height: 1.5em;line-height: 1.5;white-space: nowrap;overflow: hidden; text-overflow: ellipsis;
+      &:empty{display: none}
+    }
+  }
+}
+
+@media screen and (min-width: $wwMedium){
+  .reRate{padding-top: 5px;
+    .myRating{position: relative;padding: 0;
+      .gotPoint{float: left;margin-top: 0;margin-right:5px;}
+      .andComment{display: inline-block;width:calc(100% - 186px);white-space: nowrap;text-overflow: ellipsis;overflow: hidden;vertical-align: top;margin:1px 0;
+      }
+    }
+  }
+}
+
+
+
+
+
+// 提示、說明文字
+.hint, .tips{font-size: .92em;color:  $hintColor1;margin: 2px 0 0 3px; line-height: 1.5;
+  em{display: inline-block;color: #000;margin: 0 3px;}
+}
+
+p.tips{margin: 0 0 .7em;}
+.emp{color: $hintColor1}
+.uploadFile + .hint{margin-top: .5em;}
+.note{padding:0 0 0 1.2em;line-height: 1.5;
+  &:before{content: '❖';display: inline-block;width: 1.2em;margin-left: -1.2em;}
+  em{color: $red;}
+}
+.formLayout td .tips{margin-top: 8px;}
+
+// 表單填寫不正確時的提示訊息
+.warning, .notice{ color: $red; min-width: 80px; display: none; position: relative; padding:1px 0 1px 28px;margin: 7px 0; line-height: 1.3;
+  &::before{position: absolute;left: 4px;top: 0; content: ''; width: 22px; height: 20px; background:url(../images/hint_stop-pass.png) no-repeat center 0; background-size: 21px;}
+  em{font-weight: bold; display: inline-block;margin: 0 3px; }
+}
+.notice{ color: #dd4e0c;
+  &::before{background-position: center -40px;}
+}
+.stress{ color: $red;}
+
+// 較大塊的文字提示，例如：「目前無任何資料。點選『新增』立即新增」，初建於「首頁資料設定」
+.hintMessage{ font-size: 1.2em;line-height: 1.5; text-align: center; border: 1px dashed $border-color-light; border-radius: 8px;padding:20px; width: 80%; margin: 15px auto;}
+
+.main>.note{@extend %marginSet2;}
+/* 表單前的說明文字 */
+.preHeader{@extend %marginSet1;font-size: 1.25em;}
+
+
+
+// 分隔 inline 或 inline-block 文字
+.delimit{display: inline-block;}
+.delimit + .delimit{margin-left: 1em;}
+
+
+
+
+// slide up / down 控制元件
+.toggleCtrl{position: relative;display: inline-block;padding: 0 34px 0 10px;margin: 0; height: 2.25em;line-height: 2.3em;border-radius: 4px;color: $font-color;transition: .1s;cursor: pointer;background: #fff;}
+.toggleCtrl:hover{background:$bg-color; color: $font-color-darker; box-shadow: none;}
+.toggleCtrl:before{@include arrowBefore(9px);position: absolute;right:12px;top:50%;margin-top: -8px;}
+.toggleCtrl.closeIt:before{transform: rotate(225deg);margin-top: -2px;}
+
+// remove icon
+.removeThis{position: absolute; right: 4px;top: 4px;width: 28px;height: 28px;background: rgba(0,0,0,.3);border-radius: 50%; transition: .15s;cursor: pointer;
+  &:before, &:after{content: '';position: absolute;width:16px;height: 2px;border-radius: 2px;background: #fff; left: 50%;top: 50%;margin-top: -1px;margin-left: -8px;transform: rotate(45deg);}
+  &:after{transform: rotate(135deg);}
+  &:hover{/* background: rgba(0,0,0,.7); box-shadow: #fff 0 0 0 2px;*/ background-color: $btn-bg2; box-shadow: $btn-bg2 0 0 0 2px;}
+}
+
+// delete icon （ficon: function icon , 帶有功能的圖示，例如「編輯」「刪除」...）
+.ficon{display: inline-block; vertical-align: middle;
+  a{display: block;margin: 0 auto;position: relative; width: 44px; height: 44px; text-align: center; border: none; border-radius: 50%; transition: .2s; cursor: pointer;background: $btn-bg1 url(../images/icon_function.png) no-repeat center 0; background-size: 24px auto; 
+    &::before{content: attr(title);position: absolute; top: 0; left: 0; white-space: nowrap; border-radius: 3px;
+       font-size: .85em; text-align: center;background-color:rgba(255,255,255,.8); color: $font-color;
+      padding: 0 2px;width: 40px; opacity: 0; transition: .2s;
+    }
+    &:hover{box-shadow: $btn-bg2 0 0 0 3px; background-color: $btn-bg2;
+      &::before{opacity: 1; top: -1.75em;}
+    }
+  }
+  &.add a{background-position: center 10px;}
+  &.edit a{background-position: center -30px;}
+  &.delete a, &.remove a{background-position: center -70px;}
+  &.file a{background-position: center -110px;}
+  &.duplicate a{background-position: center -150px;}
+  &.copyLink a{background-position: center -190px;}
+  &.changeGroup a{background-position: center -230px;}
+  &.changeOrder a{background-position: center -270px;}
+  &.preview a{background-position: center -310px;}
+  // a{display: block; 
+  //   width: 44px;height: 44px;  background-color: $btn-bg1; background-repeat: no-repeat; background-position: center center; background-size: 24px; border: none; border-radius: 50%; transition: .2s; cursor: pointer;
+  //   &:hover{box-shadow: $btn-bg2 0 0 0 3px; background-color: $btn-bg2 ;}
+  // }
+  // &.delete a{ background-image: url(../images/icon_delete.png);}
+  // &.preview a{ background-image: url(../images/icon_preview2.png);}
+  // &.file a{ background-image: url(../images/icon_preview2.png);}
+
+}
+
+
+
+// i 圓形圖示
+.infoAndHelp{display: inline-block;width:32px;height:32px;margin:0 3px 6px 0;vertical-align: middle;
+  &>a{display:block;height:100%;border-radius:50%;background:#788 url(../images/icon_info.png) no-repeat center center;background-size:75%;transition:.2s;border-bottom: none; color: #000;
+    &:hover{box-shadow:$hiLight2 0 0 0 2px;background-color:$hiLight2;}
+  }
+}
+// .infoAndHelp + *{clear:both;}
+// .path + .infoAndHelp{margin:-16px 3px 6px 0}
+
+
+.funcBtn_add{ display: inline-block; 
+  a{position: relative; display: block;height: 40px; line-height: 40px; padding: 2px 12px 2px 46px; border: none; text-decoration: none;
+     box-shadow:$border-color-light 0 0 0 1px ; border-radius: 24px; cursor: pointer; transition: .2s;
+    &::before{content: '';height: 40px;width: 40px;position: absolute; left: 2px;top: 2px;border-radius: 50%;
+      background: $btn-bg1 url(../images/icon_plus2.png) no-repeat center -30px;background-size: 20px auto;transition: .2s;}
+    &:hover{ background-color: $btn-bg2; color: #fff;box-shadow:$btn-bg2 0 0 0 2px;
+      &::before{background-color: $hiLight2;}
+    }
+  }
+}
+
+// ---------------searchOnTop
+.searchOnTop{@extend %marginSet2;position: relative;background: #fff;border-radius:30px;padding: 4px;
+  input{font-size: 1em;vertical-align: top;}
+  input[type="text"]{height:32px;line-height:32px;border-radius:30px;padding:0 9px;margin: 0;border: none;width:calc(100% - 54px);
+    &:focus{box-shadow:$btn-bg1 0 0 0 1px;background: $bg-color-pale;}
+  }
+  &:hover input[type="text"]{background: $bg-color-pale;}
+  input[type="submit"],
+  input[type="button"],
+  input[type="reset"]{position: absolute;right: 4px;top: 4px;bottom: 4px; border-radius:30px;
+    ;width:0;margin: 0;padding:0 0 0 32px;height: auto;background:$btn-bg1 url(../images/icon_searchClose.png) no-repeat -24px 5px; background-size: 50px;border: none;}
+  input[type="reset"]{padding-left: 28px;height: 28px;top: 50%;margin-top: -14px;right: 42px;background-size: 36px;background-position: 7px -14px;background-color:transparent;opacity: .6;
+    &:hover{opacity: 1;background-color: #fff;box-shadow: none}
+  }
+}
+.navBtnsDv + .searchOnTop{width:calc(96vw - 9em);margin: -50px auto 12px 2vw;}
+.searchOnTop + .page{margin-top: 15px;}
+@media screen and (min-width: $wwMedium){
+  .navBtnsDv + .searchOnTop{width:72%;margin-top: -44px;margin-bottom: 10px;}
+}
+@media screen and (min-width: $wwWide){
+  .navBtnsDv + .searchOnTop{margin-left:20px;}
+}
+
+
+// 鈴鐺圖示
+.alertThis{position: relative;width:26px;height:26px;display: inline-block;vertical-align: middle;border-radius: 50%;background: $red url(../images/icon_alertOnOff.png) no-repeat center center;background-size: 16px;overflow: hidden;cursor: pointer;
+  &:hover{background-color:#f12;}
+  &.off{background-color:$bg-color;
+    &:before{content: '';position: absolute;width: 1px;height: 28px;left:50%;top:0;margin-left:-2px; transform: rotate(45deg);background: #fff;}
+    &:hover{background-color:$btn-bg2;}
+  }
+  &.disabled{cursor: not-allowed;
+    &:hover,  &.off:hover{background-color:$bg-color}
+  }
+}
+@media screen and (min-width: $wwWide){
+  .alertThis{width:24px;height:24px;}
+}
+.alertLabel{position: relative;width:26px;height:26px;display: inline-block;vertical-align: middle;border-radius: 50%;background: $red url(../images/icon_alertOnOff.png) no-repeat center center;background-size: 16px;overflow: hidden;
+  &.off{background-color:$bg-color;
+    &:before{content: '';position: absolute;width: 1px;height: 28px;left:50%;top:0;margin-left:-2px; transform: rotate(45deg);background: #fff;}
+  }
+}
+
+// hover 顯示提示文字小標
+.hoverHint{display: none;
+  position: relative;padding: 0;width: 1.8em;height: 1.8em;
+  border-radius: 50%;vertical-align: middle;margin: 0 2px;background: $bg-color;color: $font-color;
+  &:before{content: 'i';position: absolute;left: 0;right: 0;top: 0;line-height:1.3;font-size: 1.3em;vertical-align: middle;padding: 0;font-family: 'Times New Roman', Times, serif;}
+  &:hover{background: $btn-bg2;color: #fff;}
+}
+.black.restore + .hoverHint{display: inline-block;}
+@media screen and (min-width: $wwWide){
+  .hoverHint{display: inline-block;width: 1.3em;height: 1.3em;
+    &:before{line-height: 1.3;font-size: 1em;}
+  }
+}
+
+
+
+.backToNav {display: inline-block;width:32px;height: 32px;padding:3px;z-index:999;border-radius:50%;background: rgba(89, 119, 131, .5);cursor: pointer; transition: .2s;
+  &:before{content:'';display:block;width:10px;height:10px;border:3px solid #fff;transform:rotate(45deg);border-bottom:none;border-right:none;margin: 12px auto 0;}
+  &:hover{background: $btn-bg2; box-shadow:  $btn-bg2 0 0 0 2px;}
+}
+
+//  免運費圖示
+.product-freeshipping {display: inline-block;padding-left: 22px;line-height: 20px;height: 20px;margin-right: 8px;vertical-align: middle;background: url(../images/icon_shipping2.png) no-repeat 0 0;background-size: 20px auto;}
+
+//折扣圖示
+.discount {display: inline-block;padding: 0 4px 0 3px;height: 20px;line-height: 20px;font-size: 18px;color: #fff;background: $red;position: relative;vertical-align: middle;margin-right: 10px;
+  &::before{content: "";position: absolute;right: -5px;top: 0;width: 0;height: 0;border-style: solid;border-width: 10px 0 10px 5px;border-color: transparent transparent transparent $red;}
+  &::after{content: "% off";display: inline-block;font-size: 12px; line-height: .9; transform: scale(.75);width:10px;vertical-align: top;text-align: right;}
+}
+
+
+
+
+
+.more{ text-align: right;
+  a{position: relative;;display: inline-block; padding-right: 12px;border: none;
+    &:after{content: '';position: absolute;right: 3px;top: 50%;margin-top: -3px;width: 6px;height: 6px; border:2px solid $border-color-dark;transform: rotate(45deg); border-left: none;border-bottom: none; margin-right: 1px;transition: .2s;}
+    &:hover:after{right: 1px; border-color: $hiLight2;}
+  }
+}
+
+
+// 拖移改變次序
+.dragStick{display: inline-block;width:44px;height: 44px;background:$bg-color-pale  url(../images/icon_dragSticker.png) no-repeat center center; cursor:grab ; background-size: 16px auto; border-radius: 4px; transition: .2s;
+  &:hover{box-shadow: rgba(0,0,0,.3) 0 1px 4px; background-color: #fff;}
+  &:active{cursor: grabbing;}
+}
+@media screen and (min-width: $wwMedium){
+  .dragStick{width:32px;height: 32px;}
+}
+
+
+// ------------------------------------2020
+
+// 前後移動順序
+.shiftOrder{text-align:center;width: 30px;transition: .2s;
+  .up, .down{display:inline-block;width:26px; height:26px; background:#fff;border-radius:3px;box-shadow:$btn-bg1 0 0 3px; cursor:pointer;
+    &::before{content:'';display:inline-block;width:0;height:0; margin-top:9px; border-style:solid;border-width:9px 6px 0 6px;border-color:$btn-bg1 transparent transparent;}
+    &:hover{box-shadow:#fff 0 0 0 2px; background:$btn-bg2;
+      &::before{border-top-color:$hiLight1;}
+    }
+  }
+  .up{
+    &::before{ transform:rotate(180deg); margin-top:8px;}
+  }
+  .down:nth-child(2){ margin-top:4px;}
+}
+
+// icon_? 小圖示
+// i 圖示
+.icon_i{position: relative;display: inline-block;width:0;border-radius: 1.8em; height:1.8em; font-size: 1rem; line-height:1.8;padding: 0 0 0 1.8em;margin: 0; color: $font-ahover-color; background:$bg-color ;overflow: hidden;vertical-align: middle; transition: .3s; cursor: pointer; border: none;
+  &::before{content: 'i';position: absolute;left:.55em;top:2px; text-align: center; font-weight: normal;
+    height: 1em; line-height: 1.1; border-radius: 2em;
+    font-size: 20px; font-style: italic;font-family: 'Times New Roman', Times, serif;}
+  &::after{content: attr(title);display: inline-block; margin-left: 2px; vertical-align: middle;}
+  &:hover{background:$font-ahover-color; color: #fff;}
+
+  &[title]:hover{width: 4.8em;}
+
+  // 有時候裡面有連結
+  a{position: absolute;left: 0; width: 1.8em; height: 100%; border: none; text-decoration: none;}
+}
+.formX>.icon_i:first-child{position: absolute; right: 20px; top:10px;}
+fieldset legend > .icon_i{margin-left: 5px;}
+
+
+// 放大圖示
+.icon_enlarge{display: inline-block;width: 32px;height: 32px;border-radius: 4px;
+  background:rgba(0,0,0,.55) url(../images/icon_enlarge.png) no-repeat center center; background-size: 24px; transition: .2s;
+
+  &:hover{background-color: $hiLight2; box-shadow: $hiLight2 0 0 0 2px;}
+
+  a{display: block; width: 100%;height: 100%; border: none; text-decoration: none;}
+}
+// 清除圖示 clear
+.icon_clear{position: relative;display: inline-block;width: 28px;height: 28px;
+  border-radius: 4px; cursor: pointer;opacity: .6;
+  &:hover{background-color: $bg-color; opacity: 1;}
+  &::before, &::after{content: ''; position: absolute; width: 16px; height: 2px; background: $btn-bg2; left: 50%; top: 50%; margin-left: -8px; margin-top: -1px;}
+  &::before{transform:rotate(45deg);}
+  &::after{ transform: rotate(135deg);}
+
+}
+
+// 必填未填提示訊息
+.errorMsg{position: relative;  display: inline-block; color: $red; min-width: 80px; }
+textarea + .errorMsg{ display: block;}

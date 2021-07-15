@@ -1,0 +1,62 @@
+/* 商品分類三層選單 */
+.multiCategory{
+  .inputAndBtns{display: flex; flex-flow: row nowrap;
+    input[type="text"]{flex: 1 1 88%; margin-right: 0;
+      &[readonly]:hover{border-color:$btn-bg1}
+      // &[readonly]:focus{box-shadow: $btn-bg1 0 0 0 1px;}
+    }
+    button{ flex:0 1 6%; white-space: nowrap; vertical-align: top;margin: 4px 0 0 5px;}
+  }
+
+  .cateSelect{display:none;margin:0 0 5px;border:1px solid $border-color-light;width:100% !important;
+    background:#fff;box-shadow:rgba(0,0,0,.3) 0 2px 8px;
+  }
+  .cateSearch{display: flex; flex-flow: row nowrap; margin:10px 8px;
+    &>*{vertical-align: middle;}
+    .label{display: inline-block; flex:1 1 5%; min-width: 4em; height: 2.7em;line-height: 2.7em;}
+    input[type="text"]{flex:1 1 90%;}
+    input[type="submit"], input[type="button"], button{ flex:1 1 5%; min-width: 2em; margin: 3px;}
+  }
+  .cateList{position:relative;overflow:hidden;height:24em;background:$bg-color-pale; border-top: 1px solid $border-color-light;
+    ul{position:absolute;top:0;bottom:0;background:#fff;overflow-x:hidden;overflow-y:auto;width:40%;box-shadow:rgba(0,0,0,.25) -1px 0 6px;margin:0;padding:0;list-style:none;
+      &:nth-child(1){border-left:none;}
+      &:nth-child(2){display:none;left:40%;border-right:1px solid $border-color-light;}
+      &:nth-child(3){display:none;left:60%;border:none;margin-left:-1px;right:0;width:auto;}
+    }
+    li{padding:.5em 1em .4em;line-height:1.3;
+      &:hover{background:$bg-color;}
+      &.selected{background:#333;color:#fff;}
+    }
+
+    // 20210407 關鍵字查詢的結果「產業別」
+    &.bySearch{
+      ul{width: 100%; box-shadow: none;}
+    }
+  }
+  button{background:$hiLight2;color: #fff;
+    &:hover{box-shadow: $hiLight2 0 0 0 2px;}
+    &.cancel{background: $btn-bg1;
+      &:hover{box-shadow:  $btn-bg1 0 0 0 2px;}
+    }
+  }
+}
+
+
+// 20201201 產品型錄設定/1 設定系統資訊/產業別 - 最近使用的產業別
+.cateInUse{ margin: 1em 0 .5em .5em;padding: 0; line-height: 1.3;
+  p{margin: 0;padding: 0 0 .2em; border-bottom: 2px solid $border-color-pale;}
+  ul{list-style: none; margin: 0;padding: 0;}
+  li{padding: .4em 0 .5em 1.2em; margin: 0 0 2px 0; cursor: pointer;position: relative; 
+    border-bottom: 1px solid $border-color-pale;
+    &::before{content: ''; position: absolute; left: 2px;top: .85em;
+      width: 7px; height: 7px; background: $btn-bg1;}
+  &:hover{border-bottom-color:$border-color-light;}
+  // &:active{box-shadow:$border-color-light 0 0 0 2px;}
+  }
+}
+
+// @media screen and (max-width: $wwMedium){
+//   .multiCategory{
+//     input{display: block;width:calc(100% - 20px) }
+//   }
+// }

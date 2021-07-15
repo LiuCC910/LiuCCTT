@@ -1,0 +1,498 @@
+.sortingTh{display: inline-block; min-width: 2em; position: relative;padding: 0 21px 0 5px; cursor: pointer;
+  &:hover{color: #000;}
+  &::before, &::after{content: '';position: absolute;right: 5px;top:50%;  border-style: solid;}
+  &::before{border-width: 0 6px 6px 6px;border-color:transparent transparent $bg-color transparent;margin-top: -7px;}
+  &::after{border-width: 6px 6px 0 6px;border-color:$bg-color transparent transparent  transparent;margin-top: 1px;}
+  &.descending{
+    &::before{border-bottom-color: $bg-color;}
+    &::after{border-top-color:$hiLight2;}
+  }
+  &.ascending{
+    &::before{border-bottom-color:$hiLight2;}
+    &::after{border-top-color: $bg-color;}
+  }
+}
+
+
+// ---------------------------------------------- listTable   
+.listTable{ @extend %marginSet1;padding:9px;background: #fff;border-radius:6px;
+  h3{margin: 0;padding: 0;}
+  .funcBtnGp{ margin-right: 0;
+    &>ul{ float: right;}
+    &+table{margin-top:6px;}
+  }
+  table{ clear: both; width:auto; margin: 5px auto; border: 2px solid $border-color-dark;background: #fff;}
+  caption{padding: 0 0 .4em;font-size: 1.25em; color: $font-color-darker;}
+
+  tr:hover,
+  tr:hover + tr.hiddenRow{background: $hover-bg-color;}
+  th, td{padding:.6em .7em .5em;vertical-align: middle;border: 1px solid $border-color-pale;border-bottom-color: $border-color-light;word-break: break-word;}
+  th{background: $bg-color-pale; vertical-align: middle;
+    &.changeOrder{width: 4em;}
+    .ofallCheck{white-space: nowrap;}
+  }
+  th, td {
+    .listCheck:only-child{display: block; width: 22px; margin: 0 auto;}
+    //20210112
+    // &.listNumb{ width: 1.5em; text-align: center;} 20210114 以 .rowOrder 取代
+  }
+  &.hasThumbImg{
+    td{vertical-align: middle; text-align: center; padding-top: 7px;padding-bottom: 7px;}
+  }
+  &.hasEmbVideo{
+    td{vertical-align: middle; text-align: center; padding-top: 7px;padding-bottom: 7px;
+      iframe{width: 265px;margin: 0 auto; display: block;}
+    }
+  }
+  // 查無資料
+  .noMatch{position: relative;padding:1em .8em;font-size:1.1em;border-radius:6px;line-height: 1.5;background: #fff;  }
+
+  td{
+    iframe{border: none; width: 320px; height: 200px;}
+    .ficon{vertical-align: middle;}
+    .ficon:only-child{display:block;}
+    // .editThis{text-align: center;}
+
+    &>abbr{display: block; text-align: center;}
+  }
+  abbr{text-decoration: none;}
+
+
+  // 20210111
+  &.noBorder{
+    table{ border: none;}
+    th, td{ border: none;}
+  }
+  .summary{font-size: 1.3em; background-color: $bg-color-pale;}
+
+
+  &.noCheckAll{
+    th .listCheck.checkAll{display: none;}
+  }
+
+
+
+}
+
+.search.toggleDrawer.hidden + .listTable .noMatch{margin-top:  2em;}
+
+// .listTable .hiddenRow>td{padding:0;}
+// .hiddenRow,
+// .hiddenRow .drawer{display: none;}
+// .hiddenRow td table{margin: 12px auto 12px 40px;width: 95%; width:calc(100% - 52px) ;background: #fff;}
+// .rwdTable td.forController{vertical-align: middle;text-align: center;width:40px;padding: 0;}
+
+
+.formLayout td>.listTable{ //20210126
+  padding: 0; margin: 3px; width:calc(90% + 14px);
+}
+
+@media screen and (min-width:$wwMedium){
+  .listTable{padding: 16px;
+    table{width: 100%}
+
+    .onListTop + table caption{ text-align: left;}
+
+
+    .noMatch{margin:-8px;
+      &:before{background-position: center -39px;}
+    }
+
+  }
+  .sortByTh{display: inline-block;position: relative;padding-right: 15px;cursor: pointer;padding: .4em 16px .4em 0;margin: -.4em 0 -.4em 0;
+    &:after{content: '';position: absolute;right: 0;top: 50%;margin-top: -3px;width: 0;height: 0;box-sizing: content-box;border-style: solid;border-width: 7px 6px 0 6px;border-color: $border-color-light transparent transparent transparent;transition: .4s;}
+    &.ascend:after{transform: rotate(180deg);}
+    &:hover{color:#000;}
+    &.activated:after{border-top-color:$hintColor1}
+  }
+
+}
+
+@media screen and (max-width:$wwMedium - 1){
+  // .hiddenRow td table{display: block;width:auto;margin: 0 auto;background: transparent;border: none;
+  //   tbody{display: block;}
+  //   tr{border-radius: 5px;border: none}
+  //   td:first-child{border-top: 1px solid $border-color-light;}
+  // }
+
+  .listTable{margin-left: 0;margin-right: 0;
+    table{width: 100%;border: none;background: transparent;}
+    td time + .unread,
+    td time + .linkBtn{margin-top: 0;}
+    // tr.hiddenRow{display: none;
+    //   &>td{border-bottom: none;position: static}
+    //   &>td:before,
+    //   &>td:after{display: none}
+    //   .drawer{padding:12px;background: #909ea2;box-shadow: rgba(0,0,0,.3) 0 0 5px inset}
+    // }
+  }
+
+  table.rwdTable{
+    thead{display: none}
+    tr, th, td{display: block;margin: 0;}
+    tr{margin-top: 9px;padding:20px 10px;background: #fff;border: 1px solid $border-color-light;
+      &.hasHiddenRow{position: relative;padding-bottom: 52px;}
+      &:first-child{margin-top: 0;}
+      // &.hiddenRow{border: none;margin:0;padding: 0;}
+    }
+    td{position: relative;border: none;border-bottom: 1px solid $border-color-light;padding-left: 6em;padding-right: 3px;
+      &:first-child{border-top: 1px solid $border-color-light;}
+      &:empty{display: none;}
+      &::before{content:attr(data-title);display:inline-block; color:#555;font-size: .8em;width: 7.2em;height: 100%;line-height: 1.6;margin:0 0 .2em -7.2em;}
+      &:after{content: '';position: absolute;left: 5.5em;top: 2px;bottom: 2px;width: 1px;background: #ccc;}
+      &.forController{padding: 0;position: static;height: 0;width: auto;border: none;
+        &+td{border-top: 1px solid $border-color-light;}
+      }
+      &.forController::after{display: none}
+    }
+    // .hiddenRow>td:first-child{border-top: none;}
+  } 
+}
+
+
+
+// 回覆函範本列表
+
+
+
+
+
+// 商機報名紀錄
+.applyList{  @extend %marginSet1; padding: 0;
+
+  ul{margin: 0;padding: 0;list-style: none;line-height: 1.3;}
+  li{clear: both;margin: 2px 0 10px;
+    &.head{display: none;}
+    span{display: block;padding: .5em 0;
+      &:before{content: attr(data-title)'：';display: inline-block;color:$font-color-lighter;font-size: .85em;}
+      &.buyer,
+      &.subject{border-bottom: 1px solid $border-color-pale;}
+      &.expired{width: 49%;float: left;color:$font-color;}
+      &.status{width: 49%;float: right;text-align: right;
+        &.done{color:$hintColor1;}
+        &.canceled{color: $font-color-lighter;}
+      }
+    }
+    a{display: block;overflow: hidden;border: none;background: #fff;border-radius: 4px;padding: 4px 8px;box-shadow: rgba(0,0,0,.3) 0 0 3px;transition: .3s;
+      &:hover{box-shadow: $hiLight1 0 0 0 3px, rgba(0,0,0,.5) 0 0 8px 2px;
+      }
+    }
+  }
+}
+@media screen and (min-width: $wwMedium){
+  .applyList{padding:6px 12px 16px;background: #fff; border-radius: 6px;
+    li{border-bottom: 1px solid $border-color-pale;margin: 0;
+      &.head{display: block;overflow: hidden;text-align: center;border-bottom: 2px solid $border-color-dark;font-weight: bold;}
+      a{background:none; border-radius: 0;box-shadow: none;padding: 0;margin: 0; 
+        &:hover{box-shadow: rgba(0,0,0,.3) 0 0 5px 1px;position: relative;z-index: 99;}
+      }
+      span{float: left;padding: .8em 0 .5em;margin: 0 1%;
+        &:before{display: none;}
+        &.buyer{width: 20%;border: none;}
+        &.subject{width: 50%;border: none;}
+        &.expired{width: 11%;text-align: center;float: left;}
+        &.status{width: 11%;text-align: center;}
+      }
+    }
+  }
+}
+
+
+
+// hover 可展開的報價單號碼
+// 20210322：取消 hover 可展開報價單號碼
+td .quotaNo{display: block; word-break: break-all; text-align: left;
+  a{ display: inline-block; padding:4px 3px 2px; border: none; box-shadow: $border-color-pale 0 0 0 1px; border-radius: 3px; background-color: #fff; transition: .15s;
+    &:hover{box-shadow:$font-ahover-color 0 0 0 1px;}
+    &.showLightbox{ box-shadow: $border-color-light 0 0 0 2px; cursor: pointer;
+      &:hover{box-shadow: $border-color-dark 0 0 0 2px;}
+    } 
+  }
+}
+
+
+.listTbNew{@extend %marginSet1;background: #fff;padding:10px;border-radius: 6px;
+  h3{margin: 0;padding: 0;
+    &:first-child{padding-top: 10px; padding-bottom: 8px;}
+  }
+  &>.funcBtnGp{margin: 0;
+    ul{float: right;padding: 0;}
+  }
+
+  table{width:100%;margin:0 auto 20px;line-height: 1.3; border-collapse: collapse;}
+  tr{border-bottom: 1px solid $border-color-pale;
+    &:first-child th{border-bottom: 2px solid $border-color-dark;
+      &:hover{background: #fff;}
+    }
+    &:last-child{border-bottom: 2px solid $border-color-pale;}
+  }
+  tr:hover{background:$bg-color-pale;
+    .dragStick{background-color: #fff;}
+  }
+  th, td{padding:.8em .5em .5em;vertical-align: top;word-break: break-word;text-align: center;}
+  
+  &.vam{// vam : vertical align middle
+    th, td{vertical-align: middle;padding:.5em;}
+  }
+  th{background: #fff; vertical-align: middle;}
+  .summary{font-size: 1.3em;}
+  tfoot > tr:first-child{border-top: none;}
+
+
+  // 20210504 主列與隱藏列
+  .drawerTable{border-bottom: 1px solid $border-color-dark;}
+  tr.SumRow{ font-weight: bold; font-size: 1.1em; border-top: 1px solid $border-color-light; border-bottom: none;
+    .handle{display: block;position: relative; margin: -.5em 0; padding: .5em 20px .5em 0; cursor: pointer;
+      &::after{content: ''; position: absolute; right: 0; top: 10px; width: 8px;height: 8px; border:2px solid $btn-bg2; transform: rotate(45deg); border-left: none; border-top: none; transition: .2s;}
+    }
+    &.ctc{ //ctc: click to close
+      .handle::after{transform: rotate(225deg); top: 15px;}
+    }
+  }
+  tr.subRow{ display: none; border-top: 1px solid $border-color-pale; border-bottom: none;
+    &>td:first-child{ border-top: 1px solid transparent;}
+  }
+}
+
+// 用於「我的提醒」（儀表板）頁籤內
+.chartSet{
+  &>.listTable, &>.listTbNew{ margin-left: 0; margin-right: 0;
+    tbody{
+      td:first-child{white-space: nowrap;}
+    }
+  }
+} 
+
+.listTable , .listTbNew {
+  .caption{display: block;margin: 0 0 4px;font-size: 1.2em; line-height: 1.3;}
+  td{
+    .certiMark{display: block;
+      img{width: 50px;display: block; margin: 0 auto;}
+    }
+    .pdPhoto{ width: 120px; height: 120px;
+      img{width: 100%; height: 100%; object-fit: contain;}
+    }
+
+    // ---
+    time{display:block;font-size: .95em;min-width: 5.7em; text-align: center;word-break: keep-all;
+      &.year{ display: inline-block; min-width: 2.6em;}
+    }
+    .linkBtn{white-space: nowrap;font-size: .93em}
+    time + .linkBtn{margin-top: .4em;}
+
+    &.title{text-align: left;
+      a{text-align: left; display: block; border: none; text-decoration: underline; max-width: 18em;}
+      a:hover{text-decoration: underline;}
+    }
+
+
+    &.rowOrder{text-align: center; width: 3em;}
+    &.changeOrder{text-align: center;}
+    &.checkInside, &.check{ width: 2em;text-align: center;}
+    &.digit{text-align: right;}
+    .digit{display: block;word-break: keep-all;text-align: right;}
+    .status{display: block; text-align: center;}
+    .ellipsis{display: block ;white-space: nowrap; overflow: hidden; text-overflow: ellipsis;width: 20em;}
+    .nowrap, &.nowrap{white-space: nowrap;}
+    .currency{ display: inline-block; white-space: nowrap;}
+    .title{display: block;min-width: 5em;max-width: 12em; text-align: left; line-height: 1.5;}
+
+    ul, ol, p{margin-top: 0;margin-bottom: 0; padding: 0; list-style: none;line-height: 1.3;}    
+    li + li{margin-top: .6em;}
+
+    .ellipsis{display: block ;white-space: nowrap; overflow: hidden; text-overflow: ellipsis;width: 20em;}
+    .thumbImg{display: block;margin: 0 auto;width: 100px; height: 100px; object-fit: contain;
+      &.landscape{width: 300px;}
+      &.magCover{width: 140px;height: auto; max-height: 200px;}
+    }
+
+    .smallLabel{background-color: $red; color: #fff; font-size: .85em; height: 1.5em; line-height: 1.8; padding: 0 5px; border-radius: 3px;
+      &.new{background-color: $hiLight2;}
+    
+    }
+
+    // -------------------------------
+
+    .smallPdImg{width: 80px;height: 80px;display: block;object-fit: contain;}
+
+    button{word-break: keep-all;padding-left: .5em;padding-right: .5em;
+      &.round{padding-left: .8em; padding-right: .8em;}
+    }
+  
+    //from .listTable
+    &.rowOrder{text-align: center; width: 3em;}
+    &.checkInside, &.check{ width: 2em;text-align: center;} 
+ 
+    &.aRight:first-child{white-space: nowrap;}
+
+    // &.nowrap{white-space: nowrap; overflow: hidden;}
+
+  }
+  td, th{
+    &.aLeft{text-align: left;}
+    &.aRight{text-align: right;}
+    &.aCenter{text-align: center;}
+
+    &.vaTop{vertical-align: top;}
+  }
+
+
+  .onListTop{
+    h3{margin: 0;padding: 0;
+      & ~ .funcBtnGp{margin: 0;}
+    }
+    .funcBtnGp{margin-right: 0;}
+  }
+
+  // 20210329
+  .statusIcon{display: inline-block; margin: auto; position: relative; width: 24px; height: 24px;
+    &::before, &::after{
+      content: '';position: absolute; left: 50%;top: 50%;
+    }
+    &.yes::before{width: 8px; height: 16px; border: 3px solid $font-color; border-left: none; border-top: none; transform: rotate(45deg); margin-top: -12px; margin-left: -5px;}
+    &.no::before, &.no::after{ width: 3px;height: 19px;background-color: $font-color; transform: rotate(45deg); margin-left: -1px; margin-top: -9px;}
+    &.no::after{transform: rotate(135deg);}
+  }
+
+  @media screen and (min-width: $wwMedium){
+    .dragStick{width:36px;height: 20px;}
+  }
+
+  .btnLook{ font-size: 1em; }
+  table ~ .btnLook, .expArea ~ .btnLook {float: right; margin:3px; padding: 0; vertical-align:top;}
+}
+
+.listTable{
+  .expArea{border: 2px solid $border-color-dark;
+    &>table{border: none;}
+  }
+}
+
+// 「營運總覽」頁籤下的「重點訊息公告」
+// 可展開／收合的表格條列 20200630
+.expansible{ 
+  .expArea{position: relative;overflow: hidden;/* border: 2px solid $border-color-dark; */
+    &>table{ border-collapse: collapse; margin: 0;
+      th:first-child, td:first-child{ border-left: none;}
+      th:last-child, td:last-child{ border-right: none;}
+      tbody>tr:last-child td{border-bottom: none;}
+      thead tr:first-child th{border-top: none;}
+      td{
+        &.ellipTitle{overflow: hidden;position: relative;
+          a{position: absolute;top: .6em; width:calc( 100% - 1.5em); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: block; border: none;}
+          .nowrap{position: absolute;top: .6em; width:calc( 100% - 1.5em); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: block;}
+        }
+        &.date{width: 6em; }
+        time{white-space: nowrap;width: 98%; margin: 0 auto; display: block; overflow: hidden;text-overflow: ellipsis;}
+      }
+    }
+  }
+
+  &::after{content: ''; display: block; clear: both;}
+  .ctrlBtn{position: relative; float: right; cursor: pointer; margin: 5px 1px; padding:0 22px 0 5px; border-radius: 3px; transition: .2s;
+    &::after{ @include arrowBefore;position: absolute; right: 7px; top: 5px;
+    }
+    &.expanded::after{transform: rotate(225deg);top: 8px;}
+    &:hover{box-shadow: $border-color-light 0 0 1px 1px;}
+
+    &.btnLook{padding: 0 24px 0 16px; height: 2.3em;line-height: 2.3em;border-radius: 2em;box-shadow:$border-color-dark 0 0 0 1px;
+      &:hover{box-shadow:$border-color-dark 0 0 0 2px;border: none;}
+      &::after{top: 11px; right: 11px;}
+      &.expanded::after{top: 14px;}
+    }
+  }
+}
+
+.listTbNew {
+  .expArea{border-bottom: 1px solid $border-color-pale;
+    tr:last-child{border-bottom-width: 1px;}
+  }
+}
+
+
+
+
+
+
+
+
+
+// ++++++++++++++++++++++++++++++++++++ 模組，待整合為一個檔案
+
+// 型錄或網頁使用語系標示
+.langList{list-style: none;margin: 0;padding: 0; overflow: hidden;
+  li{float: left; margin: 2px 4px 2px 0;padding: 0 .6em; height: 2em;line-height: 2em; border: 1px solid $border-color-pale; border-radius: 4px; background-color: #fff;
+    .count{display: inline-block;min-width: 1em; padding: 0 .15em; text-align: center;height: 1.3em;line-height: 1.35; vertical-align: middle; border-radius: 1em; font-size: .85em; margin-left: .1em; margin-top: -4px; background: $btn-bg1; color: #fff;}
+    em{display: inline-block; font-weight: bold;}
+  }
+}
+
+
+
+// +++++++++++++++++++++++++++++++++++++++++++++ productCategorySet
+.templateSetting{ 
+  @extend %marginSet1;
+  h3:first-child{margin: 0 0 15px;}
+  .listTable, .listTbNew { margin:15px 0; padding: 0;
+    .hint{margin: .5em 0;}
+    .langList li{margin: 2px 4px 2px 0;}
+  }
+}
+
+
+.otherLangs{display: inline-block; white-space: nowrap;}
+
+
+
+
+// -------20210118 型錄異動紀錄（在燈箱中）
+.logAndRecord{
+  &>ul{list-style: none; margin: 0;padding: 0;
+    &>li{padding: .4em 0;margin-bottom: .5em;border: 1px solid $border-color-light;border-radius: 4px;
+     &:hover{border-color: $border-color-dark;}
+    }
+  }
+  .breif{
+    &.expCtrl{padding-right: 7em;
+      &::before{content: attr(data-title); position: absolute; right: 34px; top: .5em; color: $font-color-lighter;}
+      &.reveal::before{content: '收合';}
+      &:hover::before{color: $font-color;}
+    }
+    dl{margin: 0; padding: 0;
+      // outline: 1px solid red;
+      dt, dd{display: inline-block;line-height: 2.2em; height: 2.2em; margin: 0;}
+      dt{position: relative; padding: 0 .3em 0 12px; color: $font-color-lighter;}
+      dd{padding: 0 12px 0 .3em;
+        time{width: 10em; display: inline-block;}
+      }
+      dd + dt{
+        &::before{content: ''; position: absolute; top: 2px; bottom: 2px; left: 0; width: 2px; background-color: $border-color-pale;}
+      }
+    }
+    button{margin-left: 3em;}
+  }
+  .listTable{margin:0 12px; padding:12px 0 0;
+    th{text-align: center; white-space: nowrap;}
+    td{ vertical-align: top;
+      // ol{ line-height: 1.3;padding-left: 1.8em;
+      //   li+li{margin-top: .7em;}
+      //   li>ul{margin-top: 0.7em;}
+      //   li li>ul{ margin-left: 1em;}
+      //   &>li{ list-style: decimal; 
+      //     li{list-style: none;}
+      //   }
+      // }
+    }
+  }
+
+  .logItems{list-style: decimal; line-height: 1.4;padding-left: 1.8em;
+    li+li{margin-top: .7em;}
+    li>ul{margin-top: .7em;}
+    li li{list-style: none;}
+    li li>ul{ margin-left: 1em;}
+
+  }
+}
+
+textarea.fromHtmlEditor{ display: block; width: 100%; box-sizing: border-box;}
+td textarea.fromHtmlEditor{margin-left: 0;margin-right: 0; height: 6.5em;}

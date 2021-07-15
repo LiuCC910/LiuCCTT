@@ -1,0 +1,151 @@
+// 收藏項條列 和 收藏項比較 的功能按鍵
+.funcBtnGp{clear: both;@extend %marginSet1; margin-bottom: 0;overflow: hidden;
+  ul{list-style: none;padding:3px 0;margin:0;font-size: .95em;overflow: hidden;}
+  li{float: left;position: relative;padding: 0;margin: 3px 4px 3px 2px;text-align: center;
+    &>a{display: block;padding: 0 .9em;text-decoration: none;border: none;height:44px;line-height:44px;border-radius: 30px; background: #fff; color: $font-color;box-shadow:$border-color-light 0 0 0 1px inset;transition: .2s;cursor: pointer;
+      &:hover{background:$btn-bg2;color:#fff; box-shadow: none; }
+    }
+    &[class]>a{padding-left:46px;
+      &::before{content: '';position: absolute;left: 3px;top:3px;width: 38px;height: 38px;background:$btn-bg1;border-radius: 50%;background-repeat: no-repeat;background-size: 24px auto;background-position: center center;transition: .2s;}
+      &:hover::before{background-color:$btn-bg1;}
+    }
+    &[class]>a::before{ 
+      background: $btn-bg1 url(../images/icon_function.png) no-repeat center 6px;
+      background-size: 24px auto; width: 36px;height: 36px; top: 3px; left: 3px;
+    }
+
+    &.none>a{padding-left: .9em;
+      &::before{display: none;}
+    }
+
+    // 「新增」按鈕 mouse over 顯示為橘色
+    &.add>a:hover{ background-color: $hiLight2;
+      &::before{background-color: rgba(0,0,0, .3);}
+    }
+
+
+    
+    &.mail>a::before{background-image: url(../images/icon_mail.png);}
+    &.subscribe>a::before{background-image: url(../images/icon_alert.png);}
+    &.compare>a::before{background-image: url(../images/icon_compare.png);}
+    &.remove>a::before{background-image: url(../images/icon_delete.png);}
+
+    &.add>a::before,
+    &.cart>a::before,
+    &.duplicate>a::before{background-image: url(../images/icon_funcBtns.png);}
+    &.add>a::before{background-position: center 6px;}
+    &.duplicate>a::before{background-position: center -32px;}
+    &.cart>a::before{ background-position:center -80px;}
+
+    // 2020 ------
+    &.edit>a::before, &.delete>a::before{background-image: url(../images/icon_function.png);background-size: 24px auto;}
+    &.edit>a::before{background-position: center -32px;}
+    // --- 2020
+
+    &.disabled>a{background:$border-color-light;cursor: default;color: $border-color-pale;
+      &:hover{box-shadow: none;}
+      &::before{opacity: .6;}
+      &:hover::before{box-shadow: none; background-color: $btn-bg1;}
+    }
+
+    .icon_i{ margin-top: .45em; height: 1.8em;}
+
+
+  }
+  
+  // 內含兩組 ul 20201103。通常放在表格條列上方，前一組是與 checkbox 有關的功能。
+  &.divide{margin-left: auto;
+    ul:first-child{ float: left;}
+    ul:last-child{float: right;}
+  }
+
+  &>.icon_i{ margin: 12px 16px 0 0;}
+}
+@media screen and (min-width: $wwMedium){
+  .funcBtnGp{
+    li{
+      &>a{height:42px;line-height:42px;}
+      &[class]>a{padding-left: 44px;}
+      &[class]>a::before{ 
+        background: $btn-bg1 url(../images/icon_function.png) no-repeat center 6px;
+        background-size: 24px auto; width: 36px;height: 36px; top: 3px; left: 3px;
+      }
+      
+      &.none>a{padding-left: .9em;}
+      
+
+      &.add>a::before, &.edit>a::before, &.delete>a::before, &.cart>a::before {background-image: url(../images/icon_function.png);background-size: 24px auto;}
+      
+      &.add>a::before{ background-position: center 6px;}
+      &.edit>a::before{ background-position: center -34px;}
+      &.remove>a::before,
+      &.delete>a::before{ background-position: center -74px;}
+      &.export>a::before{ background-position: center -114px;}
+      &.changeGroup>a::before{ background-position: center -234px;}
+      &.changeOrder>a::before{background-position: center -274px;}
+      &.notAvailable>a::before{background-position: center -354px;}
+      &.useLabel>a::before{background-position: center -394px;}
+      &.checkColumn>a::before{background-position: center -434px;}
+      &.cart>a::before{background-position: center -474px;}
+
+    }
+  }
+
+  // 20201105 在圖、影條列上方的
+  .onListTop{display: flex; flex-flow: row wrap; align-items:center; justify-content: space-between;
+    &>.funcBtnGp:only-child{width: 100%;
+      ul{float: right;}
+    }
+
+    .head{display: inline-block; font-size: 1.5em; color: #000; padding: .3em 0 0;}
+
+    & + p.hint{padding-top: .5em;}
+
+  }
+  .onListTop .funcBtnGp{font-size: 1em;
+    &:first-child{margin-left: 0;}
+    &:last-child{margin-right: 0;}
+  }
+  
+}
+
+
+
+//20200922 功能按鈕圖示
+.funcBtn{position: relative;margin: 3px; padding:0 16px 0 46px; border-radius: 30px; height: 44px;
+  background: #fff;color: $font-color;box-shadow:$border-color-light 0 0 0 1px inset;
+  transition: .2s;cursor: pointer;
+  &::before{content: '';position: absolute; left: 3px; top: 3px;   border-radius: 50%; width: 38px; height: 38px;
+    background-color: $btn-bg1; background-repeat: no-repeat; background-position: center 0; 
+    background-image: url(../images/icon_function.png); background-size:24px;
+  }
+  
+  &:hover{background-color: $btn-bg2; box-shadow: $btn-bg2 0 0 0 1px;}
+  &:hover::before{background-color:$hiLight2;}
+
+  &.add::before{background-position: center 6px;}
+  &.edit::before{background-position: center -34px;}
+  &.remove::before{background-position: center -74px;}
+  &.copy::before{background-position: center -154px;}
+  
+  
+  &.changeOrder::before{background-position: center -274px;}
+  &.preview::before{background-position: center -314px;}
+}
+
+//20210506
+span.funcBtn{ display: inline-block; line-height: 44px;
+  &:hover{color: #fff;}
+}
+
+
+// button元件，單獨存在的功能按鈕圖示
+button.funcBtn{position: relative; padding: 0 !important; margin-left: 0; width: 44px; vertical-align: middle;
+  background-color: $btn-bg1;  box-shadow: none;transition:.2s;
+  &::after{content: attr(data-title);position: absolute; top:-1em; left:-3px; height: 1.3em; line-height: 1.3;
+    padding: 0 3px; border-radius: 4px;font-size: .85em;color: $font-color;opacity: 0;transition: .2s; min-width: 44px; text-align: center;}
+  &:hover{background-color: $btn-bg2;box-shadow: $btn-bg2 0 0 0 2px;
+    &::before{background-color: $btn-bg2;}
+    &::after{top: -1.5em;opacity: 1; background-color: rgba(255,255,255, .7); color: $font-color; }
+  }
+}

@@ -1,0 +1,61 @@
+.aboutUsBlockList{/* @extend %marginSet1;background: #fff; border-radius: 6px;padding:16px 16px 32px; */
+  ul, li{list-style: none;margin: 0;padding: 0;}
+  li{margin:6px 0; padding: 0 0 6px; line-height: 1.5;border-bottom: 1px solid $border-color-pale;
+    // &+li{margin-top: 10px;}
+    &:last-child{border: none;}
+    a{display: block; border: none; text-decoration: none; color: $font-color; border-radius: 4px;
+      position: relative; padding: 16px 10em 14px 3em; cursor: pointer; transition: .2s;
+      &:hover{ /* @extend %shadowNormal */ background: $bg-color;}
+    }
+    h3{font-size: 1.35em; margin: 0;}
+    p{margin:.6em 0 0;}
+    .number{position: absolute; left: 15px; top: auto; font-size: 1.5em; line-height: 1; color: $font-color-lighter; font-weight: bold;}
+    .buttonLike{position: absolute; right: 14px;top: 14px;padding: 0 30px 0 18px;height:2.3em; line-height:2.35;
+      box-shadow: $border-color-pale 0 0 0 1px; border-radius: 4px; background: #fff;transition: .2s;
+      &::after{@include arrowBefore(8px, 2px, $btn-bg2, -45deg); border-color:$hiLight2;
+        position: absolute;top: .8em; right: 16px; transition: .2s;
+      }
+    }
+    a:hover .buttonLike{
+      box-shadow: rgba(0,0,0,.2) 0 2px 12px 1px;
+    }
+  }
+}
+
+
+// About us : 海外據點設定 20200921，在從右滑入的 .slideinBox 內
+.branchSetting{clear:both; margin: 6px 16px;padding: 3px;border-radius: 4px;
+  .expFolder{position: relative;padding:3px 10px; margin: 5px 0 15px; border-radius: 4px;@extend %shadowBorder;}
+  .dragStick{ position: absolute; height: 32px; top: 6px; left: 10px;}
+
+  .langTab{margin:5px auto 10px; 
+    &>ul{background: $bg-color-pale;}
+  }
+
+  .twoColumn{display: flex; justify-content: space-between; margin: 0 0 20px;
+    .formLayout{flex: 1 1 60%; width: auto; margin: 0;}
+    .gMap{flex: 0 1 calc(40% - 15px);margin-left: 15px; align-self: stretch;}
+  }
+
+
+  .branchName{padding:8px 20px 8px 0;line-height: 1.3; margin-left: 44px;color: $font-color-lighter;
+    em{ display: inline-block; margin-left: .3em; font-weight: bold;font-size: 1.25em; color: $font-color-darker;}
+  }
+  .settings{border-top: 2px solid $border-color-pale;margin:4px 0 0; padding: 10px 8px 20px; overflow: hidden;
+    .funcBtn{ float: right;}
+
+    .formLayout{
+      td:first-child{white-space: nowrap;}
+      select{max-width: calc(90% - 1.5em + 6px);
+        & + button{ vertical-align: middle;}
+      }
+    } 
+  }
+
+  .gMap{
+    h5{margin: 0 0 .5em; height: 1.2em; font-size: 1.15em;}
+    iframe{ display: block; width: 100%; height:calc(100% - 2em);}
+  }
+
+
+}

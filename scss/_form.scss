@@ -1,0 +1,760 @@
+// 表單送出按鈕群
+.btnDv{clear:both;text-align:center;margin:0 auto;
+  &.aLeft{text-align:left;}
+  input[type="submit"],
+  input[type="reset"],
+  input[type="button"],
+  button{width: auto;min-width:5em; height: 3em;line-height: 3em;border-radius: 2em;}
+  .btnLook{font-size: 1em;}
+  .btnLook a {height: 3em;line-height: 3em;min-width:5em;padding: 0 .8em;}
+  
+  // input[type="submit"],
+  // input[type="button"]{background-color: $hiLight2;}
+  // input[type="submit"]:hover,
+  // input[type="button"]:hover{box-shadow:$hiLight2 0 0 0 2px;}
+
+  input[type="submit"],
+  button[type="submit"],
+  input[type="button"].confirm,
+  input.confirm,
+  button.confirm{background-color: $hiLight2;
+    &:hover{box-shadow:$hiLight2 0 0 0 2px;}
+  }
+
+
+  input[type="reset"],
+  button[type="reset"],
+  input[value="Cancel"],
+  input[value="取消"]{background-color:$btn-bg1;}
+  button[type="reset"]:hover,
+  input[type="reset"]:hover,
+  input[value="Cancel"]:hover,
+  input[value="取消"]:hover{background-color:$btn-bg2;color:#fff;box-shadow:$btn-bg2 0 0 0 2px;}
+
+
+  &.sticky{
+    position: absolute; position: sticky;
+    left: 0;bottom: 0;right: 0; margin: 0; 
+    background: rgba(255,255,255,.7);
+  }
+}
+.formLayout ~ .btnDv{border-top: 1px solid $border-color-pale;padding:15px 0 30px;margin-top: 20px;}
+
+.listTable .btnDv:first-child{text-align: left;}
+
+
+// table class="formLayout" tr td 排版設定
+.formLayout{display: block;border: none;border-collapse: collapse; clear: both;
+  &>tbody, &>tbody>tr, &>tbody>tr>td,
+  &>tr, &>tr>td{display: block;}
+
+  &>tbody>tr>td, &>tr>td{display: block;width: auto;
+    &:nth-child(odd){width: auto;max-width: none;text-align: left;padding:18px 0 0 .4em;color: #000;position: relative;
+      &:before{content: '';position: absolute;left: -5px;top: 24px;width: 5px;height:.9em;background: $bg-color-dark;}
+    }
+    &:nth-child(even){padding:0 0 7px;}
+  }
+}
+@media screen and (min-width:$wwMedium ){
+  .formLayout{width: 94%;margin: 0 auto; display: table;
+    &>tbody{display: table-row-group;}
+    &>tbody>tr, &>tr{display: table-row;}
+    &>tbody>tr>td, &>tr>td{display: table-cell;vertical-align: top;position: relative;
+      &:nth-child(odd){text-align: right;width: 15%;padding: 16px 5px 1px 0;
+        &:before{display: none;}
+        .required{margin-left: -.3em;}
+      }
+      &:nth-child(even){padding: 5px 0 1px;}
+    }
+  }
+
+  .tabContainer>.formLayout:last-child{margin-bottom: 30px;}
+
+
+  // .dataTable 裡面的 .formLayout
+
+  .dataTable .formLayout{
+    &>tbody>tr>td, &>tr>td{
+      &:nth-child(even){padding-left: .5em;}
+    }
+  }
+
+}
+
+
+
+// 表單元件設定
+.formLayout>tbody>tr>td, .formLayout>tr>td{
+  input[type="text"],
+  input[type="date"],
+  input[type="datetime-local"],
+  input[type="email"],
+  input[type="file"],
+  input[type="month"],
+  input[type="number"],
+  input[type="password"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="time"],
+  input[type="url"],
+  input[type="week"],
+  textarea {width: calc(100% - 20px); }
+  input[type="radio"],
+  input[type="checkbox"]{width:auto;margin-right: 5px;}
+  select{max-width: calc(100% - 14px - 1.5em);}
+
+  
+  // 模擬多選 select
+  .optionGroup{margin: 0 3px;
+    label{display: inline-block;margin-right: 1em;height: 2em;padding:.4em .3em 0 .3em;line-height: 1.5;margin-bottom:6px;}
+  }
+  .optionPool{min-height: 2.4em;margin: 3px;
+    &.firmType{
+     label{ float: none; display: block;}
+    }
+  }
+
+  .gMap{margin: 3px; width: 98%;height: 55vh; border: 1px solid $border-color-light; border-radius: 4px; overflow: hidden;
+    iframe{width: 100%; height: 100%;}
+  }
+
+  textarea ~ .hint{margin-top: 0;}
+  select:not(.autoWidth):only-child{width: calc(100% - 14px - 1.5em);}
+  select.autoWidth{width: auto;}
+
+  
+
+  //--------------------------------------------2020
+  //公司介紹標題
+  .firmCategoryName{width: 90%; overflow: hidden; 
+    select{width: 100%; display: block;}  
+    input[type="text"]{width:calc(100% - 20px);}
+  }
+}
+@media screen and (min-width:$wwSlim){
+  .formLayout{
+    .optionPool.firmType label{float: left;width:calc(50% - 44px);}
+  }
+}
+
+@media screen and (min-width:$wwMedium){
+  .formLayout>tbody>tr>td, .formLayout>tr>td{
+    input[type="text"],
+    // input[type="date"],
+    input[type="datetime-local"],
+    input[type="email"],
+    input[type="file"],
+    input[type="month"],
+    input[type="number"],
+    input[type="password"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="time"],
+    input[type="url"],
+    input[type="week"]{width: 90%;
+      &.mini{width: 6em;}
+      &.shore{width: 16em;}
+    }
+    textarea {width: 90%;}
+
+
+    .hint,
+    .textCount{width:calc(90% + 14px);}
+    input[type="date"]{width: 12em;}
+    input[type="radio"], input[type="checkbox"]{width:auto;}
+    .optionPool{width: 91%;
+      &.firmType{//公司型態
+        label{width: 9em; float: left;}
+      }
+    }
+    .during{width:calc(90% + 18px);}
+    .gMap{width:calc(90% + 12px); height: 450px;}
+  }
+
+  .formLayout td .fr-box.fr-basic.fr-top{
+    width:calc(90% + 14px); // 對齊其他表單元件的寬度
+  }
+}
+
+
+//日期區間，只允許放兩個日期輸入欄位 --------------------------------------------------------------------
+.during {position: relative;overflow: hidden;
+  &:before{content: '~';width: 1.2em;line-height: 2.4em;text-align: center;position: absolute;right: -4px;margin-top: 5px;font-weight: bold;}
+  &.readonly::before{right: 1em;}
+  // 20201126 沒有清除圖示的情況
+  input[type="date"],
+  input[type="datetime-local"],
+  input[type="text"]{float: left;/* width: calc(98% - 7em) ; width: calc(98% - 3.8em)*/ width: calc(98% - 1.5em) !important}
+  
+  // 20201126 input外面有清除圖示的情況
+  input[type="date"]:nth-last-child(4),
+  input[type="date"]:nth-last-child(2):nth-child(3),
+  input[type="datetime-local"]:nth-last-child(4),
+  input[type="datetime-local"]:nth-last-child(2):nth-child(3),
+  input[type="text"]:nth-last-child(4),
+  input[type="text"]:nth-last-child(2):nth-child(3){width: calc(98% - 3.8em) !important;}
+
+  input[type="date"] ~ input[type="date"],
+  input[type="datetime-local"] ~ input[type="datetime-local"],
+  input[type="text"] ~ input[type="text"]{clear: left;}
+  
+  .clearIcon, .calendarIcon{float: left;margin: 6px 0 0 1px;}
+
+  // 20210126，應該不需要了，觸發小月曆套件會直接做在輸入框
+  // 保留月曆圖示在input外面的情況
+  input[type="date"]:nth-last-child(3), input[type="date"]:nth-last-child(6),
+  input[type="datetime-local"]:nth-last-child(3), input[type="datetime-local"]:nth-last-child(6),
+  input[type="text"]:nth-last-child(3), input[type="text"]:nth-last-child(6) {width: calc(98% - 7em) !important;}
+
+
+}
+@media screen and (min-width:$wwMedium){
+  .during{
+    // 沒有清除圖示的情況 20210126
+    input[type="date"], input[type="date"]:first-child,
+    input[type="datetime-local"],
+    input[type="text"]{width: calc(50% - 2.6em) !important;}
+
+    // 有清除圖示，沒有月曆圖示的情況 20210126 修改
+    input[type="date"]:nth-last-child(2):nth-child(3), input[type="date"]:nth-last-child(4),
+    input[type="datetime-local"]:nth-last-child(2):nth-child(3),input[type="datetime-local"]:nth-last-child(4),
+    input[type="text"]:nth-last-child(2):nth-child(3), input[type="text"]:nth-last-child(4){width: calc(50% - 4.8em) !important;}
+
+
+    // 第二個日期輸入框左邊要留空間給小蟲號 ～
+    input[type="date"] ~ input[type="date"],
+    input[type="datetime-local"] ~ input[type="datetime-local"],
+    input[type="text"] ~ input[type="text"]{clear: none;margin-left: 1.6em;}
+    &:before{right: 50%;}
+    &.readonly::before{right: 50%; margin-right: 2.3em;}
+
+    // 20210126，應該不需要了，觸發小月曆套件會直接做在輸入框
+    // 保留有月曆圖示也有清除圖示的情況
+    input[type="date"]:nth-last-child(3), input[type="date"]:nth-last-child(6),
+    input[type="datetime-local"]:nth-last-child(3), input[type="datetime-local"]:nth-last-child(6),
+    input[type="text"]:nth-last-child(3), input[type="text"]:nth-last-child(6) {width: calc(50% - 7em) !important;}
+  }
+}
+// 月曆和清除圖示 -------------------------------------------------------------------------------------
+.clearIcon, .calendarIcon{display: inline-block;vertical-align: middle;width: 2.2em;height: 2.2em;line-height: 2.2em;border-bottom: none;border-radius: 3px;margin-top: .1em;cursor: pointer; transition: .1s;
+  &:hover{box-shadow:$border-color-dark 0 0 3px 1px;background-color: #fff;}
+  &:active{box-shadow:$border-color-dark 0 0 0 3px;}
+}
+.clearIcon{background: url(../images/icon_clear.png) no-repeat center center; background-size: 24px;}
+.calendarIcon{background: url(../images/icon_calendar.png) no-repeat center center; background-size: 24px;}
+
+
+
+
+// keyword And Field -------------------------------------------------------------------------------------
+.keywordAndField{
+  input[type="text"]{width: 55%;margin-right: -2px;width:calc( 76% - 58px);}
+  select{width:24%;}
+}
+@media screen and (min-width: $wwMedium){
+  .keywordAndField{
+    input[type="text"]{width: 66%;}
+    select{width:18%;}
+  }
+}
+
+
+.formLayout .selectImitating {width:auto;}
+@media screen and (min-width:$wwMedium){
+
+  .formLayout>tbody>tr>td, .formLayout>tr>td{
+    .selectImitating {width:calc(90% + 20px);}
+    select:not(.autoWidth):only-child{ width: calc( 90% - 1.5em + 6px );}
+    .during{width:calc(90% + 1.5em);} //20201215
+
+    .optionPool,
+    .addAndRemove{width: 92%;}
+    .ms-options-wrap{ width: 90%;}
+  }
+
+}
+
+// 簡易 file upload--------------------------------------------------------------------
+.uploadFileSet{ display: flex;
+  .filenameHere{position: relative;border: 1px solid $border-color-light; min-width: 10em; padding-right: 40px;
+    flex: 1 1 70%;
+  }
+  .icon_clear{ position: absolute; right: 4px; top: 4px;}
+  input[type="file"]{width:6em !important;padding:0;height: 2.4em;border: 1px solid $btn-bg1; background: $btn-bg1; cursor: pointer; color: transparent; transition: .2s;
+    &::before{content: attr(title); display: block;padding:0;width: 6em;line-height: 2.4em; height: 100%; text-align: center;
+     color: #fff; 
+    }
+    &:hover{box-shadow:$btn-bg2 0 0 0 2px ; background-color: $btn-bg2; border-color: $btn-bg2;}
+  }
+}
+// 有舊檔存在時
+.oldFileSet{display: flex; align-items: flex-start; 
+  .removeThis{position: relative; margin: 0 5px; top: auto; }
+  .asAnInput{
+    &.filenameHere{ word-break: break-all; max-width: calc(100% - 10em); line-height: 1.6;}
+  }
+  .restore{display: none;}
+}
+.formLayout{
+  .uploadFileSet, .oldFileSet, .multiUploadSet{width: 92%;}
+}
+
+// 多筆 file upload ----------- 20210202
+.multiUploadSet{
+  input[type="file"]{padding:0;height: 2.4em; cursor: pointer; width: 0 !important;text-indent: -300em; box-shadow: none;border: none; background:none ;
+    &:hover, &:focus{background-color: transparent;}
+    // outline: 1px solid red;
+    
+    &::before{content: attr(title); display: block;padding:0 .8em;min-width:6em;text-align: center;border: none; background: $btn-bg1; color: #fff; position: absolute; text-indent: 0; border-radius: 4px; transition: .2s;}
+    &:hover::before{box-shadow:$btn-bg2 0 0 0 2px ; background-color: $btn-bg2;}
+  }
+  .filenameList{clear: both; list-style: none; margin: 0 0 1em;padding: 0;  line-height: 1.5;
+    li{position: relative;  padding: 10px 56px 2px 3px; margin:7px 0 0; border-bottom: 1px solid $border-color-pale;
+      min-height: 34px; word-break: break-all;
+      .fileSize{ font-size: .9em; display: inline-block; margin-left: .5em; /* color: $font-color-lighter; */
+        &::before{content: '( ';}
+        &::after{content: ' )';}
+      }
+      .ficon{position: absolute;right: 3px; top: 0;}
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:$wwMedium - 1){
+ .btnDv.fixBtm,
+ .mailFunc.fixBtm{position: fixed; bottom: 0;left: 0;right: 0;padding: 16px 2vw;background: rgba(255, 255, 255, .85);z-index: 888;box-shadow: rgba(0, 0, 0, .4) 0 0 12px}
+}
+
+
+.formLayout td .optionPool.templates{margin-left: 3px;margin-right: 3px;}
+.formLayout td .fr-box{margin-left: 3px;margin-right: 3px;}
+
+
+
+// /* 一整列的 checkbox 項目 */-------------------------------------------------------------------------------------
+.agreeCheck{margin:8px auto; clear:both;
+  &>label{font-weight:normal;position: relative;padding:.8em .8em .8em 2.5em;text-align:left;text-indent:-2em;font-weight:normal;border:1px dashed $border-color-light;background:$bg-color-pale;display:block;border-radius:4px;text-indent: -1.7em;line-height: 1.5;}
+  &>label>input[type="checkbox"]{font-size: 2em;margin-right: .2em;vertical-align: top;}
+  .infoAndHelp{width:26px;height:26px; margin: -3px 5px 0;}
+}
+@media screen and (min-width:$wwMedium) {
+  .agreeCheck{margin-bottom:15px;}
+  .agreeCheck + .agreeCheck{margin-top: -10px;}
+}
+
+
+// 20190730 profileSetting:Contact information --------------------------------------------------------------------
+.profileSetting{@extend %marginSet1;@extend %paddingSet2;
+  position:relative;clear:both;border-radius:6px;background:#fff;
+  fieldset{border: 1px solid $border-color-pale;margin: 0 -1vw;padding:1em 1vw;border-radius: 4px;background: #fff;}
+  fieldset + fieldset{margin-top: 25px;}
+  legend{padding:0 .8em;margin: 0 3vw;border-left: 5px solid $btn-bg2;border-right: 5px solid $btn-bg2;line-height: 1.2;font-weight: bold;font-size: 1.15em;}
+  td{
+    label{display: block;line-height: 1.4;
+      input[type="checkbox"]{margin-left: 5px;font-size: 2em;}
+    }
+    select{max-width:calc(100% - 1.5em - 14px);}
+    select:only-child{width:calc(100% - 1.5em - 14px);}
+  }
+}
+@media screen and (max-width: $wwSlim - 1){
+  .profileSetting{
+    fieldset{border:none;margin:0 -3vw ;padding:1em 2vw;border-top: 1px solid $border-color-light; border-radius: 0;
+      legend{margin:0;}
+    }
+  }
+}
+@media screen and (min-width: $wwMedium){
+  .profileSetting{
+    fieldset{margin: 0;}
+    td{
+      input{width: 22em;}
+      label{width: 22em;
+        input[type="checkbox"]{width: auto}
+      }
+      select,
+      select:only-child{width: 20.9em;}
+    }
+  }
+}
+
+// thisAccount ------------------------------------------------------------------------------
+.thisAccount{@extend %marginSet1;overflow: hidden;padding-bottom:10px;
+  h3{margin: 0 0 .4em;padding: 5px;font-size: 1.5em;border-bottom: 2px solid #fff;
+    span{display: inline-block;}
+    .label{font-size: .75em;color:$border-color-dark;
+      &:after{content: "： "}
+    }
+    .account{font-weight: bold}
+  }
+  label{margin: 0;float: left;width:calc(100% - 8em);line-height: 1.5;padding-left: 2em;text-indent: -2em;
+    input[type="checkbox"]{margin-right: .4em;font-size:2em;}
+    & + input{float: right;margin-top: .25em}
+  }
+}
+@media screen and (min-width: $wwMedium){
+  .thisAccount{padding-bottom:0;
+    label + input{margin-top: 0;}
+  }
+}
+
+
+
+.contactId {
+  .formLayout{width:100%;
+    &>tbody>tr{
+      &>td:nth-child(odd){position: relative;padding: .6em 0 3px 44px;width: auto;
+        img{position: absolute;left: 5px;bottom:1px;width: 32px;height: 32px;border-radius:4px;overflow: hidden;}
+      }
+    }
+  }
+}
+
+
+// .basicInfo -----------------------------------------------------------------------------------------------
+@media screen and (min-width: $wwMedium){
+  .basicInfo .formLayout{width:97%;
+    &>tbody>tr{
+      &>td:nth-child(odd){width: 34%}
+      &>td:nth-child(even){width:64%}
+    }
+  }
+  .contactId .formLayout{margin: 0 auto;width: auto;overflow: hidden;
+    &>tbody>tr{
+      &>tr{display: block;overflow: hidden;}
+      &>td{float: left;
+        &:nth-child(odd){width:32%;padding: .9em 0 3px;white-space: nowrap;
+          img{position: static;display: inline-block;vertical-align:top;margin: -8px 2px 5px 3px;}
+        }
+        &:nth-child(even){width:68%;padding: 0;margin-bottom: 9px;
+          input{width: calc(100% - 20px);}
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: $wwWide){
+  .basicInfo .formLayout{width:96%;
+    &>tbody>tr{
+      &>td:nth-child(odd){width: 15%;}
+      &>td:nth-child(even){width:auto}
+    }
+  }
+  .contactId .formLayout{width: 99%;display: table;
+    &>tbody>tr{
+      &>td{
+        &:nth-child(odd){width:19%;text-align: right;white-space: nowrap;
+          img{width: 24px;height: 24px; display: inline-block;vertical-align:top;margin:-3px 2px auto 3px;}
+        }
+        &:nth-child(even){width: 30%;}
+        &:empty{display: none;}
+      }
+    }
+  }
+
+}
+
+
+
+
+
+
+
+
+// 電話號碼組 -------------------------------------------------------------------------------------------
+.phoneNumbSet{display: flex; margin: 3px 0;border-radius: 6px;
+  .preSymbol{flex: 0 1 .6em;height: 2.4em;line-height: 2.4;margin:3px 0;text-align: center;
+    &:first-child{margin-left: 3px;}
+  }
+  .countryCode{ flex: 0 1 2.5em;}
+  .areaCode{flex: 0 1 2em;}
+  .mainNumber{flex: 1 1 10em; max-width: 12em;}
+  .ext{flex: 0 1 4.5em}
+  &.duns{
+    input:first-of-type{width: 2.5em;}
+    input:nth-of-type(2){width: 3.5em;}
+    input:last-child{width: 4.5em;}
+  }
+  & + .hint{margin-left: .8em;}
+}
+@media screen and (max-width: $wwSlim - 1){
+  .phoneNumbSet{ 
+    &.business{flex-wrap: wrap;
+      .countryCode{ flex-basis:22%;}
+      .areaCode{flex-basis:22%;}
+      .mainNumber{flex:1 1 55%;max-width:none}
+      .ext{flex: 1 1 20%}
+    }
+  }
+}
+//稱謂 ＋ 姓名 ----------------------------------------------------------
+.nameSet{margin: 3px 0; display: flex;
+  select{width: 3em;}
+  input{ flex: 1 1 auto;}
+}
+
+//地址組----------------------------------------------------------
+.addressSet{margin:3px; display: flex; flex-wrap: wrap;
+
+  span{margin: 0 3px; flex: 0 0 auto;}
+  .countySelection{flex: 1 0 100%; 
+    display: flex; justify-content: flex-end;
+    &>select{flex: 1 1 40%; width: 40%;}
+  }
+  &>input[type="text"]{flex: 1 1 100%;}
+
+  .zipcodeSet{ position: relative;
+    input{width: 5em !important;}
+    label{ display: inline-block; height: 2.4em;line-height: 2.4em;}
+    & ~ button{vertical-align: middle;}
+  }
+
+
+  // 20210121 新增 國家選單獨立一行
+  select.nation{ flex: 1 1 90%;}
+  .zipcodeAndAddr{flex:1 1 90%;margin-right: 3px;
+    // outline: 1px solid red; 
+    display: flex; margin-left: 3px;
+    .zipcode{ white-space: nowrap;
+      input{width: 4em;}
+    }
+    &>input[type="text"]{ flex:1 1 80%; margin-right: 0;}
+  }
+
+
+}
+.formLayout td .addressSet{ margin: 3px 0 3px 3px; width:calc(90% + 17px) ;
+  & + label{margin-left:0;}
+  // 地址組2 郵遞區號＋街道門牌 ---------------------------------------------
+  .addressSet2{margin: 3px 0;display: flex;
+    .zipcode{width: 5em;
+      &+input{flex: 1 1 auto;}
+    }
+    @media screen and (max-width: $wwSlim - 1){
+      flex-wrap: wrap;
+    }
+  }
+} 
+// 一個 selection + 一個 text input
+.areaSet{display: flex;
+  select{flex: 0 1 4em;}
+  label{flex: 0 1 2.6em; white-space: nowrap;line-height: 2.8; text-align: right;}
+  input{flex:1 1  20em;}
+}
+
+// 數字範圍 20201102
+.range{ width:calc( 90% + 20px); display: flex; justify-content: space-between; line-height: 2.8em;
+  input[type="text"], input[type="number"]{ width: 48%;
+    flex: 1 1 auto;
+  }
+}
+
+
+
+
+@media screen and (min-width: $wwMedium){
+  .formLayout{
+    .addressSet, .addressSet2,
+    .areaSet,
+    .businessCard,
+    .nameSet, .phoneNumbSet{width: calc(90% + 20px);}
+  }
+}
+@media screen and (min-width: $wwSlim){
+  .formLayout{
+    .companyScale{overflow: hidden;
+      .subField{float: left;
+        &:first-child{width: 40%; margin-left:0}
+        &:last-child{width: 50%;margin-left: 2%;margin-top: 0;}
+        &>label:first-child{width: auto;font-size: 1em;}
+        input{width:7em;max-width: 90%;}
+        select{width:10em; max-width: 90%;}
+      }
+    }
+  }
+}
+@media screen and (min-width: $wwMedium){
+  .formLayout{
+    .nameWithTitle{
+      input{width: 17em;margin-left: .25em;}
+      &:after{content: '';display: block;clear: both;}
+    }
+
+    .stateAndOther{width: 23.4em;
+      .subField{margin-left: 0;}
+    }
+  
+    .companyScale{width:auto;margin-top: .4em;background:none;padding: 0;
+      .subField{
+        &:first-child{width: auto;}
+        &:last-child{width: auto;}
+      }
+    }
+  }
+}
+
+
+
+
+// Profile Setting 照片與名片 ------------------------------------------------------------------------------------
+.profileSetting .uploadImg{ margin: 20px -1vw 10px;}
+@media screen and (min-width: $wwSlim){
+  .profileSetting .uploadImg{ border: 1px solid $border-color-pale; border-radius: 6px;}
+}
+@media screen and (min-width: $wwMedium){
+  .profileSetting .uploadImg{margin: 20px auto 10px}
+}
+@media screen and (min-width: $wwWide){
+  .profileSetting .uploadImg{position:absolute;top:70px;left:36.8em;overflow:hidden;padding:2px;margin: 0;border: none;
+    width: calc(100% - 39.5em);max-width: 480px;}
+}
+@media screen and (min-width: 1400px){
+  .profileSetting .uploadImg{ left: 51%;}
+}
+
+
+// uploadImg ------------------------------------------------------------------------------------
+.uploadImg {border-top: 3px solid $border-color-pale;padding: 20px 0;
+  .inputImg{position:relative;display:block;text-align:center;line-height:1.6;margin: 0 auto;text-align: center;max-width: 100%;overflow: hidden;
+    .image{position: relative;width:100%;z-index:9;
+      img{display: block;width:100%;height:100%;object-fit:contain;}
+    }
+    .removeThis{position: absolute; right: 3px;top: 3px;}
+    input[type="file"]{position:absolute;left:1%;top:0;height: 98%;width: 98%; overflow:hidden;background:transparent;color:transparent;text-indent:-20em;padding: 0;margin: 0;border:1px dashed $border-color-light;cursor: pointer; border-radius: 8px;
+      &:hover{border-style:solid;}
+      &:focus{outline:none;box-shadow:none;}
+    }
+  }
+  .pPhoto{width:44vw;height:44vw;
+    .image{max-width: 400px;max-height: 400px;}
+  }
+  .bCard{height:44vw;width: 88vw; margin-top:20px;
+    .image{max-width: 800px;max-height: 400px;}
+  }
+  .vacant{display:inline-block;position:relative;top:50%;margin: -2.6em auto 0;font-size: .9em;text-align: center;padding: 0 5px;
+    p {color:#888;margin: .6em 0;line-height: 1.3;}
+    p:first-child{font-size: 1.2em;}
+  }
+}
+@media screen and (min-width: $wwMedium) and (max-width: $wwWide - 1){
+  .uploadImg  .inputImg{max-width:96%;
+    .removeThis{transform: scale(1.4);right: 10px;top: 10px;}
+  }
+}
+@media screen and (min-width: $wwWide){
+  .uploadImg {border: none;
+    .inputImg{cursor: pointer;}
+    .pPhoto{width:200px;height:200px;}
+    .bCard{height:200px;width: 400px;}
+  }
+}
+
+
+// formInline 單行的表單 20201106 -------------------------------------------------------------------
+.formInline{display: flex; justify-content: space-between;
+  align-items: flex-start; background: #fff; padding:8px 10px; border-radius: 6px;
+  // outline: 1px solid red;
+  &.boundary{ background: $bg-color-pale; box-shadow: rgba(0, 0, 0, .3) 0 0 4px inset;}
+  .formLayout{width: auto; align-self: flex-start; margin: 0 !important;
+    flex:1 1 80%;
+    // outline: 1px solid blue;
+    &>tbody>tr{
+      &>td:last-child{width: auto; padding-top: 0; padding-bottom: 0;
+        &>*{width: auto;}
+      }
+      &>td:first-child{width: auto;min-width: 5em; white-space: nowrap;  padding-top: .8em; padding-right: .8em;}
+    }
+
+    .optionPool{
+      label{float: none; display: inline-block;vertical-align: middle; 
+        &:hover, &.isSelected{box-shadow: none;}
+      }
+      select + label{margin-left: 1.3em;}
+      select{vertical-align: middle; height: 2.2em; line-height: 2.2em;}
+      label + select.relatePrev{ margin-left: -8px;}
+    }
+
+    td{
+      &>input[type="text"]:only-child{width: 96%;
+        @media screen and (min-width: $wwMedium){
+          min-width: 24em;
+        }
+      }
+    }
+  }
+  .btnDv{padding: 0 !important; margin: 0 !important; border: none !important;
+    flex:1 1 15%;
+    input[type="submit"], input[type="reset"], input[type="button"], button{min-width: 2.5em;}
+  }
+
+}
+
+// 20210217  (匯出商品型錄至 eBay) -------------------------------------------------------------------
+.tripleSelect{ display: flex; flex-flow: row wrap;
+  select{flex:1 1 28%; width: auto;
+    // &:nth-child(3){display: none;}
+  }
+  @media screen and (min-width: $wwMedium){
+    select:nth-child(3){max-width:calc(50% - 1.5em - 14px);}
+  }
+}
+.formLayout .tripleSelect{width:calc( 90% + 20px);}
+
+// shippingFee (匯出商品型錄至 eBay) 20210312 -------------------------------------------------------------------
+.shippingFee{
+  .areaAndServices{display: flex; align-items: center; margin-bottom: 5px;
+    &>*{flex: 0 1 auto;}
+    &>label:first-child{ margin-right: 5px;
+      em{ color:#000;}
+      &+select{flex:1 1 60%;}
+    }
+    .label{white-space: nowrap; display: inline-block;}
+    select+select{ flex:1 1 50%; max-width: calc(100% - 14em - 8px); }
+  }
+
+  .aloneCheck{margin-left: 1.5em;}
+
+}
+.formLayout .shippingFee{width: calc( 90% + 15px); margin-bottom: 10px; margin-left: 5px;}
+
+
+// priceValidDate (匯出商品型錄至 eBay) 20210312 ----------------------------------------------------
+.formLayout .priceValidDate{width: calc( 90% + 15px); margin-left: 5px;
+  input[type="text"], input[type="number"]{width: 8em;}
+  select{display: inline-block !important; width: auto !important;}
+  &>label + label{margin-left: 1em;}
+
+}
+
+// inlineLabel  20210312 ----------------------------------------------------
+// 一段label文字後面跟著一個 input 或 select
+.arbitrary{ display: flex; align-items: center; justify-content: flex-start;
+  label{display: inline-block; flex:0 1 auto; white-space: nowrap; margin-right: 5px;}
+  select{flex:1 1 auto; width: auto !important;}
+  input{flex: 1 1 auto;}
+  input.mini {flex:0 0 auto;}
+}
+.formLayout .arbitrary{max-width: calc( 90% + 15px); margin-left: 5px;}
+
+// 表單中的 froala 20210312 ----------------------------------------------------
+.formLayout .fr-box .fr-separator.fr-hs {
+  display: none;
+}
+
+
+
+// -------------------------------------------------------------------
+.main>.formInline{@extend %marginSet1; }
+.search .formInline, .formX .formInline{padding-top: 15px;padding-bottom: 20px;}

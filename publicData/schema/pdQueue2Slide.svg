@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 240 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,0,-100)">
+        <g id="oneAndFourFlip" transform="matrix(1,0,0,1,0,630)">
+            <g id="big">
+            </g>
+        </g>
+        <g id="oneAndFour" transform="matrix(-1,0,0,1,240,500)">
+            <g id="big1" serif:id="big">
+            </g>
+        </g>
+        <g id="pd_list2">
+        </g>
+        <g id="pd_list">
+        </g>
+        <g id="pd_list2_slide" transform="matrix(1,0,0,1,0,100)">
+            <g>
+                <g transform="matrix(0.525253,0,0,0.358621,166.444,-2.24828)">
+                    <rect x="22" y="23" width="99" height="145" style="fill:white;"/>
+                    <path d="M121,23L22,23L22,168L121,168L121,23ZM23.904,25.788L23.904,165.212L119.096,165.212L119.096,25.788L23.904,25.788Z" style="fill:rgb(191,191,191);"/>
+                </g>
+                <g transform="matrix(0.916667,0,0,0.916667,171,2.66667)">
+                    <rect x="12" y="8" width="48" height="48" style="fill:rgb(204,204,204);"/>
+                </g>
+            </g>
+            <g>
+                <g transform="matrix(0.525253,0,0,0.358621,110.444,-2.24828)">
+                    <rect x="22" y="23" width="99" height="145" style="fill:rgb(219,219,219);"/>
+                    <path d="M121,23L22,23L22,168L121,168L121,23ZM23.904,25.788L23.904,165.212L119.096,165.212L119.096,25.788L23.904,25.788Z" style="fill:rgb(191,191,191);"/>
+                </g>
+                <g transform="matrix(0.916667,0,0,0.916667,115,2.66667)">
+                    <rect x="12" y="8" width="48" height="48" style="fill:rgb(64,64,64);fill-opacity:0.54;"/>
+                </g>
+                <g transform="matrix(0.863636,0,0,1,116.909,-37)">
+                    <g transform="matrix(1.51724,0,0,1.5,-7.24138,-320.5)">
+                        <rect x="14" y="251" width="29" height="2" style="fill:white;"/>
+                    </g>
+                    <g transform="matrix(1.51724,0,0,1.5,-7.24138,-315.5)">
+                        <rect x="14" y="251" width="29" height="2" style="fill:white;"/>
+                    </g>
+                    <g transform="matrix(1.15789,0,0,1.5,-2.21053,-310.5)">
+                        <rect x="14" y="251" width="29" height="2" style="fill:white;"/>
+                    </g>
+                    <g transform="matrix(0.878403,0,0,1.5,1.70236,-297.5)">
+                        <rect x="14" y="251" width="29" height="2" style="fill:white;"/>
+                    </g>
+                </g>
+            </g>
+            <g>
+                <g transform="matrix(0.525253,0,0,0.358621,54.4444,-2.24828)">
+                    <rect x="22" y="23" width="99" height="145" style="fill:white;"/>
+                    <path d="M121,23L22,23L22,168L121,168L121,23ZM23.904,25.788L23.904,165.212L119.096,165.212L119.096,25.788L23.904,25.788Z" style="fill:rgb(191,191,191);"/>
+                </g>
+                <g transform="matrix(0.916667,0,0,0.916667,59,2.66667)">
+                    <rect x="12" y="8" width="48" height="48" style="fill:rgb(204,204,204);"/>
+                </g>
+            </g>
+            <g>
+                <g transform="matrix(0.525253,0,0,0.358621,-1.55556,-2.24828)">
+                    <rect x="22" y="23" width="99" height="145" style="fill:white;"/>
+                    <path d="M121,23L22,23L22,168L121,168L121,23ZM23.904,25.788L23.904,165.212L119.096,165.212L119.096,25.788L23.904,25.788Z" style="fill:rgb(191,191,191);"/>
+                </g>
+                <g transform="matrix(0.916667,0,0,0.916667,3,2.66667)">
+                    <rect x="12" y="8" width="48" height="48" style="fill:rgb(204,204,204);"/>
+                </g>
+            </g>
+            <g transform="matrix(0.707107,-0.707107,0.707107,0.707107,-96.9949,-10.4264)">
+                <path d="M46,100L46,102L42,102L42,106L40,106L40,100L46,100Z" style="fill:rgb(89,89,89);"/>
+            </g>
+            <g transform="matrix(-0.707107,0.707107,-0.707107,-0.707107,337.038,74.4264)">
+                <path d="M46,100L46,102L42,102L42,106L40,106L40,100L46,100Z" style="fill:rgb(89,89,89);"/>
+            </g>
+        </g>
+        <g id="pd_list_slide">
+        </g>
+    </g>
+</svg>

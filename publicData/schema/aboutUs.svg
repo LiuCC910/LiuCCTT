@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 240 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,0,-636)">
+        <g id="contactUs">
+        </g>
+        <g id="aboutUsIcon">
+        </g>
+        <g id="aboutUsTree" transform="matrix(1,0,0,1,0,720)">
+            <g id="tree">
+            </g>
+        </g>
+        <g id="aboutUs" transform="matrix(1,0,0,1,0,630)">
+            <g transform="matrix(2.42424,0,0,0.551724,-53.3333,-6.68966)">
+                <rect x="22" y="23" width="99" height="145" style="fill:rgb(128,128,128);"/>
+            </g>
+            <g transform="matrix(0.935252,0,0,1,90.9065,-30)">
+                <g transform="matrix(4.64562,0,0,1.5,-51.0387,-311.5)">
+                    <rect x="14" y="251" width="29" height="2" style="fill:white;"/>
+                </g>
+                <g transform="matrix(4.64562,0,0,1.5,-51.0387,-306.5)">
+                    <rect x="14" y="251" width="29" height="2" style="fill:white;"/>
+                </g>
+                <g transform="matrix(3.50265,0,0,1.5,-35.0371,-301.5)">
+                    <rect x="14" y="251" width="29" height="2" style="fill:white;"/>
+                </g>
+                <g transform="matrix(4.64562,0,0,1.5,-51.0387,-294.5)">
+                    <rect x="14" y="251" width="29" height="2" style="fill:white;"/>
+                </g>
+                <g transform="matrix(4.64562,0,0,1.5,-51.0387,-289.5)">
+                    <rect x="14" y="251" width="29" height="2" style="fill:white;"/>
+                </g>
+                <g transform="matrix(2.13846,0,0,1.5,-15.9385,-284.5)">
+                    <rect x="14" y="251" width="29" height="2" style="fill:white;"/>
+                </g>
+                <g transform="matrix(1.69602,0,0,2,-9.7443,-445)">
+                    <rect x="14" y="251" width="29" height="2" style="fill:white;"/>
+                </g>
+            </g>
+            <g transform="matrix(1.75,0,0,1.25,-11,6)">
+                <rect x="12" y="8" width="48" height="48" style="fill:rgb(204,204,204);"/>
+            </g>
+        </g>
+        <g id="news">
+        </g>
+        <g id="newsSlide">
+        </g>
+        <g transform="matrix(1,0,0,1,6,211)">
+            <g id="iStage">
+            </g>
+        </g>
+        <g id="bigBannerTree" transform="matrix(1,0,0,1,0,100)">
+            <g id="tree1" serif:id="tree">
+            </g>
+        </g>
+        <g id="bigBanner">
+        </g>
+    </g>
+</svg>

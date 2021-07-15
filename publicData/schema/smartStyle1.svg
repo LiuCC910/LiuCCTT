@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 240 86" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,0,-1030)">
+        <g id="smartStyle5">
+        </g>
+        <g transform="matrix(1.88636,0,0,1,108.591,1333)">
+            <g id="smartStyle4">
+            </g>
+        </g>
+        <g id="smartStyle3">
+        </g>
+        <g transform="matrix(1.97727,0,0,1,102.318,1111)">
+            <g id="smartStyle2">
+            </g>
+        </g>
+        <g id="smartStyle1" transform="matrix(1,0,0,1,0,-5)">
+            <g transform="matrix(1.09091,0,0,1.08861,-10.9091,-102.595)">
+                <rect x="120" y="1045" width="110" height="79" style="fill:rgb(204,204,204);"/>
+            </g>
+            <g transform="matrix(1.88636,0,0,1,-7.40909,1008)">
+                <g transform="matrix(1.51724,0,0,1.5,-7.24138,-320.5)">
+                    <rect x="14" y="251" width="29" height="2" style="fill:rgb(115,115,115);"/>
+                </g>
+                <g transform="matrix(1.51724,0,0,1.5,-7.24138,-315.5)">
+                    <rect x="14" y="251" width="29" height="2" style="fill:rgb(115,115,115);"/>
+                </g>
+                <g transform="matrix(1.51724,0,0,1.5,-7.24138,-310.5)">
+                    <rect x="14" y="251" width="29" height="2" style="fill:rgb(115,115,115);"/>
+                </g>
+                <g transform="matrix(1.51724,0,0,1.5,-7.24138,-305.5)">
+                    <rect x="14" y="251" width="29" height="2" style="fill:rgb(115,115,115);"/>
+                </g>
+                <g transform="matrix(0.56072,0,0,1.5,20.0195,-299.5)">
+                    <rect x="14" y="251" width="29" height="2" style="fill:rgb(115,115,115);"/>
+                </g>
+            </g>
+            <g transform="matrix(1.65517,0,0,2.5,13.8276,425.5)">
+                <rect x="14" y="251" width="29" height="2" style="fill:rgb(115,115,115);"/>
+            </g>
+            <g transform="matrix(1.3,0,0,1,-95.5,-228)">
+                <path d="M130,1327C130,1325.9 129.311,1325 128.462,1325L111.538,1325C110.689,1325 110,1325.9 110,1327L110,1331C110,1332.1 110.689,1333 111.538,1333L128.462,1333C129.311,1333 130,1332.1 130,1331L130,1327Z" style="fill:rgb(204,204,204);"/>
+            </g>
+        </g>
+        <g id="pdPair">
+        </g>
+        <g id="pd_list_tree">
+        </g>
+        <g id="oneAndFourFlip" transform="matrix(1,0,0,1,0,630)">
+            <g id="big">
+            </g>
+        </g>
+        <g id="oneAndFour" transform="matrix(-1,0,0,1,240,500)">
+            <g id="big1" serif:id="big">
+            </g>
+        </g>
+        <g id="pd_list2">
+        </g>
+        <g id="pd_list">
+        </g>
+        <g id="pd_list2_slide">
+        </g>
+        <g id="pd_list_slide">
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 240 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,0,-1230)">
+        <g id="adv">
+        </g>
+        <g id="smartModule0" transform="matrix(1,0,0,1,0,1224)">
+            <g transform="matrix(2.42424,0,0,0.551724,-53.3333,-6.68966)">
+                <rect x="22" y="23" width="99" height="145" style="fill:white;"/>
+            </g>
+            <g transform="matrix(1.03226,0,0,1.03226,2.45161,-1160.71)">
+                <rect x="17" y="1138" width="62" height="62" style="fill:rgb(204,204,204);"/>
+            </g>
+            <g transform="matrix(0.967742,0,0,0.967742,5.74194,-1087.29)">
+                <rect x="85" y="1138" width="31" height="31" style="fill:rgb(204,204,204);"/>
+            </g>
+            <g transform="matrix(0.967742,0,0,0.967742,5.74194,-1053.29)">
+                <rect x="85" y="1138" width="31" height="31" style="fill:rgb(204,204,204);"/>
+            </g>
+            <g transform="matrix(1.3,0,0,1,19,-1258.23)">
+                <path d="M130,1327C130,1325.9 129.311,1325 128.462,1325L111.538,1325C110.689,1325 110,1325.9 110,1327L110,1331C110,1332.1 110.689,1333 111.538,1333L128.462,1333C129.311,1333 130,1332.1 130,1331L130,1327Z" style="fill:rgb(204,204,204);"/>
+            </g>
+            <g transform="matrix(0.941176,0,0,0.941176,9.88235,-1057.06)">
+                <circle cx="176.5" cy="1146.5" r="8.5" style="fill:rgb(204,204,204);"/>
+            </g>
+            <g transform="matrix(1.97727,0,0,1,102.318,-13)">
+                <g transform="matrix(1.51724,0,0,1.5,-7.24138,-320.5)">
+                    <rect x="14" y="251" width="29" height="2" style="fill:rgb(115,115,115);"/>
+                </g>
+                <g transform="matrix(1.51724,0,0,1.5,-7.24138,-315.5)">
+                    <rect x="14" y="251" width="29" height="2" style="fill:rgb(115,115,115);"/>
+                </g>
+                <g transform="matrix(1.51724,0,0,1.5,-7.24138,-310.5)">
+                    <rect x="14" y="251" width="29" height="2" style="fill:rgb(115,115,115);"/>
+                </g>
+                <g transform="matrix(0.558066,0,0,1.5,6.18708,-305.5)">
+                    <rect x="14" y="251" width="29" height="2" style="fill:rgb(115,115,115);"/>
+                </g>
+                <g transform="matrix(0.76734,0,0,2.5,14.8894,-580.5)">
+                    <rect x="14" y="251" width="29" height="2" style="fill:rgb(115,115,115);"/>
+                </g>
+            </g>
+        </g>
+        <g id="smartModule">
+        </g>
+        <g transform="matrix(1,0,0,1,-10,1044)">
+            <g id="smartModuleTree">
+                <g id="tree">
+                </g>
+            </g>
+        </g>
+        <g id="header">
+        </g>
+        <g id="contactUs">
+        </g>
+        <g id="aboutUsIcon">
+        </g>
+        <g id="aboutUsTree" transform="matrix(1,0,0,1,0,720)">
+            <g id="tree1" serif:id="tree">
+            </g>
+        </g>
+        <g transform="matrix(0.935252,0,0,1,90.9065,600)">
+            <g id="aboutUs">
+            </g>
+        </g>
+        <g id="news">
+        </g>
+        <g id="newsSlide">
+        </g>
+        <g transform="matrix(1,0,0,1,6,211)">
+            <g id="iStage">
+            </g>
+        </g>
+        <g id="bigBannerTree" transform="matrix(1,0,0,1,0,100)">
+            <g id="tree2" serif:id="tree">
+            </g>
+        </g>
+        <g id="bigBanner">
+        </g>
+    </g>
+</svg>

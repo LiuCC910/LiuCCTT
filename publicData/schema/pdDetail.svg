@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 240 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,0,-1647)">
+        <g id="型錄展示">
+            <g transform="matrix(0.707107,-0.707107,0.707107,0.707107,-97.0163,1658.07)">
+                <path d="M46,100L46,102L42,102L42,106L40,106L40,100L46,100Z" style="fill:rgb(89,89,89);"/>
+            </g>
+            <g transform="matrix(-0.707107,0.707107,-0.707107,-0.707107,337.016,1742.93)">
+                <path d="M46,100L46,102L42,102L42,106L40,106L40,100L46,100Z" style="fill:rgb(89,89,89);"/>
+            </g>
+            <g transform="matrix(2.70968,0,0,2.70968,-208.323,-1428.61)">
+                <rect x="85" y="1138" width="31" height="31" style="fill:rgb(204,204,204);"/>
+            </g>
+            <g transform="matrix(0.645161,0,0,0.645161,61.1613,984.806)">
+                <rect x="85" y="1138" width="31" height="31" style="fill:rgb(204,204,204);"/>
+            </g>
+            <g transform="matrix(0.645161,0,0,0.645161,85.1613,984.806)">
+                <rect x="85" y="1138" width="31" height="31" style="fill:rgb(204,204,204);"/>
+            </g>
+            <g transform="matrix(0.645161,0,0,0.645161,109.161,984.806)">
+                <rect x="85" y="1138" width="31" height="31" style="fill:rgb(204,204,204);"/>
+            </g>
+            <g transform="matrix(0.645161,0,0,0.645161,133.161,984.806)">
+                <rect x="85" y="1138" width="31" height="31" style="fill:rgb(204,204,204);"/>
+            </g>
+            <g transform="matrix(2.36364,0,0,1,80.9091,1615)">
+                <g transform="matrix(1.51724,0,0,1.5,-7.24138,-320.5)">
+                    <rect x="14" y="251" width="29" height="2" style="fill:rgb(115,115,115);"/>
+                </g>
+                <g transform="matrix(1.51724,0,0,1.5,-7.24138,-314.5)">
+                    <rect x="14" y="251" width="29" height="2" style="fill:rgb(115,115,115);"/>
+                </g>
+                <g transform="matrix(0.627321,0,0,1.5043,5.21751,-309.578)">
+                    <rect x="14" y="251" width="29" height="2" style="fill:rgb(115,115,115);"/>
+                </g>
+                <g transform="matrix(1.51724,0,0,1.5,-7.24138,-299.5)">
+                    <rect x="14" y="251" width="29" height="2" style="fill:rgb(115,115,115);"/>
+                </g>
+                <g transform="matrix(1.51724,0,0,1.5,-7.24138,-293.5)">
+                    <rect x="14" y="251" width="29" height="2" style="fill:rgb(115,115,115);"/>
+                </g>
+                <g transform="matrix(0.816976,0,0,1.5,2.56233,-287.5)">
+                    <rect x="14" y="251" width="29" height="2" style="fill:rgb(115,115,115);"/>
+                </g>
+            </g>
+            <g transform="matrix(2.3165,0,0,3,81.569,905)">
+                <rect x="14" y="251" width="29" height="2" style="fill:rgb(115,115,115);"/>
+            </g>
+        </g>
+        <g id="smartStyle5">
+        </g>
+        <g transform="matrix(1.88636,0,0,1,108.591,1333)">
+            <g id="smartStyle4">
+            </g>
+        </g>
+        <g id="smartStyle3">
+        </g>
+        <g transform="matrix(1.97727,0,0,1,102.318,1111)">
+            <g id="smartStyle2">
+            </g>
+        </g>
+        <g transform="matrix(1.88636,0,0,1,-7.40909,1003)">
+            <g id="smartStyle1">
+            </g>
+        </g>
+        <g id="pdPair">
+        </g>
+        <g id="pd_list_tree">
+        </g>
+        <g id="oneAndFourFlip" transform="matrix(1,0,0,1,0,630)">
+            <g id="big">
+            </g>
+        </g>
+        <g id="oneAndFour" transform="matrix(-1,0,0,1,240,500)">
+            <g id="big1" serif:id="big">
+            </g>
+        </g>
+        <g id="pd_list2">
+        </g>
+        <g id="pd_list">
+        </g>
+        <g id="pd_list2_slide">
+        </g>
+        <g id="pd_list_slide">
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 240 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,0,-995)">
+        <g id="footer" transform="matrix(1,0,0,1,0,100)">
+            <g id="圖層-1" serif:id="圖層 1">
+            </g>
+        </g>
+        <g id="aboutUsIcon2">
+        </g>
+        <g id="adv">
+        </g>
+        <g transform="matrix(1.97727,0,0,1,102.318,1211)">
+            <g id="smartModule0">
+            </g>
+        </g>
+        <g id="smartModule">
+        </g>
+        <g transform="matrix(1,0,0,1,-10,1044)">
+            <g id="smartModuleTree">
+                <g id="tree">
+                </g>
+            </g>
+        </g>
+        <g id="header" transform="matrix(1,0,0,1,0,956)">
+            <g transform="matrix(2.42424,0,0,0.275862,-53.3333,32.6552)">
+                <rect x="22" y="23" width="99" height="145" style="fill:rgb(217,217,217);"/>
+            </g>
+            <g transform="matrix(1.58333,0,0,0.333333,139,48.8333)">
+                <path d="M60,32C60,18.745 57.738,8 54.947,8C45.727,8 26.273,8 17.053,8C15.713,8 14.427,10.529 13.48,15.029C12.532,19.53 12,25.635 12,32L12,32C12,45.255 14.262,56 17.053,56C26.273,56 45.727,56 54.947,56C57.738,56 60,45.255 60,32L60,32Z" style="fill:white;"/>
+            </g>
+            <g transform="matrix(1,0,0,1,-9,-881.931)">
+                <text x="44.095px" y="944.181px" style="font-family:'CenturyGothic-Bold', 'Century Gothic', sans-serif;font-weight:700;font-size:9px;fill:rgb(128,128,128);">Company Name</text>
+            </g>
+            <g transform="matrix(0.769231,0,0,0.766395,6.38462,-723.654)">
+                <path d="M19,1010.12L32,1031L6,1031L19,1010.12Z" style="fill:rgb(128,128,128);"/>
+            </g>
+        </g>
+        <g id="contactUs">
+        </g>
+        <g id="aboutUsIcon">
+        </g>
+        <g id="aboutUsTree" transform="matrix(1,0,0,1,0,720)">
+            <g id="tree1" serif:id="tree">
+            </g>
+        </g>
+        <g transform="matrix(0.935252,0,0,1,90.9065,600)">
+            <g id="aboutUs">
+            </g>
+        </g>
+        <g id="news">
+        </g>
+        <g id="newsSlide">
+        </g>
+        <g transform="matrix(1,0,0,1,6,211)">
+            <g id="iStage">
+            </g>
+        </g>
+        <g id="bigBannerTree" transform="matrix(1,0,0,1,0,100)">
+            <g id="tree2" serif:id="tree">
+            </g>
+        </g>
+        <g id="bigBanner">
+        </g>
+    </g>
+</svg>

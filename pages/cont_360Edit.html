@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-Hans-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>SU-360資源庫設定（內容管理）</title>
+  <link href="https://fonts.googleapis.com/css?family=Red+Hat+Display:400,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/design.css">
+  <script src="../js/jquery-3.4.1.min.js"></script>
+  <script src="../js/rwdTable.js"></script>
+  <script src="../js/basic.js"></script>
+</head>
+
+<body>
+  <div class="topZone">
+    <header class="webHeader">
+      <h1>Taiwan Trade</h1>
+    </header>
+    <div class="topMenu">
+      <ul class="nav">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Language</a>
+          <ul>
+            <li><a href="xLang">正體中文</a></li>
+            <li><a href="xLang">English</a></li>
+            <li><a href="xLang">日本語</a></li>
+            <li><a href="xLang">简体中文</a></li>
+            <li><a href="xLang">Русский</a></li>
+            <li><a href="xLang">Español</a></li>
+            <li><a href="xLang">Portugues</a></li>
+            <li><a href="xLang">العربية</a></li>
+            <li><a href="xLang">Bahasa Indonesia</a></li>
+            <li><a href="xLang">Deutsch</a></li>
+            <li><a href="xLang">Tiếng Việt</a></li>
+            <li><a href="xLang">ภาษาจีนแบบดั้งเดิม</a></li>
+            <li><a href="xLang">Türk</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Chat with Us</a></li>
+      </ul>
+      <ul class="hasSignIn">
+        <li class="hello">
+          <a href="javascript:;">Hello, <em>Nana</em><span class="msgCount">14</span></a>
+          <ul>
+            <li class="role">賣家中心</li>
+            <li><a href="#">前往企業網</a></li>
+            <li><a href="#">我的管理端</a></li>
+            <li><a href="#">商機管理</a></li>
+            <li><a href="#">商機資料庫管理</a></li>
+            <li><a href="#">會員重要公告</a></li>
+            <li class="role">Buy</li>
+            <li><a href="#">Messages <span class="count">3</span></a></li>
+            <li><a href="#">My Subscription <span class="count">10</span></a></li>
+            <li><a href="#">Order History <span class="count">1</span></a></li>
+            <li><a href="#">Customized Sourcing</a></li>
+            <li><a href="#">Account Setting</a></li>
+          </ul>
+        </li>
+        <li class="signInOut"><a href="#">Sign Out</a></li>
+        <li><a href="#">Favorites</a>
+          <ul>
+            <li><a href="#">Products <span class="count">3</span></a></li>
+            <li><a href="#">Suppliers <span class="count">0</span></a></li>
+          </ul>
+        </li>
+        <li class="cart"><a href="#">0 Items</a></li>
+      </ul>
+    </div>
+    <button class="sideBarCtrl" type="button"></button>
+    <button class="topMenuCtrl" type="button"></button>
+  </div>
+
+  <div class="wrapAll">
+    <aside class="sideBar">
+        <nav class="menu">
+          <ul>
+            <li class="hasChild"><a href="javascript:;" data_target="_self"><span class="menuIcon "></span>My Taiwantrade</a>
+              <ul>
+                <li><a href="myTT_dashboard.html" target="_self">我的提醒(2021已上線)</a></li>
+                <li><a href="home_ep.html" target="_self">營運儀錶板(2020已上線)</a></li>
+                <li><a href="javascript:;">商機資料庫查詢(外連)</a></li>
+              </ul>
+            </li>
+            <li><a href="javascript:;"><span class="menuIcon myep"></span>企業網管理</a>
+              <ul>
+                <li><a href="site_compData.html">公司資料設定</a></li>
+                <li><a href="site_applyLogo.html">台灣經貿網Logo申請</a></li>
+                <li><a href="site_build_guide.html">建站引導</a></li>
+              </ul>
+            </li>
+            <li class="hasChild activate activated"><a href="javascript:;"><span class="menuIcon content"></span>內容管理</a>
+              <ul style="display: block;">
+                <li><a href="cont_catalog_list.html">產品型錄設定</a></li>
+                <li><a href="cont_PdCateSetting.html">產品分類設定</a></li>
+                <li><a href="cont_privateShowroom.html">型錄加密設定</a></li>
+                <li><a href="cont_newsList.html">公司新聞設定</a></li>
+                <li><a href="cont_imageList.html">圖庫設定</a></li>
+                <li><a href="cont_videoList.html">影音設定</a></li>
+                <li><a href="javascript:;">360資源庫設定</a></li>
+                <li><a href="cont_marketingList.html">行銷專案活動查詢</a></li>
+                <li><a href="cont_PdCateExp.html">新聞匯入匯出</a></li>
+                <li><a href="cont_albumList.html">型錄專輯設定</a></li>
+                <li><a href="cont_eBay_searchList.html">匯出型錄至eBay</a></li>
+                <li><a href="comp_homeMultimedia.html">多媒體輪播設定功能(EC)</a></li>
+              </ul>
+            </li>
+            <li><a href="#" data_target="_self">
+              <span class="menuIcon merchandise"></span>銷貨管理 <font color="red">New</font>
+              <span class="count" style="" id="menu_orderUnreadCount">26</span></a>
+              <ul>
+                <li><a href="sale_orderListFromBuyer.html">買主訂單 <span class="count" style="" id="submenu_orderUnreadCount">26</span></a></li>
+                <li><a href="sale_orderListToSupplier.html">訂貨管理</a></li>
+                <li><a href="sale_onlineShop.html">銷售頁面設定</a></li>
+                <li><a href="sale_paymentSetPayPalList.html">收款及幣別設定</a></li>
+                <li><a href="sale_returnPolicy.html">退換貨辦法設定</a></li>
+                <li><a href="sale_quotation_list.html">線上報價</a></li>
+                <li><a href="sale_quotationTemplateList.html">報價單樣板</a></li>
+              </ul>
+            </li>
+            <li><a href="javascript:;"><span class="menuIcon inquiry"></span>商機管理 <span class="count">99+</span></a>
+              <ul>
+                <li><a href="javascript:;">線上對談 <span class="count">5</span></a></li>
+                <li><a href="javascript:;">買主清單</a></li>
+                <li><a href="javascript:;">商機清單</a></li>
+                <li><a href="javascript:;">商機資料庫推薦 <span class="count">99+</span></a></li>
+                <li><a href="javascript:;">訊息範本</a></li>
+                <li><a href="javascript:;">商機報名紀錄</a></li>
+                <li><a href="javascript:;">配對偏好設定</a></li>
+              </ul>
+            </li>
+            <li><a href="javascript:;"><span class="menuIcon myaccount"></span>會員管理</a>
+              <ul>
+                <li><a href="javascript:;">公司成員設定</a></li>
+                <li><a href="javascript:;">帳號設定</a></li>
+                <li><a href="javascript:;">業務聯絡人設定</a></li>
+                <!--li><a href="javascript:;">追蹤供應商</a></li>
+                <li><a href="javascript:;">追蹤產品</a></li-->
+              </ul>
+            </li>
+            <li><a href="javascript:;"><span class="menuIcon cart"></span>購物車</a>
+              <ul>
+                <li><a href="javascript:;">購物車</a></li>
+                <li><a href="javascript:;">訂單查詢</a></li>
+                <li><a href="javascript:;">點數查詢</a></li>
+                <li><a href="javascript:;">台灣產品雜誌稿件</a></li>
+                <li><a href="javascript:;">紅利商品兌換</a></li>
+              </ul>
+            </li>
+            <li><a href="javascript:;"><span class="menuIcon weblink"></span>連結</a>
+              <ul>
+                <li><a href="javascript:;">教育中心</a></li>
+                <li><a href="javascript:;">採洽易</a></li>
+                <li><a href="javascript:;">進出口資料查詢</a></li>
+                <li><a href="javascript:;">物流查詢</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+    </aside>
+      
+    <div class="main">
+      <header class="pageHeading">
+        <h2>新增360資源</h2>
+        <ul class="path">
+          <li><a href="#">內容管理</a></li>
+          <li>360資源庫設定</li>
+        </ul>
+      </header>
+
+      <div class="navBtnsDv">
+        <span class="btnLook back"><a href="javascript:history.back()">返回</a></span>
+      </div>
+
+      <section class="search">
+        <form action="">
+          <table class="formLayout">
+            <tr>
+              <td>群組</td>
+              <td>
+                <select name="" id="">
+                  <option value="" selected>未分類(Unclassified)</option>
+                  <option value="">公司介紹</option>
+                  <option value="">產品介紹</option>
+                  <option value="">產品使用說明</option>
+                </select>
+              </td>
+            </tr>
+              <tr>
+              <td><abbr title="必填欄位" class="required">*</abbr> 標題</td>
+              <td><input type="text" value="MUSIC FOR HOPE"></td>
+            </tr>
+            <!--第一期只有網址-->
+            <!--tr>
+                <td><abbr title="必填欄位" class="required">*</abbr> 類型</td>
+                <td>
+                    <div class="optionPool">
+                        <label><input type="radio" name="ggggg">外部URL</label>
+                        <label><input type="radio" name="ggggg" checked>上傳圖片</label>
+                      </div>
+                </td>
+            </tr-->
+            <tr>
+              <td><abbr title="必填欄位" class="required">*</abbr> 網址</td>
+              <td><input type="url" value="https://scankit.istaging.com/FH13-5/FH13-5.html"></td>
+            </tr>
+            <tr>
+              <td><abbr title="必填欄位" class="required">*</abbr> 網址</td>
+              <!--轉入的網址要disabled或readonly-->
+              <td><input type="url" value="https://vr360.ttstaging.com.tw/product360/showProduct360/2714" disabled></td>
+            </tr>
+
+            <!--tr>
+              <td><abbr title="必填欄位" class="required">*</abbr> 上傳圖片</td>
+              <td>
+                <div class="tabContainer show">    
+                <div class="dragThumbs specAndPreview">
+                    <div class="eachThumb">
+                      <span title="拖移調整順序" class="dragStick"></span>
+                      <span class="removeThis trigPop" id="pop-delPurchaseSpec"></span>
+                      <div class="specPreview"><img src="../publicData/360/c0_l0_0_0.jpg"></div>
+                    </div>
+                    <div class="eachThumb">
+                      <span title="拖移調整順序" class="dragStick"></span>
+                      <span class="removeThis trigPop" id="pop-delPurchaseSpec"></span>
+                      <div class="specPreview"><img src="../publicData/360/c1_l0_0_0.jpg"></div>
+                    </div>
+                    <div class="eachThumb">
+                      <span title="拖移調整順序" class="dragStick"></span>
+                      <span class="removeThis trigPop" id="pop-delPurchaseSpec"></span>
+                      <div class="specPreview"><img src="../publicData/360/c2_l0_0_0.jpg"></div>
+                    </div>
+                    <div class="eachThumb">
+                      <span title="拖移調整順序" class="dragStick"></span>
+                      <span class="removeThis trigPop" id="pop-delPurchaseSpec"></span>
+                      <div class="specPreview"><img src="../publicData/360/c3_l0_0_0.jpg"></div>
+                    </div>
+                    <div class="eachThumb">
+                        <span title="拖移調整順序" class="dragStick"></span>
+                        <span class="removeThis trigPop" id="pop-delPurchaseSpec"></span>
+                        <div class="specPreview"><img src="../publicData/360/c4_l0_0_0.jpg"></div>
+                      </div>
+                  </div>                
+                    
+                    <div class="fileDragDrop">
+                        <input type="file">
+                        <p>拖拉檔案或選擇檔案上傳</p>
+                        <button type="button" class="showLightbox" id="imgInLib">從圖庫選擇</button>
+                        <button type="button" class="restore">還原</button>
+                    </div>
+                    <div class="countdown"><em>4</em> / 30</div>
+                    <p class="tips">Tips: 上傳360產品圖片。建議至少需要6張，尺寸需大於 640*640 px。<br>為正確產生360瀏覽資源，請注意圖片排序</p>
+
+                </div>                
+              </td>
+            </tr-->
+          </table>
+          <div class="btnDv">
+            <input type="submit" value="儲存">
+            <input type="reset" value="取消">
+          </div>
+        </form>
+
+      </section>
+
+
+
+      <footer class="webFooter">
+        <ul class="footLinks">
+          <li><a href="#">Liability Disclaimer</a></li>
+          <li><a href="#">Terms Of Use</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Intellectual Property Right Infringement Policy</a></li>
+          <li><a href="#">Product and Service Listing Policy</a></li>
+          <li><a href="#">Useful links</a></li>
+        </ul>
+        <p>Help Customer Service:+886-800506088  © 2002-2019 TAITRA. All rights reserved.</p>
+      </footer>
+        
+
+    </div><!-- /.main -->
+  </div><!-- ./wrapAll -->
+
+
+  <div class="goTopBottom">
+    <span class="goTop" title="go top"></span>
+    <span class="goBottom" title="go bottom"></span>
+  </div>
+</body>
+
+</html>

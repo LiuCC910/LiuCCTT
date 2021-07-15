@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="zh-Hans-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>SU-260資源庫設定（內容管理）</title>
+  <link href="https://fonts.googleapis.com/css?family=Red+Hat+Display:400,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/design.css">
+  <script src="../js/jquery-3.4.1.min.js"></script>
+  <script src="../js/rwdTable.js"></script>
+  <script src="../js/basic.js"></script>
+</head>
+
+<body>
+  <div class="topZone">
+    <header class="webHeader">
+      <h1>Taiwan Trade</h1>
+    </header>
+    <div class="topMenu">
+      <ul class="nav">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Language</a>
+          <ul>
+            <li><a href="xLang">正體中文</a></li>
+            <li><a href="xLang">English</a></li>
+            <li><a href="xLang">日本語</a></li>
+            <li><a href="xLang">简体中文</a></li>
+            <li><a href="xLang">Русский</a></li>
+            <li><a href="xLang">Español</a></li>
+            <li><a href="xLang">Portugues</a></li>
+            <li><a href="xLang">العربية</a></li>
+            <li><a href="xLang">Bahasa Indonesia</a></li>
+            <li><a href="xLang">Deutsch</a></li>
+            <li><a href="xLang">Tiếng Việt</a></li>
+            <li><a href="xLang">ภาษาจีนแบบดั้งเดิม</a></li>
+            <li><a href="xLang">Türk</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Chat with Us</a></li>
+      </ul>
+      <ul class="hasSignIn">
+        <li class="hello">
+          <a href="javascript:;">Hello, <em>Nana</em><span class="msgCount">14</span></a>
+          <ul>
+            <li class="role">賣家中心</li>
+            <li><a href="#">前往企業網</a></li>
+            <li><a href="#">我的管理端</a></li>
+            <li><a href="#">商機管理</a></li>
+            <li><a href="#">商機資料庫管理</a></li>
+            <li><a href="#">會員重要公告</a></li>
+            <li class="role">Buy</li>
+            <li><a href="#">Messages <span class="count">3</span></a></li>
+            <li><a href="#">My Subscription <span class="count">10</span></a></li>
+            <li><a href="#">Order History <span class="count">1</span></a></li>
+            <li><a href="#">Customized Sourcing</a></li>
+            <li><a href="#">Account Setting</a></li>
+          </ul>
+        </li>
+        <li class="signInOut"><a href="#">Sign Out</a></li>
+        <li><a href="#">Favorites</a>
+          <ul>
+            <li><a href="#">Products <span class="count">3</span></a></li>
+            <li><a href="#">Suppliers <span class="count">0</span></a></li>
+          </ul>
+        </li>
+        <li class="cart"><a href="#">0 Items</a></li>
+      </ul>
+    </div>
+    <button class="sideBarCtrl" type="button"></button>
+    <button class="topMenuCtrl" type="button"></button>
+  </div>
+
+  <div class="wrapAll">
+    <aside class="sideBar">
+      <nav class="menu">
+        <ul>
+          <li class="hasChild"><a href="javascript:;" data_target="_self"><span class="menuIcon "></span>My Taiwantrade</a>
+            <ul>
+              <li><a href="myTT_dashboard.html" target="_self">我的提醒(2021已上線)</a></li>
+              <li><a href="home_ep.html" target="_self">營運儀錶板(2020已上線)</a></li>
+              <li><a href="javascript:;">商機資料庫查詢(外連)</a></li>
+            </ul>
+          </li>
+          <li><a href="javascript:;"><span class="menuIcon myep"></span>企業網管理</a>
+            <ul>
+              <li><a href="site_compData.html">公司資料設定</a></li>
+              <li><a href="site_applyLogo.html">台灣經貿網Logo申請</a></li>
+              <li><a href="site_build_guide.html">建站引導</a></li>
+            </ul>
+          </li>
+          <li class="hasChild activate activated"><a href="javascript:;"><span class="menuIcon content"></span>內容管理</a>
+            <ul style="display: block;">
+              <li><a href="cont_catalog_list.html">產品型錄設定</a></li>
+              <li><a href="cont_PdCateSetting.html">產品分類設定</a></li>
+              <li><a href="cont_privateShowroom.html">型錄加密設定</a></li>
+              <li><a href="cont_newsList.html">公司新聞設定</a></li>
+              <li><a href="cont_imageList.html">圖庫設定</a></li>
+              <li><a href="cont_videoList.html">影音設定</a></li>
+              <li><a href="javascript:;">360資源庫設定</a></li>
+              <li><a href="cont_marketingList.html">行銷專案活動查詢</a></li>
+              <li><a href="cont_PdCateExp.html">新聞匯入匯出</a></li>
+              <li><a href="cont_albumList.html">型錄專輯設定</a></li>
+              <li><a href="cont_eBay_searchList.html">匯出型錄至eBay</a></li>
+              <li><a href="comp_homeMultimedia.html">多媒體輪播設定功能(EC)</a></li>
+            </ul>
+          </li>
+          <li><a href="#" data_target="_self">
+            <span class="menuIcon merchandise"></span>銷貨管理 <font color="red">New</font>
+            <span class="count" style="" id="menu_orderUnreadCount">26</span></a>
+            <ul>
+              <li><a href="sale_orderListFromBuyer.html">買主訂單 <span class="count" style="" id="submenu_orderUnreadCount">26</span></a></li>
+              <li><a href="sale_orderListToSupplier.html">訂貨管理</a></li>
+              <li><a href="sale_onlineShop.html">銷售頁面設定</a></li>
+              <li><a href="sale_paymentSetPayPalList.html">收款及幣別設定</a></li>
+              <li><a href="sale_returnPolicy.html">退換貨辦法設定</a></li>
+              <li><a href="sale_quotation_list.html">線上報價</a></li>
+              <li><a href="sale_quotationTemplateList.html">報價單樣板</a></li>
+            </ul>
+          </li>
+          <li><a href="javascript:;"><span class="menuIcon inquiry"></span>商機管理 <span class="count">99+</span></a>
+            <ul>
+              <li><a href="javascript:;">線上對談 <span class="count">5</span></a></li>
+              <li><a href="javascript:;">買主清單</a></li>
+              <li><a href="javascript:;">商機清單</a></li>
+              <li><a href="javascript:;">商機資料庫推薦 <span class="count">99+</span></a></li>
+              <li><a href="javascript:;">訊息範本</a></li>
+              <li><a href="javascript:;">商機報名紀錄</a></li>
+              <li><a href="javascript:;">配對偏好設定</a></li>
+            </ul>
+          </li>
+          <li><a href="javascript:;"><span class="menuIcon myaccount"></span>會員管理</a>
+            <ul>
+              <li><a href="javascript:;">公司成員設定</a></li>
+              <li><a href="javascript:;">帳號設定</a></li>
+              <li><a href="javascript:;">業務聯絡人設定</a></li>
+              <!--li><a href="javascript:;">追蹤供應商</a></li>
+              <li><a href="javascript:;">追蹤產品</a></li-->
+            </ul>
+          </li>
+          <li><a href="javascript:;"><span class="menuIcon cart"></span>購物車</a>
+            <ul>
+              <li><a href="javascript:;">購物車</a></li>
+              <li><a href="javascript:;">訂單查詢</a></li>
+              <li><a href="javascript:;">點數查詢</a></li>
+              <li><a href="javascript:;">台灣產品雜誌稿件</a></li>
+              <li><a href="javascript:;">紅利商品兌換</a></li>
+            </ul>
+          </li>
+          <li><a href="javascript:;"><span class="menuIcon weblink"></span>連結</a>
+            <ul>
+              <li><a href="javascript:;">教育中心</a></li>
+              <li><a href="javascript:;">採洽易</a></li>
+              <li><a href="javascript:;">進出口資料查詢</a></li>
+              <li><a href="javascript:;">物流查詢</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+    
+    <div class="main">
+      <header class="pageHeading">
+        <h2>360資源庫設定</h2>
+        <ul class="path">
+          <li><a href="#">內容管理</a></li>
+          <li>360資源庫設定</li>
+        </ul>
+      </header>
+
+      <section class="noteDv expansile">
+        <ol>
+          <li>因360環物連結刪除後即無法復原，如需刪除，請填寫<a href="#">變更申請書(等客戶補檔案要設下載連結)</a>，我們將協助刪除該連結。</li>
+          <li>我們將會進行連結網址轉換，此轉換不影響買主於台灣經貿網上瀏覽，但如有將該360環物圖片連結運用於其它成，請務必調整。</li>
+        </ol>
+      </section>
+
+      <section class="searchRow simple">
+        <form action="">
+          <input type="text" placeholder="請輸入查詢關鍵字">
+          <input type="reset" value="清除">
+          <input type="submit" value="查詢">
+        </form>
+      </section>
+
+      <section class="filterBy">
+        <span>快速選單</span>
+        <div class="simuInput">全部</div>
+        <ul class="filterOptions">
+          <li class="isPicked">全部 <span class="count">41</span></li>
+          <li>使用中<span class="count">20</span></li>
+          <li>未使用<span class="count">21</span></li>
+        </ul>
+      </section>
+
+      <section class="classify">
+        <ul>
+          <li class="active"><a href="javascript:;">全部</a></li>
+          <li><a href="javascript:;">未分組</a></li>
+          <li class="hasMoreFunc"><a href="javascript:;">公司介紹</a><span class="moreFunc"></span>
+            <ul class="action">
+              <li class="modifyThis trigPop" id="pop-editGp">修改</li>
+              <li class="deleteThis trigPop" id="pop-delGp">刪除</li>
+            </ul>
+          </li>
+          <li class="hasMoreFunc"><a href="javascript:;">產品介紹</a><span class="moreFunc"></span>
+            <ul class="action">
+              <li class="modifyThis trigPop" id="pop-editGp">修改</li>
+              <li class="deleteThis trigPop" id="pop-delGp">刪除</li>
+            </ul>
+          </li>
+          <li class="hasMoreFunc"><a href="javascript:;">產品使用說明</a><span class="moreFunc"></span>
+            <ul class="action">
+              <li class="modifyThis trigPop" id="pop-editGp">修改</li>
+              <li class="deleteThis trigPop" id="pop-delGp">刪除</li>
+            </ul>
+          </li>
+          <li class="hasMoreFunc"><a href="javascript:;">Excepteur proident</a><span class="moreFunc"></span>
+            <ul class="action">
+              <li class="modifyThis trigPop" id="pop-editGp">修改</li>
+              <li class="deleteThis trigPop" id="pop-delGp">刪除</li>
+            </ul>
+          </li>
+
+          <li class="addNew">
+            <input type="text" placeholder="新增群組">
+            <button class="add" type="submit"></button>
+          </li>
+        </ul>
+      </section>
+      <script>
+        // 20210429：input 內是空字串時，mouseleave 才收合 
+        $(function(){
+          var _addNewClass = $('.classify').find('.addNew');
+          _addNewClass.hover(
+            function(){
+              $(this).addClass('typing');
+            },
+            function(){
+              if ($(this).find('input').val() === ''){
+                $(this).removeClass('typing');
+              }
+            }
+          )
+        })
+      </script>
+      
+
+
+      <section class="mediaList checkingList">
+
+        <div class="onListTop">
+          <label class="ofallCheck checkAll"><input type="checkbox">全選</label>
+
+          <div class="funcBtnGp">
+            <ul>
+              <li class="changeGroup"><a class="trigPop" id="pop-cg1">移動群組</a></li>
+              <!--li class="remove"><a class="trigPop" id="pop-del1">刪除勾選項目</a></li-->
+            </ul>
+          </div>
+
+          <div class="filter">
+            <label>排序條件</label>
+            <select>
+              <option value="">建立時間：由新到舊</option>
+              <option value="">建立時間：由舊到新</option>
+            </select>
+          </div>
+
+          <div class="displayMode">
+            <ul>
+              <li class="array now"></li>
+              <li class="stack"></li>
+            </ul>
+          </div>
+            
+
+          <div class="funcBtnGp">
+            <ul>
+              <li class="add"><a href="#">新增360資源</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <ul class="exchangeView grid">
+          <li class="oneMedia">
+            <label class="listCheck"><input type="checkbox"></label>
+            <iframe src="https://vr360.ttstaging.com.tw/product360/showProduct360/2714" scrolling="no" frameBorder="0"></iframe>
+            <ul class="mInfo">
+              <li class="title"><span class="label">標題</span><em>E3 分離扣</em></li>
+              <li><span class="label">群組</span><em>產品介紹</em></li>
+              <li><span class="label">是否使用</span><em>否</em></li>
+              <li><span class="label">類型</span><em>外部URL</em></li>
+              <li class="date"><span class="label">建立日期</span><em>2020-05-14 11:43:10</em></li>
+              <li class="date"><span class="label">轉換日期</span><em>2020-05-14 11:43:10</em></li>
+            </ul>
+            <ul class="editThis">
+              <li class="edit"><a href="#" title="編輯"></a></li>
+              <li class="copyLink"><a title="複製360資源連結"></a></li>
+              <!--li class="delete"><a class="trigPop" id="pop-del2" title="刪除"></a></li-->
+            </ul>
+          </li>
+          <li class="oneMedia">
+            <label class="listCheck"><input type="checkbox"></label>
+            <iframe src="https://scankit.istaging.com/P1000032/P1000032.html" scrolling="no" frameBorder="0"></iframe>
+            <ul class="mInfo">
+              <li class="title"><span class="label">標題</span><em>E4 分離扣</em></li>
+              <li><span class="label">群組</span><em>產品介紹</em></li>
+              <li><span class="label">是否使用</span><em>是</em></li>
+              <li><span class="label">類型</span><em>360元件</em></li>
+              <li class="date"><span class="label">建立日期</span><em>2020-05-14 11:43:10</em></li>
+              <li class="date"><span class="label">轉換日期</span><em>2020-05-14 11:43:10</em></li>
+            </ul>
+            <ul class="editThis">
+              <li class="edit"><a href="#" title="編輯"></a></li>
+              <li class="copyLink"><a title="複製360資源連結"></a></li>
+            </ul>
+          </li>
+          <li class="oneMedia">
+            <label class="listCheck"><input type="checkbox"></label>
+            <iframe src="https://scankit.istaging.com/P1000051/P1000051.html" scrolling="no" frameBorder="0"></iframe>
+            <ul class="mInfo">
+              <li class="title"><span class="label">標題</span><em>E4 分離扣</em></li>
+              <li><span class="label">群組</span><em>產品介紹</em></li>
+              <li><span class="label">是否使用</span><em>是</em></li>
+              <li><span class="label">類型</span><em>360元件</em></li>
+              <li class="date"><span class="label">建立日期</span><em>2020-05-14 11:43:10</em></li>
+              <li class="date"><span class="label">轉換日期</span><em>2020-05-14 11:43:10</em></li>
+            </ul>
+            <ul class="editThis">
+              <li class="edit"><a href="#" title="編輯"></a></li>
+              <li class="copyLink"><a title="複製360資源連結"></a></li>
+            </ul>
+          </li>
+          <li class="oneMedia">
+            <label class="listCheck"><input type="checkbox"></label>
+            <iframe src="https://scankit.istaging.com/P1000035/P1000035.html" scrolling="no" frameBorder="0"></iframe>
+            <ul class="mInfo">
+              <li class="title"><span class="label">標題</span><em>E5 分離扣</em></li>
+              <li><span class="label">群組</span><em>產品介紹</em></li>
+              <li><span class="label">是否使用</span><em>是</em></li>
+              <li><span class="label">類型</span><em>360元件</em></li>
+              <li class="date"><span class="label">建立日期</span><em>2020-05-14 11:43:10</em></li>
+              <li class="date"><span class="label">轉換日期</span><em>2020-05-14 11:43:10</em></li>
+            </ul>
+            <ul class="editThis">
+              <li class="edit"><a href="#" title="編輯"></a></li>
+              <li class="copyLink"><a title="複製360資源連結"></a></li>
+            </ul>
+          </li>
+          <li class="oneMedia">
+            <label class="listCheck"><input type="checkbox"></label>
+            <iframe src="https://scankit.istaging.com/P1000036/P1000036.html" scrolling="no" frameBorder="0"></iframe>
+            <ul class="mInfo">
+              <li class="title"><span class="label">標題</span><em>E6 分離扣</em></li>
+              <li><span class="label">群組</span><em>產品介紹</em></li>
+              <li><span class="label">是否使用</span><em>是</em></li>
+              <li><span class="label">類型</span><em>360元件</em></li>
+              <li class="date"><span class="label">建立日期</span><em>2020-05-14 11:43:10</em></li>
+              <li class="date"><span class="label">轉換日期</span><em>2020-05-14 11:43:10</em></li>
+            </ul>
+            <ul class="editThis">
+              <li class="edit"><a href="#" title="編輯"></a></li>
+              <li class="copyLink"><a title="複製360資源連結"></a></li>
+            </ul>
+          </li>
+        </ul>
+        
+      </section>
+
+      <section class="page">
+        <p>每頁顯示 <select name="perPage" id="perPage">
+          <option value="30">10</option>
+          <option value="30">25</option>
+          <option value="10">50</option>
+          <option value="30">全部</option>
+        </select> 筆</p>
+        <p>本頁顯示 <em>1</em> 到 <em>10</em> 筆，共有 <em>57</em> 筆</p>
+        <ul>
+          <li class="prev disabled"><a href="#">上一頁</a></li>
+          <li class="here"><a href="#">1</a></li>
+          <li class="ellipsis">...</li>
+          <li><a href="#">3</a></li>
+          <li><a href="#">4</a></li>
+          <li><a href="#">5</a></li>
+          <li class="ellipsis">...</li>
+          <li><a href="#">12</a></li>
+          <li class="next"><a href="#">下一頁</a></li>
+        </ul>
+      </section>
+
+
+      <footer class="webFooter">
+        <ul class="footLinks">
+          <li><a href="#">Liability Disclaimer</a></li>
+          <li><a href="#">Terms Of Use</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Intellectual Property Right Infringement Policy</a></li>
+          <li><a href="#">Product and Service Listing Policy</a></li>
+          <li><a href="#">Useful links</a></li>
+        </ul>
+        <p>Help Customer Service:+886-800506088  © 2002-2019 TAITRA. All rights reserved.</p>
+      </footer>
+    
+
+      <section class="popMsg" id="cg1">
+        <h3>移動群組</h3>
+        <div class="popBody">
+          <div class="changeGroup">
+           <label>移動選取的<em>2</em>個360資源至群組</label>
+            <select name="" id="">
+              <option value="">公司介紹</option>
+              <option selected value="">產品介紹</option>
+              <option value="">產品使用說明</option>
+            </select>
+          </div>
+        </div>
+        <div class="btnDv">
+          <input type="submit" value="確定" class="closePop">
+          <input type="button" value="取消" class="closePop">
+        </div>
+      </section>
+
+      <section class="popMsg" id="del1">
+        <h3>刪除360資源</h3>
+        <div class="popBody">
+          <p>您確定要刪除選取的<em>2</em>個資源嗎？</p>
+        </div>
+        <div class="btnDv">
+          <input type="submit" value="確定" class="closePop">
+          <input type="button" value="取消" class="closePop">
+        </div>  
+      </section>
+
+      <section class="popMsg" id="del2">
+        <h3>刪除360資源</h3>
+        <div class="popBody">
+          <p>您確定要刪除這個360資源嗎？</p>
+        </div>
+        <div class="btnDv">
+          <input type="submit" value="確定" class="closePop">
+          <input type="button" value="取消" class="closePop">
+        </div>  
+      </section>
+   
+      <section class="popMsg" id="editGp">
+        <h3>更改群組名稱</h3>
+        <div class="popBody">
+          <table class="formLayout">
+            <tr>
+              <td>原群組名稱</td>
+              <td><div class="asAnInput">公司介紹</div></td>
+            </tr>
+            <tr>
+              <td>更改為</td>
+              <td><input class="gpName" type="text" value=""></td>
+            </tr>
+          </table>
+        </div>
+        <div class="btnDv">
+          <input type="submit" value="確定" class="closePop">
+          <input type="button" value="取消" class="closePop">
+        </div>
+      </section>
+
+      <section class="popMsg" id="delGp">
+        <h3>刪除群組</h3>
+        <div class="popBody">
+          <p>您確定要刪除 <em class="groupName">公司介紹</em> 這個群組嗎？</p>
+        </div>
+        <div class="btnDv">
+          <input type="submit" value="確定" class="closePop">
+          <input type="button" value="取消" class="closePop">
+        </div>  
+      </section>
+     
+
+
+    </div><!-- /.main -->
+  </div><!-- ./wrapAll -->
+
+
+  <div class="goTopBottom">
+    <span class="goTop" title="go top"></span>
+    <span class="goBottom" title="go bottom"></span>
+  </div>
+</body>
+
+</html>

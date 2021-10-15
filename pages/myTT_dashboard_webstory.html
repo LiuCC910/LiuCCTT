@@ -1,0 +1,1308 @@
+<!DOCTYPE html>
+<html lang="zh-Hans-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>SU-我的提醒（My Taiwantrade）</title>
+  <link href="https://fonts.googleapis.com/css?family=Red+Hat+Display:400,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/design.css">
+  <script src="../js/jquery-3.4.1.min.js"></script>
+  <script src="../js/rwdTable.js"></script>
+  <script src="../js/basic.js"></script>
+</head>
+
+<body>
+  <div class="topZone">
+    <header class="webHeader">
+      <h1>Taiwan Trade</h1>
+    </header>
+    <div class="topMenu">
+      <ul class="nav">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Language</a>
+          <ul>
+            <li><a href="xLang">正體中文</a></li>
+            <li><a href="xLang">English</a></li>
+            <li><a href="xLang">日本語</a></li>
+            <li><a href="xLang">简体中文</a></li>
+            <li><a href="xLang">Русский</a></li>
+            <li><a href="xLang">Español</a></li>
+            <li><a href="xLang">Portugues</a></li>
+            <li><a href="xLang">العربية</a></li>
+            <li><a href="xLang">Bahasa Indonesia</a></li>
+            <li><a href="xLang">Deutsch</a></li>
+            <li><a href="xLang">Tiếng Việt</a></li>
+            <li><a href="xLang">ภาษาจีนแบบดั้งเดิม</a></li>
+            <li><a href="xLang">Türk</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Chat with Us</a></li>
+      </ul>
+      <ul class="hasSignIn">
+        <li class="hello">
+          <a href="javascript:;">Hello, <em>Nana</em><span class="msgCount">14</span></a>
+          <ul>
+            <li class="role">賣家中心</li>
+            <li><a href="#">前往企業網</a></li>
+            <li><a href="#">我的管理端</a></li>
+            <li><a href="#">商機管理</a></li>
+            <li><a href="#">商機資料庫管理</a></li>
+            <li><a href="#">會員重要公告</a></li>
+            <li class="role">Buy</li>
+            <li><a href="#">Messages <span class="count">3</span></a></li>
+            <li><a href="#">My Subscription <span class="count">10</span></a></li>
+            <li><a href="#">Order History <span class="count">1</span></a></li>
+            <li><a href="#">Customized Sourcing</a></li>
+            <li><a href="#">Account Setting</a></li>
+          </ul>
+        </li>
+        <li class="signInOut"><a href="#">Sign Out</a></li>
+        <li><a href="#">Favorites</a>
+          <ul>
+            <li><a href="#">Products <span class="count">3</span></a></li>
+            <li><a href="#">Suppliers <span class="count">0</span></a></li>
+          </ul>
+        </li>
+        <li class="cart"><a href="#">0 Items</a></li>
+      </ul>
+    </div>
+    <button class="sideBarCtrl" type="button"></button>
+    <button class="topMenuCtrl" type="button"></button>
+  </div>
+
+  <div class="wrapAll">
+    <aside class="sideBar">
+      <nav class="menu">
+        <ul>
+          <li><a href="javascript:;"><span class="menuIcon cart"></span>My Taiwantrade</a>
+            <ul>
+              <li><a href="javascript:;">我的提醒</a></li>
+              <li><a href="javascript:;">商機資料庫查詢</a></li>
+              <li><a href="javascript:;">成功案例分享</a></li>
+              <li><a href="javascript:;">會員買賣訊息刊登</a></li>
+              <li><a href="javascript:;">我的追蹤清單</a></li>
+            </ul>
+          </li>
+          <li><a href="javascript:;"><span class="menuIcon myep"></span>企業網管理</a>
+            <ul>
+              <!-- <li><a href="javascript:;">版型設定</a></li>
+              <li><a href="javascript:;">導覽列設定</a></li>
+              <li><a href="javascript:;">首頁設定</a></li>
+              <li><a href="javascript:;">首頁大圖設定</a></li> -->
+              <li><a href="javascript:;">網址設定</a></li>
+              <li><a href="javascript:;">公司資料設定</a></li>
+              <li><a href="javascript:;">公司介紹設定</a></li>
+              <li><a href="javascript:;">海外據點設定</a></li>
+              <li><a href="javascript:;">台灣經貿網Logo申請</a></li>
+            </ul>
+          </li>
+          <li><a href="javascript:;"><span class="menuIcon content"></span>內容管理</a>
+            <ul>
+              <li><a href="javascript:;">公司新聞設定</a></li>
+              <li><a href="javascript:;">影音設定</a></li>
+              <li><a href="javascript:;">行銷專案活動查詢</a></li>
+              <li><a href="javascript:;">品牌故事分享</a></li>
+              <li><a href="javascript:;">型錄專輯設定</a></li>
+              <li><a href="javascript:;">新聞匯入匯出</a></li>
+              <li><a href="javascript:;">匯出型錄至eBay</a></li>
+            </ul>
+          </li>
+          <li><a href="javascript:;"><span class="menuIcon merchandise"></span>銷貨管理</a>
+            <ul>
+              <li><a href="javascript:;">買主訂單</a></li>
+              <li><a href="javascript:;">訂貨管理</a></li>
+              <li><a href="javascript:;">收款及幣別設定</a></li>
+              <li><a href="javascript:;">退換貨辦法設定</a></li>
+              <li><a href="javascript:;">報價單樣板</a></li>
+              <li><a href="javascript:;">線上報價</a></li>
+            </ul>
+          </li>
+          <li><a href="javascript:;"><span class="menuIcon inquiry"></span>商機管理 <span class="count">99+</span></a>
+            <ul>
+              <li><a href="javascript:;">商機訊息通 <span class="count">5</span></a></li>
+              <li><a href="javascript:;">買主清單</a></li>
+              <li><a href="javascript:;">線上商機</a></li>
+              <li><a href="javascript:;">推薦商機 <span class="count">99+</span></a></li>
+              <li><a href="javascript:;">回覆範本</a></li>
+              <li><a href="javascript:;">偏好設定</a></li>
+              <li><a href="javascript:;">商機看板紀錄</a></li>
+            </ul>
+          </li>
+          <li><a href="javascript:;"><span class="menuIcon myaccount"></span>會員管理</a>
+            <ul>
+              <li><a href="javascript:;">公司成員設定</a></li>
+              <li><a href="javascript:;">帳號設定</a></li>
+              <li><a href="javascript:;">業務聯絡人設定</a></li>
+              <li><a href="javascript:;">追蹤供應商</a></li>
+              <li><a href="javascript:;">追蹤產品</a></li>
+            </ul>
+          </li>
+          <li><a href="javascript:;"><span class="menuIcon cart"></span>購物車</a>
+            <ul>
+              <li><a href="javascript:;">購物車</a></li>
+              <li><a href="javascript:;">訂單查詢</a></li>
+              <li><a href="javascript:;">點數查詢</a></li>
+              <li><a href="javascript:;">台灣產品雜誌稿件</a></li>
+              <li><a href="javascript:;">紅利商城(商品兌換)</a></li>
+            </ul>
+          </li>
+          <li><a href="javascript:;"><span class="menuIcon weblink"></span>連結</a>
+            <ul>
+              <li><a href="javascript:;">教育中心</a></li>
+              <li><a href="javascript:;">採洽易</a></li>
+              <li><a href="javascript:;">進出口資料查詢</a></li>
+              <li><a href="javascript:;">物流查詢</a></li>
+              <li><a href="javascript:;">報告中心</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+    
+    <div class="main">
+      <header class="pageHeading">
+        <h2>我的提醒</h2>
+        <ul class="path">
+          <li><a href="#">My Taiwantrade</a></li>
+          <li>我的提醒</li>
+        </ul>
+      </header>
+
+      <div class="tabGroup">
+        <div class="tabs">
+          <ul>
+            <li>營運總覽</li>
+            <li>流量分析</li>
+            <li>買主行為</li>
+            <li>產業分析</li>
+            <li>銷售分析</li>
+            <li>報價分析</li>
+            <li>VR分析</li>
+            <li class="active">WebStory</li>
+          </ul>
+        </div>
+        <div class="tabContainer">
+
+          <section class="noteDv">
+            <p>變身企業網經營達人，掌握企業網關鍵數據！</p>
+            <p>「營運總覽」讓您查看網站最近30天營運重點資訊，1秒搞懂企業網經營現況。</p>
+          </section>
+
+          <div class="overview">
+            <div class="blkLeft">
+              <section class="board1">
+                <ul>
+                  <li class="showLightbox" id="chart">
+                    <div class="subject">配送商機數</div>
+                    <div class="percentage">N/A</div>
+                    <div class="score">0</div>
+                  </li>
+                  <li class="showLightbox" id="chart">
+                    <div class="subject">型錄瀏覽量</div>
+                    <div class="percentage positive">+31.3 %</div>
+                    <div class="score">109</div>
+                  </li>
+                  <li class="showLightbox" id="chart">
+                    <div class="subject">企業網瀏覽量</div>
+                    <div class="percentage negative">-31.4 %</div>
+                    <div class="score">339</div>
+                  </li>
+                  <li class="showLightbox" id="chart">
+                    <div class="subject">線上商機數</div>
+                    <div class="percentage positive">+133.3%</div>
+                    <div class="score">7</div>
+                  </li> 
+                  <li class="showLightbox" id="chart">
+                    <div class="subject">總訪客數</div>
+                    <div class="percentage positive">+8.3 %</div>
+                    <div class="score">39</div>
+                  </li>
+                  <li class="showLightbox" id="chart">
+                    <div class="subject">被追蹤次數</div>
+                    <div class="percentage negative">-66.7%</div>
+                    <div class="score">2</div>
+                  </li>
+        
+              </section>
+              <section class="board2">   
+                <h3>依公司主要產業比較同業平均值</h3>
+                <ul>
+                  <li>
+                    <div class="subject">線上商機數</div>
+                    <div class="percentage positive">+200%</div>
+                    <div class="score">3</div>
+                  </li>
+                  <li>
+                    <div class="subject">訪客數</div>
+                    <div class="percentage positive">+31.5%</div>
+                    <div class="score">6</div>
+                  </li>
+                  <li>
+                    <div class="subject">被追蹤次數</div>
+                    <div class="percentage negative">-66.7 %</div>
+                    <div class="score">2</div>
+                  </li>
+                </ul>
+              </section>
+            </div>
+            <div class="blkRight">
+              <div class="boardMap">
+                <img class="fakeMap" src="../publicData/fakeWorldMap.png">
+              </div>
+
+              <div class="listTbNew">
+                <table>
+                  <thead>
+                    <tr>
+                      <th><span class="sortingTh">國家</span></th>
+                      <th><span class="sortingTh descending">瀏覽量</span></th>
+                    </tr>
+                  </thead>
+              
+                  <tbody>
+                    <tr><td>Taiwan</td><td class="digit">51</td></tr>
+                    <tr><td>India</td><td class="digit">5</td></tr>
+                    <tr><td>China</td><td class="digit">2</td></tr>
+                  </tbody>
+                </table>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="tabContainer">
+          <section class="noteDv">
+            <p>透析網站流量從哪來，有效佈局行銷資源！</p>
+            <p>「流量分析」提供您各式報表，一次掌握企業網的各方面流量來源及流量表現，經營企業網更精進。</p>
+          </section>
+          <section class="browsingRecord">
+            <ul>
+              <li class="ep"><a href="javascript:;">
+                <h3>企業網瀏覽量</h3>
+                <p>查看近期企業網被瀏覽的各頁面之瀏覽量、訪客數及平均停留時間</p>
+              </a></li>
+              <li class="catagory"><a href="javascript:;">
+                <h3>整體型錄瀏覽量</h3>
+                <p>提供買主於台灣經貿網及企業網中，點擊各型錄之統計</p>
+              </a></li>
+              <li><a href="javascript:;">總訪客數</a></li>
+              <li><a href="javascript:;">國家分佈</a></li>
+              <li><a href="javascript:;">進站來源</a></li>
+              <li><a href="javascript:;">導覽列瀏覽量</a></li>
+              <li><a href="javascript:;">新聞瀏覽量</a></li>
+              <li><a href="javascript:;">型錄瀏覽量</a></li>
+            </ul>
+          </section>
+        </div>
+        <div class="tabContainer">
+          <section class="noteDv">
+            <p>知買主，掌商機！</p>
+            <p>「買主行為」供您隨時查看各類商機變化趨勢，並剖析買主喜好，讓您精準優化企業網，接獲商機再提升。</p>
+          </section>
+          <section class="buyerRecord">
+            <ul>
+              <li><a href="javascript:;">線上商機數</a></li>
+              <li><a href="javascript:;">配送商機數</a></li>
+              <li><a href="javascript:;">被追蹤次數</a></li>
+              <li><a href="javascript:;">買主熱搜詞</a></li>
+              <li><a href="javascript:;">放入購物車</a></li>
+            </ul>
+          </section>
+        </div>
+        <div class="tabContainer">
+          <section class="noteDv"> <p>知己知彼，百戰百勝！</p>
+            <p>想瞭解同行企業網的表現？或者是掌握所屬產業買主的最新採購需求？「產業分析」提供各式報表，讓您查看您的企業網於所屬產業之定位，大步躍進邁向第一。</p>
+          </section>
+          <section class="comparison">
+            <ul>
+              <li><a href="javascript:;">訪客數比較</a></li>
+              <li><a href="javascript:;">型錄瀏覽量比較</a></li>
+              <li><a href="javascript:;">線上商機比較</a></li>
+              <li><a href="javascript:;">配送商機比較</a></li>
+              <li><a href="javascript:;">被追蹤次數比較</a></li>
+              <li><a href="javascript:;">買主熱搜詞比較</a></li>
+              <li><a href="javascript:;">放入購物車比較</a></li>
+            </ul>
+          </section>
+        </div>
+
+        <!-- 銷售分析 -->
+        <div class="tabContainer">
+          <section class="noteDv"><p>依所選時間區間，顯示「訂單數量、價格、熱門商品、買主國家排行」等訂單資訊(不含報價單)，詳細訂單明細請至「銷貨管理」查詢</p>
+          </section>
+          <section class="chartSet">
+            <div class="optionPool singleSelection">
+              <label class="isSelected"><input type="radio">最近30天</label>
+              <label><input type="radio">最近60天</label>
+              <label><input type="radio">最近90天</label>
+              <label><input type="radio">All time</label>
+            </div>
+            <h3>訂單數</h3>
+            <p>顯示所選期間內「交易成功訂單」數量</p>
+            <section class="chartArea">
+              <img class="fakeChart" src="../publicData/fakeChart.png"><!-- 模擬圖表 -->
+            </section>
+
+            <h3>訂單金額</h3>
+            <p>顯示所選期間內「交易成功訂單」金額（含運，幣別為美金）</p>
+            <section class="chartArea">
+              <img class="fakeChart" src="../publicData/fakeChart.png"><!-- 模擬圖表 -->
+            </section>
+
+            <h3>銷售排名</h3>
+            <p>所選期間內交易成功訂單，依銷售單價高到低排序，顯示前5筆商品</p>
+            <section class="listTable">
+              <table>
+                <thead>
+                  <tr>
+                    <th>產品序號</th>
+                    <th>總銷售數量</th>
+                    <th>銷售總金額(USD)</th>
+                    <th>產品名稱</th>
+                    <th>最新銷售時間</th>
+                    <th>產品圖片</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>456123789</td>
+                    <td>4,000</td>
+                    <td>99,999</td>
+                    <td>Oriental Beauty Tea</td>
+                    <td><time>2020-10-12 10:39:45</time></td>
+                    <td>
+                      <div class="pdPhoto"><img src="../publicData/ph02.jpg"></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>456123789</td>
+                    <td>4,000</td>
+                    <td>99,999</td>
+                    <td>Taiwan Organic Tea - Treasury 2 (2 boxes), Taiwan Organic Tea, Oriental Beauty Tea, Green Tea</td>
+                    <td><time>2020-10-12 10:39:45</time></td>
+                    <td>
+                      <div class="pdPhoto"><img src="../publicData/ph07.jpg"></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>456123789</td>
+                    <td>4,000</td>
+                    <td>99,999</td>
+                    <td>Osmanthus High Mt. Tea</td>
+                    <td><time>2020-10-12 10:39:45</time></td>
+                    <td>
+                      <div class="pdPhoto"><img src="../publicData/ph03.jpg"></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>456123789</td>
+                    <td>4,000</td>
+                    <td>99,999</td>
+                    <td>Organic Jinxuan Green Tea - Taiwan Green Tea, Bubble Tea Supplier, Tea Loose</td>
+                    <td><time>2020-10-12 10:39:45</time></td>
+                    <td>
+                      <div class="pdPhoto"><img src="../publicData/ph04.jpg"></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>456123789</td>
+                    <td>4,000</td>
+                    <td>99,999</td>
+                    <td>Organic Jinxuan Green Tea - Taiwan Green Tea, Bubble Tea Supplier, Tea Loose</td>
+                    <td><time>2020-10-12 10:39:45</time></td>
+                    <td>
+                      <div class="pdPhoto"><img src="../publicData/ph05.jpg"></div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <span class="btnLook"><a href="x">訂單查詢</a></span> 
+            </section>
+
+            <h3>買主國別</h3>
+            <p>顯示所選期間內，以「交易成功訂單」統計買主「所屬國別」比例</p>
+            <section class="chartArea">
+              <img class="fakeChart" src="../publicData/fakePie.png"><!-- 模擬圖表 -->
+            </section>
+
+            <h3>同產業買主國別比例
+              <select>
+                <option>Consumer Electronics -- 消費性電子</option>
+                <option>Electrical & Electronics -- 電機及電子</option>
+                <option>Furniture -- 家具</option>
+                <option>Gifts & Crafts -- 禮品及藝品</option>
+                <option>Hardware -- 五金</option>
+                <option>Home Appliances -- 家庭用電器</option>
+                <option>Houseware -- 家庭用品</option>
+                <option>Lights & Lighting -- 燈光及照明</option>
+              </select>
+            </h3>
+            <p>顯示所選期間內，以貴公司產業別顯示「同產業供應商交易成功訂單」統計買主「所屬國別」比例</p>
+            <section class="chartArea">
+              <img class="fakeChart" src="../publicData/fakePie.png"><!-- 模擬圖表 -->
+            </section>
+
+          </section>
+        </div>
+
+        <!-- *** 報價分析 *** -->
+        <div class="tabContainer">
+          <section class="noteDv">
+            依所選時間區間，顯示發送出的「報價單數量、報價單成交金額」等資訊，詳細訂單明細請至「銷貨管理」查詢。
+          </section>
+          <section class="chartSet">
+            <div class="optionPool singleSelection">
+              <label><input type="radio">最近30天</label>
+              <label><input type="radio">最近60天</label>
+              <label><input type="radio">最近90天</label>
+              <label class="isSelected"><input type="radio">All time</label>
+            </div>
+  
+            <h3>報價單發送數</h3>
+            <p>依所選時間區間，顯示發送出的「報價單數量、報價單成交金額」等資訊，詳細訂單明細請至「銷貨管理」查詢</p>
+            <section class="chartArea">
+              <img class="fakeChart" src="../publicData/fakeChart.png"><!-- 模擬圖表 -->
+            </section>
+  
+            <h3>報價單成交金額</h3>
+            <p>顯示所選期間內，發送出的報價單（含商機所附報架單）成交金額</p>
+            <section class="chartArea">
+              <img class="fakeChart" src="../publicData/fakeChart.png"><!-- 模擬圖表 -->
+            </section>
+          </section>
+
+          
+        </div>
+
+        <!-- *** VR 分析 *** ------------------------------------------------------------------------------------------------------------ -->
+        <div class="tabContainer">
+          <section class="noteDv">
+            <p>依所選時間區隔，顯示VR展間的「訪客、來源國別、以及展間內場景點擊事件」數據等資訊</p>
+          </section>
+          <div class="optionPool">
+            <label class="isSelected"><input type="radio" checked="checked">最近30天</label>
+            <label><input type="radio">最近60天</label>
+            <label><input type="radio"> 最近90天</label>
+          </div>
+
+          <section class="statisticSet">
+
+            <h3>VR展間使用者瀏覽量</h3>
+            <p>依所選時間區隔，顯示VR展間每日的「總訪客數」之數據資訊，並提供各展間之來源國別詳細資訊列表。</p>
+
+            <div>
+              <img class="fakeChart" src="../publicData/fake_myTTVR-1.png" style="width: 100%;">
+            </div>
+
+            <div class="listTbNew">
+              <select name="" id="">
+                <option value="">2020 Taiwan Optical & Eyewear_Tech & Beauty</option>
+                <option value="">... ... ...</option>
+              </select>
+              <table>
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>訪客來源國別</th>
+                    <th><span id="2" class="sortingTh">訪客數</span></th>
+                    <th><span id="1" class="sortingTh descending">網頁瀏覽量</span></th>
+                    <th><span id="3" class="sortingTh">事件點擊量</span></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="aRight">1</td>
+                    <td class="aLeft">United States</td>
+                    <td>48</td>
+                    <td>152</td>
+                    <td>177</td>
+                  </tr>
+                  <tr>
+                    <td class="aRight">2</td>
+                    <td class="aLeft">Taiwan</td>
+                    <td>32</td>
+                    <td>133</td>
+                    <td>81</td>
+                  </tr>
+                  <tr>
+                    <td class="aRight">3</td>
+                    <td class="aLeft">South Africa</td>
+                    <td>28</td>
+                    <td>101</td>
+                    <td>73</td>
+                  </tr>
+                  <tr>
+                    <td class="aRight">4</td>
+                    <td class="aLeft">United Arab Emirates</td>
+                    <td>15</td>
+                    <td>78</td>
+                    <td>26</td>
+                  </tr>
+                  <tr>
+                    <td class="aRight">5</td>
+                    <td class="aLeft">Saint Christopher (St.Kitts) and Nevis</td>
+                    <td>9</td>
+                    <td>32</td>
+                    <td>32</td>
+                  </tr>
+                </tbody>
+
+              </table>
+              <span class="btnLook"><a href="myTT_newWin_showroomClick.html" target="_blank">看完整資料</a></span>
+            </div>
+          </section>
+          
+          <section class="statisticSet">
+            <h3>VR展間TT型錄點擊導流量</h3>
+            <p>依所選時間區隔，顯示VR展間內的「TT型錄點擊與導流事件」數據資訊。</p>
+            <div>
+              <img class="fakeChart" src="../publicData/fake_myTTVR-2.png" style="width: 100%;">
+            </div>
+            <div class="listTbNew expansible">
+              <div class="expArea">
+                <table>
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th style="width: 65%">型錄標題</th><!-- style="width: 65%" 是必要的 -->
+                      <th><span class="sortingTh descending">點擊數 (TagClicks)</span></th>
+                      <th><span class="sortingTh">導流 (TagAction)</span></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="aRight">1</td>
+                      <td class="aLeft ellipTitle"><span class="nowrap">Sport sunglasses (Style name: T5428)</span></td>
+                      <td>152</td>
+                      <td>133</td>
+                    </tr>
+                    <tr>
+                      <td class="aRight">2</td>
+                      <td class="aLeft ellipTitle"><span class="nowrap">Taiwantrade Memo Pad (White-0308-1440) Safety goggles</span></td>
+                      <td>133</td>
+                      <td>20</td>
+                    </tr>
+                    <tr>
+                      <td class="aRight">3</td>
+                      <td class="aLeft ellipTitle"><span class="nowrap">Outdoor Sports Sunglasses with Custom Lenses. Quam elementum pulvinar etiam non quam lacus suspendisse faucibus. Curabitur gravida arcu ac tortor dignissim.</span></td>
+                      <td>101</td>
+                      <td>19</td>
+                    </tr>
+                    <tr>
+                      <td class="aRight">4</td>
+                      <td class="aLeft ellipTitle"><span class="nowrap">SAFETY EYEGLASSES</span></td>
+                      <td>78</td>
+                      <td>8</td>
+                    </tr>
+                    <tr>
+                      <td class="aRight">5</td>
+                      <td class="aLeft ellipTitle"><span class="nowrap">JA-363 CLAMSHELL FITOVER SUNGLASSES</span></td>
+                      <td>32</td>
+                      <td>10</td>
+                    </tr>
+                    <tr>
+                      <td class="aRight">6</td>
+                      <td class="aLeft ellipTitle"><span class="nowrap">Sport sunglasses (Style name: T5428) Outdoor Sports Sunglasses with Custom Lenses. Quam elementum pulvinar etiam non quam lacus suspendisse faucibus. Curabitur gravida arcu ac tortor dignissim.</span></td>
+                      <td>12</td>
+                      <td>3</td>
+                    </tr>
+                    <tr>
+                      <td class="aRight">7</td>
+                      <td class="aLeft ellipTitle"><span class="nowrap">Taiwantrade Memo Pad (White-0308-1440) Safety goggles</span></td>
+                      <td>10</td>
+                      <td>2</td>
+                    </tr>
+                    <tr>
+                      <td class="aRight">8</td>
+                      <td class="aLeft ellipTitle"><span class="nowrap">Outdoor Sports Sunglasses with Custom Lenses. Quam elementum pulvinar etiam non quam lacus suspendisse faucibus. Curabitur gravida arcu ac tortor dignissim.</span></td>
+                      <td>10</td>
+                      <td>9</td>
+                    </tr>
+                    <tr>
+                      <td class="aRight">9</td>
+                      <td class="aLeft ellipTitle"><span class="nowrap">SAFETY EYEGLASSES</span></td>
+                      <td>7</td>
+                      <td>0</td>
+                    </tr>
+                    <tr>
+                      <td class="aRight">10</td>
+                      <td class="aLeft">JA-363 CLAMSHELL FITOVER SUNGLASSES</td>
+                      <td>7</td>
+                      <td>0</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <span class="ctrlBtn btnLook" data-alttext="較少">看更多</span>
+              <span class="btnLook"><a href="myTT_newWin_catalogueClick.html" target="_blank">看完整資料</a></span>
+            </div>
+
+          </section>
+          
+          <section class="statisticSet">
+            <h3>VR場景多媒體事件點擊一覽</h3>
+            <p>依所選時間區隔，顯示VR展間場景的「其他／多媒體／影片點擊事件」數據資訊。</p>
+            <div class="listTbNew">
+              <table>
+                <thead>
+                  <th></th>
+                  <th>名稱</th>
+                  <th>標籤類別</th>
+                  <th><span class="sortingTh descending">點擊數 (Clicks)</span></th>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="aRight">1</td>
+                    <td class="aLeft" >取Dimension2 名稱字串</td>
+                    <td>標籤</td>
+                    <td>152</td>
+                  </tr>
+                  <tr>
+                    <td class="aRight">2</td>
+                    <td class="aLeft" >Taiwantrade Memo Pad (White-0308-1440) Safety goggles</td>
+                    <td>網頁</td>
+                    <td>133</td>
+                  </tr>
+                  <tr>
+                    <td class="aRight">3</td>
+                    <td class="aLeft" >Outdoor Sports Sunglasses with Custom Lenses </td>
+                    <td>圖片</td>
+                    <td>101</td>
+                  </tr>
+                  <tr>
+                    <td class="aRight">4</td>
+                    <td class="aLeft" >SAFETY EYEGLASSES</td>
+                    <td>站點</td>
+                    <td>78</td>
+                  </tr>
+                  <tr>
+                    <td class="aRight">5</td>
+                    <td class="aLeft" >JA-363 CLAMSHELL FITOVER SUNGLASSES</td>
+                    <td>標籤</td>
+                    <td>32</td>
+                  </tr>
+                </tbody>
+              </table>
+              <span class="btnLook"><a href="myTT_newWin_mediaClick.html" target="_blank">看完整資料</a></span>
+            </div>
+          </section>
+
+
+
+        </div>
+
+
+        <!-- *** WebStory *** ------------------------------------------------------------------------------------------------------------ -->
+        <div class="tabContainer show">
+            <section class="noteDv">
+              <p>依所選時間區隔，顯示WebStory的「訪客、來源國別、以及事件導流等點擊事件」數據等資訊</p>
+            </section>
+            <div class="optionPool">
+              <label class="isSelected"><input type="radio" checked="checked">最近30天</label>
+              <label><input type="radio">最近60天</label>
+              <label><input type="radio"> 最近90天</label>
+            </div>
+  
+            <section class="statisticSet">
+  
+              <h3>使用者瀏覽量</h3>
+              <p>依所選時間區隔，顯示WebStory每日的「總訪客數」之數據資訊，並提供來源國別詳細資訊列表。</p>
+  
+              <div>
+                <img class="fakeChart" src="../publicData/webstory-2.png" style="width: 100%;">
+              </div>
+  
+              <div class="listTbNew">
+                <select name="" id="">
+                  <option value="">TAITRA2021_templateH_poll_B-1-5</option>
+                  <option value="">依URL的Page Title－測試股份有限公司</option>
+                </select>
+                <table>
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th>訪客來源國別</th>
+                      <th><span id="2" class="sortingTh">訪客數</span></th>
+                      <th><span id="1" class="sortingTh descending">網頁瀏覽量</span></th>
+                      <th><span id="3" class="sortingTh">事件點擊量</span></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="aRight">1</td>
+                      <td class="aLeft">United States</td>
+                      <td>48</td>
+                      <td>152</td>
+                      <td>177</td>
+                    </tr>
+                    <tr>
+                      <td class="aRight">2</td>
+                      <td class="aLeft">Taiwan</td>
+                      <td>32</td>
+                      <td>133</td>
+                      <td>81</td>
+                    </tr>
+                    <tr>
+                      <td class="aRight">3</td>
+                      <td class="aLeft">South Africa</td>
+                      <td>28</td>
+                      <td>101</td>
+                      <td>73</td>
+                    </tr>
+                    <tr>
+                      <td class="aRight">4</td>
+                      <td class="aLeft">United Arab Emirates</td>
+                      <td>15</td>
+                      <td>78</td>
+                      <td>26</td>
+                    </tr>
+                    <tr>
+                      <td class="aRight">5</td>
+                      <td class="aLeft">Saint Christopher (St.Kitts) and Nevis</td>
+                      <td>9</td>
+                      <td>32</td>
+                      <td>32</td>
+                    </tr>
+                  </tbody>
+  
+                </table>
+                <span class="btnLook"><a href="myTT_newWin_showroomClick2.html" target="_blank">看完整資料</a></span>
+              </div>
+            </section>
+            
+            <section class="statisticSet">
+              <h3>Webstory的TT型錄與Contact點擊導流量</h3>
+              <p>依所選時間區隔，顯示「TT型錄點擊與Contact導流事件」數據資訊。</p>
+              <div>
+                <img class="fakeChart" src="../publicData/webstory-1.png" style="width: 100%;">
+              </div>
+              <div class="listTbNew expansible">
+                <div class="expArea">
+                    <select name="" id="">
+                        <option value="">TAITRA2021_templateH_poll_B-1-5</option>
+                        <option value="">依URL的Page Title－測試股份有限公司</option>
+                      </select>                    
+                  <table>
+                    <thead>
+                      <tr>
+                        <th></th>
+                        <th>類型</th>
+                        <th style="width: 65%">型錄標題</th><!-- style="width: 65%" 是必要的 -->
+                        <th><span class="sortingTh descending">點擊數 (TagClicks)</span></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="aRight">1</td>
+                        <td>Contact</td>
+                        <td class="aLeft ellipTitle">－</td>
+                        <td>30</td>
+                      </tr>
+                      <tr>
+                        <td class="aRight">2</td>
+                        <td>Product</td>
+                        <td class="aLeft ellipTitle"><span class="nowrap">Taiwantrade Memo Pad (White-0308-1440) Safety goggles</span></td>
+                        <td>1</td>
+                      </tr>
+                      <tr>
+                        <td class="aRight">3</td>
+                        <td>Product</td>
+                        <td class="aLeft ellipTitle"><span class="nowrap">Outdoor Sports Sunglasses with Custom Lenses. Quam elementum pulvinar etiam non quam lacus suspendisse faucibus. Curabitur gravida arcu ac tortor dignissim.</span></td>
+                        <td>1</td>
+                      </tr>
+                      <tr>
+                        <td class="aRight">4</td>
+                        <td>Product</td>
+                        <td class="aLeft ellipTitle"><span class="nowrap">SAFETY EYEGLASSES</span></td>
+                        <td>1</td>
+                       </tr>
+                      <tr>
+                        <td class="aRight">5</td>
+                        <td>Product</td>
+                        <td class="aLeft ellipTitle"><span class="nowrap">JA-363 CLAMSHELL FITOVER SUNGLASSES</span></td>
+                        <td>1</td>
+                      </tr>
+                      <tr>
+                        <td class="aRight">6</td>
+                        <td>Product</td>
+                        <td class="aLeft ellipTitle"><span class="nowrap">Sport sunglasses (Style name: T5428) Outdoor Sports Sunglasses with Custom Lenses. Quam elementum pulvinar etiam non quam lacus suspendisse faucibus. Curabitur gravida arcu ac tortor dignissim.</span></td>
+                        <td>1</td>
+                      </tr>
+                      <tr>
+                        <td class="aRight">7</td>
+                        <td>Product</td>
+                        <td class="aLeft ellipTitle"><span class="nowrap">Taiwantrade Memo Pad (White-0308-1440) Safety goggles</span></td>
+                        <td>1</td>
+                      </tr>
+                      <tr>
+                        <td class="aRight">8</td>
+                        <td>Product</td>
+                        <td class="aLeft ellipTitle"><span class="nowrap">Outdoor Sports Sunglasses with Custom Lenses. Quam elementum pulvinar etiam non quam lacus suspendisse faucibus. Curabitur gravida arcu ac tortor dignissim.</span></td>
+                        <td>1</td>
+                      </tr>
+                      <tr>
+                        <td class="aRight">9</td>
+                        <td>Product</td>
+                        <td class="aLeft ellipTitle"><span class="nowrap">SAFETY EYEGLASSES</span></td>
+                        <td>1</td>
+                      </tr>
+                      <tr>
+                        <td class="aRight">10</td>
+                        <td>Product</td>
+                        <td class="aLeft">JA-363 CLAMSHELL FITOVER SUNGLASSES</td>
+                        <td>1</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <span class="ctrlBtn btnLook" data-alttext="較少">看更多</span>
+                <span class="btnLook"><a href="myTT_newWin_catalogueClick2.html" target="_blank">看完整資料</a></span>
+              </div>
+  
+            </section>
+            
+            <section class="statisticSet">
+              <h3>Webstory QA事件點擊一覽</h3>
+              <p>依所選時間區隔，顯示「QA事件」數據資訊。</p>
+              <div class="listTbNew">
+                <table>
+                  <thead>
+                    <th></th>
+                    <th>QA名稱</th>
+                    <th>QA答案</th>
+                    <th><span class="sortingTh descending">點擊數 (Clicks)</span></th>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="aRight">1</td>
+                      <td class="aLeft" >Question for your viewer－Dimension 16 事件對應ID(比對JSON)</td>
+                      <td>Great</td>
+                      <td>152</td>
+                    </tr>
+                    <tr>
+                      <td class="aRight">2</td>
+                      <td class="aLeft" >Question for your viewer</td>
+                      <td>Good</td>
+                      <td>133</td>
+                    </tr>
+                    <tr>
+                      <td class="aRight">3</td>
+                      <td class="aLeft" >Question for your viewer</td>
+                      <td>Cool</td>
+                      <td>101</td>
+                    </tr>
+                    <tr>
+                      <td class="aRight">4</td>
+                      <td class="aLeft" >Question for your viewer</td>
+                      <td>excellent</td>
+                      <td>78</td>
+                    </tr>
+                    <tr>
+                      <td class="aRight">5</td>
+                      <td class="aLeft" >ID範例 4479ee9e-049b-4f1f-8ff7-ccad9e0f3dcf</td>
+                      <td>0</td>
+                      <td>32</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <span class="btnLook"><a href="myTT_newWin_mediaClick2.html" target="_blank">看完整資料</a></span>
+              </div>
+            </section>
+  
+  
+  
+          </div>        
+
+      </div>
+
+
+      <div class="boardMsg">
+        <section class="websiteEffects">
+          <h3>網站使用狀況</h3>
+          <ul>
+            <li>
+              <div class="subject">商家力</div>
+              <div class="percentage negative">-4.5%</div>
+              <div class="score">49</div>
+            </li>
+            <li>
+              <div class="subject">商機力</div>
+              <div class="percentage negative">-82.7%</div>
+              <div class="score">-1</div>
+            </li>
+            <li>
+              <div class="subject">曝光力</div>
+              <div class="percentage negative">-2.5%</div>
+              <div class="score">12</div>
+            </li>
+            <li>
+              <div class="subject">電商力</div>
+              <div class="percentage positive">+5.4%</div>
+              <div class="score">20</div>
+            </li>
+            <li class="grade">A++</li>
+          </ul>
+        </section>
+  
+        <section class="orderStatus">
+          <h3>訂單動態</h3>
+          <ol>
+            <li><a href="#"><span class="title">待處理銷售訂單數</span><span class="count">33</span></a></li>
+            <li><a href="#"><span class="title">銷售訂單未讀留言數</span><span class="count">3</span></a></li>
+            <li><a href="#"><span class="title">待處理訂貨訂單數</span><span class="count">78</span></a></li>
+            <li><a href="#"><span class="title">訂貨訂單未讀留言數</span><span class="count">7</span></a></li>
+          </ol>
+        </section>
+
+        <section class="listTable">
+          <h3>資訊現況</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>NO.</th>
+                <th>標題</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="rowOrder">1</td><td>貴公司目前為台灣經貿網的「尊爵會員」</td></tr>
+              <tr><td class="rowOrder">2</td><td><a href="#">查看服務內容：請點選這裡，會開啟一新視窗，告知您的會員專屬權益。</a></td></tr>
+              <tr><td class="rowOrder">3</td><td>世國之常代心年開個一的工論政究生說命活分正決現完身人民生。好推個問像為意。建心生演日很期水時受成媽及類來慢，許媽安過人的到計場臺打了可，議然另它。</td></tr>
+            </tbody>
+
+          </table>
+        </section>
+
+        <section class="listTable expansible">
+          <h3>重點訊息公告</h3>
+          <div class="expArea">
+            <table>
+              <thead>
+                <tr>
+                  <th>NO.</th>
+                  <th>公告標題</th>
+                  <th>公告日期</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="rowOrder">1</td>
+                  <td class="ellipTitle"><a class="showLightbox" id="msg1" href="javascript:;"><span class="smallLabel new">New</span>「網站營運績效數據分析」服務介紹影片</a></td>
+                  <td class="date"><time>2020-06-31</time></td>
+                </tr>
+                <tr>
+                  <td class="rowOrder">2</td>
+                  <td class="ellipTitle"><a class="showLightbox" id="msg1" href="javascript:;"><span class="smallLabel new">New</span> 戰略性高科技貨品輸出管理辦法</a></td>
+                  <td class="date"><time>2020-06-31</time></td>
+                </tr>
+                <tr>
+                  <td class="rowOrder">3</td>
+                  <td class="ellipTitle"><a class="showLightbox" id="msg1" href="javascript:;">是合手天一是水整唱面笑我小夠，是走那地此定人視大期展是達地自從無一生出面不達風元使利高們獨會目問亮回進好車政影聽的了</a></td>
+                  <td class="date"><time>2020-06-31</time></td>
+                </tr>
+                <tr>
+                  <td class="rowOrder">4</td>
+                  <td class="ellipTitle"><a href="javascript:;">學動這密在，媽全對我沒班不中友再完取</a></td>
+                  <td class="date"><time>2020-06-30</time></td>
+                </tr>
+               <tr>
+                  <td class="rowOrder">5</td>
+                  <td class="ellipTitle"><a href="javascript:;">地在音面長做然人得想成道就依失不兒來，就臺謝心叫德</a></td>
+                  <td class="date"><time>2020-06-30</time></td>
+                </tr>
+                <tr>
+                  <td class="rowOrder">6</td>
+                  <td class="ellipTitle"><a href="javascript:;">正標總正我一兩請一的女我示在告</a></td>
+                  <td class="date"><time>2020-06-30</time></td>
+                </tr>
+                 <tr>
+                  <td class="rowOrder">7</td>
+                  <td class="ellipTitle"><a href="javascript:;">靜會正軍一定過國天本情政</a></td>
+                  <td class="date"><time>2020-06-29</time></td>
+                </tr>
+                <tr>
+                  <td class="rowOrder">8</td>
+                  <td class="ellipTitle"><a href="javascript:;">語系是化感口時地談主出在節方前童馬全幾門去你，爾交可的牛度認代術點了，事禮果大可落形藝球論一何是公覺中對光時，我記麼獲展場備生於司育決麼過成</a></td>
+                  <td class="date"><time>2020-06-28</time></td>
+                </tr>
+                <tr>
+                  <td class="rowOrder">9</td>
+                  <td class="ellipTitle"><a href="javascript:;">背意有改班視同對下十一日什、府大到學基趣書滿的分現具手名滿</a></td>
+                  <td class="date"><time>2020-06-28</time></td>
+                </tr>
+                <tr>
+                  <td class="rowOrder">10</td>
+                  <td class="ellipTitle"><a href="javascript:;">海多快過葉石老</a></td>
+                  <td class="date"><time>2020-06-28</time></td>
+                </tr>
+                <tr>
+                  <td class="rowOrder">11</td>
+                  <td class="ellipTitle"><a href="javascript:;">花行南樓信飯施麼和選日中晚在電西因體像日媽話得</a></td>
+                  <td class="date"><time>2020-06-28</time></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="ctrlBtn" data-alttext="less">more</div>
+        </section>
+
+      </div>
+
+
+
+
+      <footer class="webFooter">
+        <ul class="footLinks">
+          <li><a href="#">Liability Disclaimer</a></li>
+          <li><a href="#">Terms Of Use</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Intellectual Property Right Infringement Policy</a></li>
+          <li><a href="#">Product and Service Listing Policy</a></li>
+          <li><a href="#">Useful links</a></li>
+        </ul>
+        <p>Help Customer Service:+886-800506088  © 2002-2019 TAITRA. All rights reserved.</p>
+      </footer>
+        
+
+    </div><!-- /.main -->
+  </div><!-- ./wrapAll -->
+
+
+  <div class="goTopBottom">
+    <span class="goTop" title="go top"></span>
+    <span class="goBottom" title="go bottom"></span>
+  </div>
+
+<!-- 作廢，改成以iframe 嵌入 20201209
+  <section class="lightbox chartXXX">
+    <button type="button" title="close" class="closeThis hideLightbox"></button>
+
+    <div class="head"><h3>型錄瀏覽量</h3></div>
+    <button class="openNewWin" onclick="window.open();" type="button">在新視窗開啟</button>
+
+    <div class="chartSet">
+      <section class="noteDv">
+        <ul>
+          <li>本報表統計訪客於企業網中，瀏覽型錄的數據統計，包含瀏覽量、訪客數及平均停留時間。</li>
+          <li>企業網的每一則型錄均可各別顯示數據．並且可從報表中看出熱門型錄排序。</li>
+          <li>您可透過最近30、60及90天的維度，查看型錄數據。如果您想比較最近30天與前一期的型錄瀏覽數，請勾選「查看成長率」。</li>
+        </ul>
+      </section>
+      <table class="formLayout">
+        <tr>
+          <td>統計區間</td>
+          <td>
+            <div class="optionPool singleSelection">
+              <label><input type="radio" checked="checked">最近30天</label>
+              <label><input type="radio">最近60天</label>
+              <label><input type="radio"> 最近90天</label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>型錄是否販售</td>
+          <td>
+            <div class="optionPool singleSelection">
+              <label><input type="radio" name="sell" value="All" checked="checked">全部</label>
+              <label><input type="radio" name="sell" value="Y">販售</label>
+              <label><input type="radio" name="sell" value="N"> 不販售</label>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <section class="chartArea">
+        <img class="fakeChart" src="../publicData/fakeChart.png">
+      </section>
+
+      <div id="chart-2-container" class="listTbNew">
+        <table>
+          <thead class="chartColumn">
+            <tr>
+              <th><span></span></th>
+              <th><span>網頁</span></th>
+              <th><span id="1" class="sortingTh ascending">瀏覽量</span></th>
+              <th><span id="2" class="sortingTh">訪客數</span></th>
+              <th><span id="3" class="sortingTh">平均停留時間(秒)</span></th>
+            </tr>
+          </thead>
+          <tbody id="chartRow" class="chartRow">
+            <tr>
+              <td class="aRight">1</td>
+              <td class="aLeft">tt.en.taiwantrade.com/</td>
+              <td>447</td>
+              <td>135</td>
+              <td>118</td>
+            </tr>
+            <tr>
+              <td class="aRight">2</td>
+              <td class="aLeft">tt.en.taiwantrade.com/product/taiwantrade-sports-cap-1043236.html</td>
+              <td>135</td>
+              <td>106</td>
+              <td>217</td>
+            </tr>
+            <tr>
+              <td class="aRight">3</td>
+              <td class="aLeft">tt.en.taiwantrade.com/about-us</td>
+              <td>88</td>
+              <td>41</td>
+              <td>211</td>
+            </tr>
+            <tr>
+              <td class="aRight">4</td>
+              <td class="aLeft">tt.en.taiwantrade.com/product/taiwantrade-fur-ball-box-1562289.html</td>
+              <td>88</td>
+              <td>29</td>
+              <td>190</td>
+            </tr>
+            <tr>
+              <td class="aRight">5</td>
+              <td class="aLeft">tt.en.taiwantrade.com/product-catalog/all-products.html</td>
+              <td>53</td>
+              <td>41</td>
+              <td>77</td>
+            </tr>
+            <tr>
+              <td class="aRight">6</td>
+              <td class="aLeft">tt.en.taiwantrade.com/online-shop</td>
+              <td>47</td>
+              <td>18</td>
+              <td>232</td>
+            </tr>
+            <tr>
+              <td class="aRight">7</td>
+              <td class="aLeft">tt.en.taiwantrade.com/product-catalog/all-products.html?page=1&amp;rows=20&amp;productType=&amp;sidx=&amp;sord=&amp;listDisplayMode=detail</td>
+              <td>47</td>
+              <td>24</td>
+              <td>96</td>
+            </tr>
+            <tr>
+              <td class="aRight">8</td>
+              <td class="aLeft">tt.en.taiwantrade.com/vp/ep/contactproduct/1/click</td>
+              <td>41</td>
+              <td>6</td>
+              <td>96</td>
+            </tr>
+            <tr>
+              <td class="aRight">9</td>
+              <td class="aLeft">tt.en.taiwantrade.com/overseas-branches</td>
+              <td>29</td>
+              <td>6</td>
+              <td>14</td>
+            </tr>
+            <tr>
+              <td class="aRight">10</td>
+              <td class="aLeft">tt.en.taiwantrade.com/sitemap</td>
+              <td>24</td>
+              <td>12</td>
+              <td>33</td>
+            </tr>
+            <tr>
+              <td class="aRight">11</td>
+              <td class="aLeft">tt.en.taiwantrade.com/product-list/privateShowroom</td>
+              <td>18</td>
+              <td>12</td>
+              <td>372</td>
+            </tr>
+            <tr>
+              <td class="aRight">12</td>
+              <td class="aLeft">tt.en.taiwantrade.com/product/1562289</td>
+              <td>18</td>
+              <td>6</td>
+              <td>5</td>
+            </tr>
+            <tr>
+              <td class="aRight">13</td>
+              <td class="aLeft">tt.en.taiwantrade.com/about-us/1006325?enabledAnchors=basicInformation-products-certification-awards-officialRecords-contactInfo</td>
+              <td>12</td>
+              <td>6</td>
+              <td>549</td>
+            </tr>
+            <tr>
+              <td class="aRight">14</td>
+              <td class="aLeft">tt.en.taiwantrade.com/about-us/1015385?enabledAnchors=basicInformation-products-certification-awards-officialRecords-contactInfo</td>
+              <td>12</td>
+              <td>6</td>
+              <td>118</td>
+            </tr>
+            <tr>
+              <td class="aRight">15</td>
+              <td class="aLeft">tt.en.taiwantrade.com/news/1065658</td>
+              <td>12</td>
+              <td>6</td>
+              <td>16</td>
+            </tr>
+
+            <tr>
+              <td></td>
+              <td></td>
+              <td>總計:936</td>
+              <td>總計:100</td>
+              <td>平均值:35</td>
+            </tr>
+          </tbody>
+        </table>
+     </div>
+    </div>
+  </section>
+-->
+
+
+  <!-- 20201209 儀表板內容改以 iframe 嵌入 -->
+  <section class="lightbox chart">
+    <button type="button" title="close" class="closeThis hideLightbox"></button>
+    <iframe src="page_in_lightbox.html"></iframe>
+  </section>
+
+
+
+  <section class="lightbox msg1">
+    <button type="button" title="close" class="closeThis hideLightbox"></button>
+
+    <section class="dataTable"><h3>重點訊息公告</h3>
+      <table>
+        <tbody>
+          <tr>
+            <th>訊息標題</th>
+            <td>戰略性高科技貨品輸出管理辦法</td>
+          </tr>
+          <tr>
+            <th>訊息內容</th>
+            <td><div>「儀表板--買主行為」介紹影片</div><div><a href="https://youtu.be/mOAakBS29SQ">https://youtu.be/mOAakBS29SQ</a></div><div><br></div><div>「儀表板--營運總覽」介紹影片</div><div><a href="https://youtu.be/cJUU8OUaA6Q">https://youtu.be/cJUU8OUaA6Q</a></div><div><br></div><div>「儀表板--產業分析」介紹影片</div><div><a href="https://youtu.be/cLMlW2yhGCE">https://youtu.be/cLMlW2yhGCE</a></div><div><br></div><div>「儀表板--流量分析」介紹影片</div><div><a href="https://youtu.be/VJvoVepygLg">https://youtu.be/VJvoVepygLg</a></div></td>
+          </tr>
+          <tr>
+            <th>連結網址</th>
+            <td><p><a href="http://tkba.taiwantrade.com.tw" target="_blank">http://tkba.taiwantrade.com.tw</a></p></td>
+          </tr>
+          <tr>
+            <th>附件</th>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </section>
+
+  <script>
+    //升降冪箭頭 GUI demo, 2021 修改
+    var _sortingTr = $('.listTable, .listTbNew').find('tr').has('.sortingTh');
+    _sortingTr.each(function(){
+      let _sortingTh = $(this).find('.sortingTh');
+      _sortingTh.click(function() {
+        _this = $(this);
+        _sortingTh.not(_this).removeClass('descending').removeClass('ascending');
+        if (_this.hasClass('descending')) {
+          _this.removeClass('descending').addClass('ascending');
+        } else if (_this.hasClass('ascending')) {
+          _this.removeClass('ascending').addClass('descending');
+        } else {
+          _this.addClass('ascending');
+        }
+      })
+    })
+  </script>  
+    
+</body>
+
+</html>

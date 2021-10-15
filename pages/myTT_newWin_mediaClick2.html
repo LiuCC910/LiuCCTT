@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-Hans-TW">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WebStory QA事件點擊一覽</title>
+    <link href="https://fonts.googleapis.com/css?family=Red+Hat+Display:400,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/design.css">
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script src="../js/basic.js"></script>
+  </head>
+  
+<body>
+  <section class="forLightbox">
+
+    <div class="head">
+      <h3>WebStory QA事件點擊一覽</h3>
+    </div>
+
+    <div class="chartSet">
+      <section class="noteDv">
+        <ul>
+          <li>WebStory QA事件點擊一覽</li>
+          <li>您可透過切換統計區間，查看 30／60／90 天內的「事件點擊」數據，名稱會顯示QA標題。</li>
+        </ul>
+      </section>
+
+      <table class="formLayout">
+        <tr>
+          <td>統計區間</td>
+          <td>
+            <div class="optionPool">
+              <label class="isSelected"><input type="radio" checked="checked">最近30天</label>
+              <label><input type="radio">最近60天</label>
+              <label><input type="radio"> 最近90天</label>
+            </div>    
+          </td>
+        </tr>
+      </table>
+
+      <section class="listTbNew">
+        <table class="drawerTable">
+          <thead>
+            <tr>
+              <th></th>
+              <th>問題名稱</th>
+              <th>問題答案</th>
+              <th><span class="sortingTh ascending">點擊數 (TagClicks)</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="aRight">1</td>
+              <td class="aLeft">Question for your viewer－Dimension 16 事件對應ID(比對JSON)</td>
+              <td>Great</td>
+              <td>152</td>
+            </tr>
+            <tr>
+              <td class="aRight">2</td>
+              <td class="aLeft">Question for your viewer</td>
+              <td>Cool</td>
+              <td>133</td>
+            </tr>
+            <tr>
+              <td class="aRight">3</td>
+              <td class="aLeft">Question for your viewer</td>
+              <td>Answer</td>
+              <td>152</td>
+            </tr>
+            <tr>
+              <td class="aRight">4</td>
+              <td class="aLeft">Question for your viewer</td>
+              <td>標Answer</td>
+              <td>133</td>
+            </tr>
+
+          </tbody>
+        </table>
+      </section>
+      
+    </div>
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-Hans-TW">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WebStory 使用者瀏覽量</title>
+    <link href="https://fonts.googleapis.com/css?family=Red+Hat+Display:400,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/design.css">
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script src="../js/basic.js"></script>
+  </head>
+  
+<body>
+  <section class="forLightbox">
+
+    <div class="head">
+      <h3>WebStory 使用者瀏覽量</h3>
+    </div>
+
+    <div class="chartSet">
+      <section class="noteDv">
+        <ul>
+          <li>WebStory瀏覽量是以網址為單位，下拉可切換檢視不同WebStory數據。</li>
+          <li>您可透過切換統計區間，查看 30／60／90 天內的「訪客、瀏覽、事件點擊」，顯示每WebStory下之訪客、點擊等數據。</li>
+          <li>WebStory下再提供造訪訪客之國家來源排行清單。</li>
+        </ul>
+      </section>
+
+      <table class="formLayout">
+        <tr>
+          <td>統計區間</td>
+          <td>
+            <div class="optionPool singleSelection">
+              <label class="isSelected"><input type="radio" checked="checked">最近30天</label>
+              <label><input type="radio">最近60天</label>
+              <label><input type="radio"> 最近90天</label>
+            </div>
+          </td>
+        </tr>
+        <!--tr>
+          <td>WebStory切換</td>
+          <td>
+            <select name="" id="">
+                <option value="">TAITRA2021_templateH_poll_B-1-5</option>
+                <option value="">依URL的Page Title－測試股份有限公司</option>
+            </select>
+          </td>
+        </tr-->
+      </table>
+
+      <section class="listTbNew">
+        <table class="drawerTable">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Webstory來源</th>
+              <th><span class="sortingTh descending">訪客數</span></th>
+              <th><span class="sortingTh">網頁瀏覽量</span></th>
+              <th><span class="sortingTh">事件點擊量</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="SumRow">
+              <td class="aRight">1</td>
+              <td class="aLeft"><span class="handle">https:/storage.googleapis.com/glia-demo/amp/test/test-ga-edm.html</span></td>
+              <td>48</td>
+              <td>152</td>
+              <td>177</td>
+            </tr>
+            <tr class="subRow"><td></td><td class="aLeft">United States</td><td>20</td><td>92</td><td>107</td></tr>
+            <tr class="subRow"><td></td><td class="aLeft">Taiwan</td><td>12</td><td>33</td><td>40</td></tr>
+            <tr class="subRow"><td></td><td class="aLeft">South Africa</td><td>8</td><td>15</td><td>12</td></tr>
+            <tr class="subRow"><td></td><td class="aLeft">United Arab Emirates</td><td>5</td><td>7</td><td>10</td></tr>
+            <tr class="subRow"><td></td><td class="aLeft">Saint Christopher (St.Kitts) and Nevis</td><td>3</td><td>5</td><td>8</td></tr>
+
+            <tr class="SumRow">
+              <td class="aRight">2</td>
+              <td class="aLeft"><span class="handle">依URL的Page URL－https://www.taiwantrade.com/static/webstory/28503340/DCH.htm</span></td>
+              <td>82</td>
+              <td>82</td>
+              <td>107</td>
+            </tr>
+            <tr class="subRow"><td></td><td class="aLeft">South Korea</td><td>22</td><td>52</td><td>77</td></tr>
+            <tr class="subRow"><td></td><td class="aLeft">Taiwan</td><td>7</td><td>20</td><td>11</td></tr>
+            <tr class="subRow"><td></td><td class="aLeft">United States</td><td>2</td><td>9</td><td>13</td></tr>
+            <tr class="subRow"><td></td><td class="aLeft">Saint Christopher (St.Kitts) and Nevis</td><td>1</td><td>1</td><td>6</td></tr>
+
+            <tr class="SumRow">
+              <td class="aRight">3</td>
+              <td class="aLeft"><span class="handle">https://www.taiwantrade.com/static/webstory/12345678/EPV.html</span></td>
+              <td>99</td>
+              <td>9</td>
+              <td>8</td>
+            </tr>
+            <tr class="subRow"><td></td><td class="aLeft">South Korea</td><td>33</td><td>3</td><td>3</td></tr>
+            <tr class="subRow"><td></td><td class="aLeft">Taiwan</td><td>33</td><td>3</td><td>3</td></tr>
+            <tr class="subRow"><td></td><td class="aLeft">United States</td><td>33</td><td>3</td><td>2</td></tr>
+          </tbody>
+        </table>
+
+      </section>
+
+    </div>
+
+  </section>
+
+</body>
+</html>
